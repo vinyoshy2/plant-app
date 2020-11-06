@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+#Requirements
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+You'll need to install Node.js before you can run the project. You can do so here: https://nodejs.org/en/download/
 
-## Available Scripts
+After installing node, run the commands "npm install" and "npm start" to launch the app. I think that's all you need to do.
 
-In the project directory, you can run:
+# Folder Structure
 
-### `yarn start`
+## public
+Should contain all assets (images, icons, etc)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## src
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Contains pretty much all of the code/other data necessary for the app
 
-### `yarn test`
+### data
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Should contain any simulated data we want to use, like projects or user profiles. Probably want to keep this data in JSON format. Images that are tied to simulated data (e.g. project pic) should probably be referred to be file name in the JSON, while the actual file is stored in public. I believe this is because images in the src directory can only be statically loaded in, and not dynamically.
 
-### `yarn build`
+### pages
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Each subdirectory of pages should contain all the components related to a particular page of the project. Feel free to set up further subdirectories within each page folder -- your page will probably consist of multiple components. I think keeping the css and js files for a single component in the same place is probably good though?
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### shared
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Any components that need to be reused across multiple pages should go here. Not sure exactly what that would include at the moment though. Probably the header with the hamburger menu.
 
-### `yarn eject`
+### utils
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Any random javascript helper functions can go here if you want. Not sure if we'll really need it
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Notable files
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## index.js 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+I think this is the very first place React looks when the app starts up. Currently, it tells React to load in the component contained in App.js.
 
-## Learn More
+## App.js
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This file maps the current URL to the correct component it needs to load in. It gets the list of URls and components from ./utils/routes.js
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## ./utils/routes.js
 
-### Code Splitting
+This file contains a list of the paths and components in the ROUTES list. You'll need to create another entry similar to the existing one in order to have your component accesible by URL.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## ./pages/home/Home.js and ./pages/home/Home.css
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Pretty simple example of a component. Whoever's doing the home page should probably replace it.
 
-### Making a Progressive Web App
+## Everything else
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Any files I didn't list, I probably don't know what they do lol
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
