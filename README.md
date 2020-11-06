@@ -1,4 +1,4 @@
-#Requirements
+# Requirements
 
 You'll need to install Node.js before you can run the project. You can do so here: https://nodejs.org/en/download/
 
