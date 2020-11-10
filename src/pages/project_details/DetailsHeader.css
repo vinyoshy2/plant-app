@@ -1,0 +1,26 @@
+#DetailsHeader {
+    display: grid;
+    grid-template-columns: [start] 50% [middle] 50% [end]
+}
+
+#DetailsText {
+    grid-column-start: start;
+    grid-column-end: middle;
+}
+
+#Ratings {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+#AddProject {
+    justify-self: right;
+    align-self: end;
+    grid-column-start: middle;
+    grid-column-end: end;
+    width: fit-content;
+    height: fit-content;
+
+}

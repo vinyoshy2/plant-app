@@ -1,5 +1,6 @@
 import React from "react";
 import Home from "./pages/home/Home.js";
+import "./App.css"
 import {
     HashRouter as Router,
     Switch,
