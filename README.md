@@ -2,7 +2,22 @@
 
 You'll need to install Node.js before you can run the project. You can do so here: https://nodejs.org/en/download/
 
-After installing node, run the commands "npm install" and "npm start" to launch the app. I think that's all you need to do.
+After installing node, run the commands ``npm install`` and ``npm start`` to launch the app. I think that's all you need to do.
+
+## Potentail Prerequisite under MacOS
+
+1. **Error**: If you have updated your OS to latest MacOS Catalina (released Sep. 24, 2020), you might meet error  
+*fsevents@X.X.X install /your-project-path/node_modules/.../fsevents*  
+when doing ``npm install``.  
+**Reason**: Out-of-date Mac development tool xcode.  
+**Solution**:  
+a. Follow Step 1 & 2 in this [link](https://stackoverflow.com/questions/62962520/npm-install-error-node-js-fsevent) to uninstall xcode-select.  
+b. Follow this [link](https://www.freecodecamp.org/news/how-to-download-and-install-xcode/) to install xcode and its command line tool.  
+*Note*: the .xip file needs around 40 GB free space in disk to extract. You might to clean up some files in your disk if not enough. The free space could be checked in Disk Utility app in Mac.
+
+2. **Error**: Syntax error * } catch {* when doing ``npm start``.  
+**Reason**: Out-of-date version of Node.js. Old version only support *} catch (err) {* syntax. To support the syntax in the error, it needs version >= 10  
+**Solution**: Follow this [link](https://medium.com/macoclock/update-your-node-js-on-your-mac-in-2020-948948c1ffb2) to update Node to latest version.
 
 # Folder Structure
 
