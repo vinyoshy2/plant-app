@@ -5,9 +5,7 @@ export const Nav = styled.nav`
   background: #FFFFFF;
   display: flex-column;
   justify-content: space-between;
-  padding-top: 1.5vw;
   z-index: 10;
-  line-height: 50px;
   /* Third Nav */
   justify-content: flex-start;
 `;
@@ -18,6 +16,8 @@ export const NavLink = styled(Link)`
   align-items: center;
   text-decoration: none;
   padding: 0 2rem;
+  padding-top: 10pt;
+  padding-bottom: 10pt; 
   height: 100%;
   cursor: pointer;
   &.active {

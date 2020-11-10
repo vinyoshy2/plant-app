@@ -1,22 +1,32 @@
 import React, { Component } from "react";
+import Lightbox from 'react-lightbox-component';
+import 'react-lightbox-component/build/css/index.css'
+
 import Sidebar from "./SideBar";
- 
+import { GalleryItems } from "./GalleryData"
+
 class Gallery extends Component {
   render() {
     return (
-      <div className='main-frame'>
+      <div className='profile-frame'>
         <Sidebar />
-        <div className='main-content'>
-          <h2 className='main-content-title'>Gallery</h2>
-          <p>Mauris sem velit, vehicula eget sodales vitae,
-          rhoncus eget sapien:</p>
-          <ol>
-            <li>Nulla pulvinar diam</li>
-            <li>Facilisis bibendum</li>
-            <li>Vestibulum vulputate</li>
-            <li>Eget erat</li>
-            <li>Id porttitor</li>
-          </ol>
+        <div className='vertical-divider' />
+        <div className='profile-content'>
+          <div className='profile-content-title'> Gallery </div>
+          <div className='horizontal-divider'/>
+          <ul>
+            { GalleryItems.map((item, index) => {
+              return (
+                <li key={index} className='album'>
+                  <h2> {item.albumName} </h2>
+                  <Lightbox images={ item.photos }
+                            thumbnailWidth='150px'
+                            thumbnailHeight='150px'/>
+                </li>
+              )
+            })}
+
+          </ul>
         </div>
       </div>
     );

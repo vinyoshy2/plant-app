@@ -5,7 +5,7 @@ const Sidebar = () => {
   return (
     <div className='sidebar'>
       <p> Profile photo </p>
-      <div className='sidebarDivider'/>
+      <div className='horizontal-divider'/>
       <Navbar />
     </div>
   )

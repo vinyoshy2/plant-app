@@ -5,9 +5,12 @@ import Sidebar from "./SideBar";
 class MyProjects extends Component {
   render() {
     return (
-      <div className='main-frame'>
+      <div className='profile-frame'>
         <Sidebar />
-        <div className='main-content'>
+        <div className='vertical-divider' />
+        <div className='profile-content'>
+          <div className='profile-content-title'> My Projects </div>
+          <div className='horizontal-divider'/>
           <h2>HELLO</h2>
           <p>Cras facilisis urna ornare ex volutpat, et
             convallis erat elementum. Ut aliquam, ipsum vitae

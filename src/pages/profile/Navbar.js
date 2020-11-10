@@ -29,7 +29,7 @@ const Navbar = () => {
             Messages
           </NavLink>
           <NavLink to='/care-reminder' activeStyle>
-            Care Reminder
+            Plant Care Calendar
           </NavLink>
           {/* Second Nav */}
           {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}

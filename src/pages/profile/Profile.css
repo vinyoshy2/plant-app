@@ -1,28 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-.main-frame {
+.profile-frame {
   display: flex;
   flex-direction: row;
 }
 
-.main-content {
+.profile-content {
   display:flex;
   flex-direction: column;
+  width: 60vw;
 }
 
-.main-content-title {
-
+.profile-content-title {
+  padding-top: 3vw;
+  font-size: 30pt;
+  text-align:center;
 }
 
 .sidebar {
   padding-left: 10vw;
-  padding-right: 1.5vw;
+  padding-right: 0.5vw;
 }
 
-.sidebarDivider {
+.horizontal-divider {
   padding-top: 10pt;
+  margin-bottom: 10pt;
   border-bottom: 1px solid black;
+  border-bottom-color: #C0C0C0;
   width: 100%;
+}
+
+.vertical-divider {
+  padding-right: 2vw;
+  border-left:1px solid black;
+  border-left-color: #C0C0C0;
+}
+
+.album {
+  margin-top: 10px;
 }
 
 * {
