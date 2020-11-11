@@ -35,6 +35,29 @@
   padding-right: 0.5vw;
 }
 
+.profile-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid #C0C0C0;
+  object-fit: cover;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.profile-username {
+  line-height: 40px;
+  font-size: 16pt;
+  font-weight: bold;
+}
+
+.badge-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
 .horizontal-divider {
   padding-top: 10pt;
   margin-bottom: 10pt;
