@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-.profile-frame {
+.vertical-frame {
   display: flex;
   flex-direction: row;
 }
@@ -97,4 +97,15 @@
   align-items: center;
   justify-content: center;
   font-size: 3rem;
+}
+
+.badge-image {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin-left: 10px;
+  margin-right: 40px;
+  border: 2px solid #c99;
+  background-position: center center;
+  object-fit: cover;
 }

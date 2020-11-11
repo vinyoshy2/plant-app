@@ -5,7 +5,7 @@ import Sidebar from "./SideBar";
 class MyProjects extends Component {
   render() {
     return (
-      <div className='profile-frame'>
+      <div className='vertical-frame'>
         <Sidebar />
         <div className='vertical-divider' />
         <div className='profile-content'>

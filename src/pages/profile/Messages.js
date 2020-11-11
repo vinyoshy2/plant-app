@@ -4,7 +4,7 @@ import Sidebar from "./SideBar";
 class Messages extends Component {
   render() {
     return (
-      <div className='profile-frame'>
+      <div className='vertical-frame'>
         <Sidebar />
         <div className='vertical-divider' />
         <div className='profile-content'>

@@ -8,7 +8,7 @@ import { GalleryItems } from "./GalleryData"
 class Gallery extends Component {
   render() {
     return (
-      <div className='profile-frame'>
+      <div className='vertical-frame'>
         <Sidebar />
         <div className='vertical-divider' />
         <div className='profile-content'>
@@ -19,6 +19,7 @@ class Gallery extends Component {
               return (
                 <li key={index} className='album'>
                   <div className='profile-subtitle'> {item.albumName} </div>
+                  {/* Lightbox lib info: https://reactjsexample.com/an-image-lightbox-component-for-reactjs/*/}
                   <Lightbox images={ item.photos }
                             thumbnailWidth='150px'
                             thumbnailHeight='150px'/>
