@@ -25,7 +25,6 @@ class Gallery extends Component {
                 </li>
               )
             })}
-
           </ul>
         </div>
       </div>
