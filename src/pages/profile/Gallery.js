@@ -12,13 +12,13 @@ class Gallery extends Component {
         <Sidebar />
         <div className='vertical-divider' />
         <div className='profile-content'>
-          <div className='profile-content-title'> Gallery </div>
+          <div className='profile-title'> Gallery </div>
           <div className='horizontal-divider'/>
-          <ul>
+          <ul className='ul-no-bullets'>
             { GalleryItems.map((item, index) => {
               return (
                 <li key={index} className='album'>
-                  <h2> {item.albumName} </h2>
+                  <div className='profile-subtitle'> {item.albumName} </div>
                   <Lightbox images={ item.photos }
                             thumbnailWidth='150px'
                             thumbnailHeight='150px'/>

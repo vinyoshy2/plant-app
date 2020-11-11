@@ -11,10 +11,23 @@
   width: 60vw;
 }
 
-.profile-content-title {
+.profile-title {
   padding-top: 3vw;
   font-size: 30pt;
   text-align:center;
+}
+
+.profile-subtitle {
+  margin-top: 1vw;
+  font-size: 20pt;
+}
+
+.profile-sub-content {
+  padding-bottom: 1vw;
+  padding-top: 1vw;
+  padding-left: 0.5vw;
+  width: 100%;
+  position: relative;
 }
 
 .sidebar {
@@ -36,8 +49,37 @@
   border-left-color: #C0C0C0;
 }
 
+.ul-no-bullets {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
 .album {
   margin-top: 10px;
+}
+
+.list-title {
+  background-color: #C0C0C0;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  font-weight: bold;
+  font-size: 14pt;
+}
+
+.list-item {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  font-size: 13pt;
+  border-bottom:1px solid black;
+  border-bottom-color: #C0C0C0;
+}
+
+.content-text {
+  font-size: 13pt;
+  margin-bottom: 15px;
 }
 
 * {

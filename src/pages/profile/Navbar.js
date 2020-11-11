@@ -23,14 +23,18 @@ const Navbar = () => {
             My Projects
           </NavLink>
           <NavLink to='/gallery' activeStyle>
-            Plant Gallery
+            My Plant Gallery
+          </NavLink>
+          <NavLink to='/badges' activeStyle>
+            My Badges
+          </NavLink>
+          <NavLink to='/care-reminder' activeStyle>
+            My Plant Care
           </NavLink>
           <NavLink to='/messages' activeStyle>
             Messages
           </NavLink>
-          <NavLink to='/care-reminder' activeStyle>
-            Plant Care Calendar
-          </NavLink>
+
           {/* Second Nav */}
           {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
         </NavMenu>

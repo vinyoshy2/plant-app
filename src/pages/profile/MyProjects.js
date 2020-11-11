@@ -9,7 +9,7 @@ class MyProjects extends Component {
         <Sidebar />
         <div className='vertical-divider' />
         <div className='profile-content'>
-          <div className='profile-content-title'> My Projects </div>
+          <div className='profile-title'> My Projects </div>
           <div className='horizontal-divider'/>
           <h2>HELLO</h2>
           <p>Cras facilisis urna ornare ex volutpat, et
