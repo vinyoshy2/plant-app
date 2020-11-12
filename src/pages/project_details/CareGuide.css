@@ -1,0 +1,29 @@
+#CareGuide {
+    background-color:#bbb;
+    padding: 10px 30px 10px 30px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+#care-title {
+    font-size: 20px;
+    font-weight: bold;
+    align-self: center;
+}
+
+.care-item {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+}
+
+.care-text {
+    align-self: center;
+}
+.care-icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #464646
+}

@@ -1,0 +1,54 @@
+#UserPhotos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.entry {
+    display: flex;
+    flex-direction: column;
+}
+
+.photo {
+    height: 300px;
+    width: 300px;
+    background-color: #bbb;
+}
+
+.user-info {
+    margin-top: 10px;
+    margin-left: 10px;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+}
+
+.profile-pic {
+    align-self: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #464646;
+}
+
+
+.like {
+    margin-left: auto;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+}
+
+.username {
+    margin-left: 5px;
+    align-self: center;
+}
+
+.like-button {
+    height:30px;
+    width:30px;
+}
+
+.like_count {
+    align-self: center;
+}

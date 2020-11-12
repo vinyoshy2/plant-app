@@ -1,5 +1,5 @@
 import React from "react";
-import "./DetailsHeader.css"
+import "./DetailsHeader.css";
 
 function DetailsHeader() {
     return (
