@@ -1,0 +1,125 @@
+{
+    "entries": [
+        {
+            "id": 0,
+            "name": "Herb Shelf",
+            "keywords": ["Cheap", "Easy Set-up"],
+            "required_plants": {"Basil": "basil.jpeg", "Mint": "mint.jpg", "Chives": "chives.jpg"},
+            "alt_plants": {"Oregano": "oregano.jpeg", "Parsley":"parsley.jpg", "Rosemary":"rosemary.jpeg"},
+            "gallery_pics": ["shelf_gallery.jpeg", "shelf2.jpg", "shelf3.jpg"],
+            "size": "Small",
+            "lighting": "Full sun",
+            "humidity": "Slightly humid",
+            "setup_difficulty": "Easy",
+            "care_difficulty": "Medium",
+            "items": ["1 Backless Shelving Unit," "3 (or more) 6-inch planters", "3 (or more) matching drainage trays", "Potting soil"],
+            "price_estimate": "$0-40",
+            "harvesting": "Once per week",
+            "watering": "Twice per week",
+            "steps": {
+                "Placing the shelf": "Most herbs need a lot of sunlight. Try to place your shelving unit near a window that gets several hours of direct sunlight per day. This will likely be a south- or west-facing window. If your shelving unit has adjustable shelf heights, ensure that as many shelves as possible will receive direct sunlight. Leave enough space between the shelves to avoid squishing the plants",
+                "Potting your plants":"Once the shelving unit has been placed, you'll need to pot your plants. Make sure the pots you've picked have some kind of drainage, and a saucer or tray beneath them to prevent leakage. Fill the pot about half way with soil. Gently press the soil against the sides of the container, leaving space for the plant to be inserted. Lightly moisten the soil in the pot. Place the plant in the pot and fill in the empty spaces around the sides. Press the soil firmly around the plant and moisten again.",
+                "Watering": "Your herbs probably require less water than you think. You will need to water them once every 2-3 days. To check whether your plants need water, stick your finger about 2 knuckles into the soil. It should be consistently moist, but not waterlogged. If the soil does not drain properly when you water the herbs, or if the leaves of the herbs begin to wilt and turn yellow, try watering your herbs less frequently. Note that the more sunlight your plants get, the more frequently you should water them",
+                "Harvesting": "Use a pair of scissors, or pinch gently with your fingers to harvest your herbs. Try to harvest regularly to encourage growth (at least once a week), but avoid removing more than a third of the herbs leaves at a time, as this can kill the plant."
+            
+            },
+            "user_photo_ids": [0,1,2]
+        },
+        {
+            "id": 1,
+            "name": "PLANT NAME",
+            "keywords": ["keyword1", "keyword2"],
+            "required_plants": {"plant1": "project-image-test.jpg", "plant2": "project-image-test.jpg"},
+            "alt_plants": {"plant1": "project-image-test.jpg", "plant2": "project-image-test.jpg"},
+            "gallery_pics": ["gallery_generic.png","gallery_generic.png","gallery_generic.png"],
+            "size": "medium",
+            "lighting": "Dim light",
+            "humidity": "Dry",
+            "setup_difficulty": "Hard",
+            "care_difficulty": "Easy",
+            "items": ["1 Item", "2 Items", "3 Items OR 2 Items"],
+            "price_estimate": "$52",
+            "harvesting": "No harvesting",
+            "watering": "Twice per week",
+            "steps": {
+                "Set up": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum", 
+                "More set up": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+                "Watering": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum", 
+                "Long term care" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+            },
+            "user_photo_ids": [4,4,4]
+        },
+        {
+            "id": 2,
+            "name": "PLANT NAME",
+            "keywords": ["keyword1", "keyword2"],
+            "required_plants": {"plant1": "project-image-test.jpg", "plant2": "project-image-test.jpg"},
+            "alt_plants": {"plant1": "project-image-test.jpg", "plant2": "project-image-test.jpg"},
+            "gallery_pics": ["gallery_generic.png","gallery_generic.png","gallery_generic.png"],
+            "size": "medium",
+            "lighting": "Dim light",
+            "humidity": "Dry",
+            "setup_difficulty": "Hard",
+            "care_difficulty": "Easy",
+            "items": ["1 Item", "2 Items", "3 Items OR 2 Items"],
+            "price_estimate": "$52",
+            "harvesting": "No harvesting",
+            "watering": "Twice per week",
+            "steps": {
+                "Set up": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum", 
+                "More set up": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+                "Watering": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum", 
+                "Long term care" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+            },
+            "user_photo_ids": [4,4,4]
+        },
+        {
+            "id": 3,
+            "name": "PLANT NAME",
+            "keywords": ["keyword1", "keyword2"],
+            "required_plants": {"plant1": "project-image-test.jpg", "plant2": "project-image-test.jpg"},
+            "alt_plants": {"plant1": "project-image-test.jpg", "plant2": "project-image-test.jpg"},
+            "gallery_pics": ["gallery_generic.png","gallery_generic.png","gallery_generic.png"],
+            "size": "medium",
+            "lighting": "Dim light",
+            "humidity": "Dry",
+            "setup_difficulty": "Hard",
+            "care_difficulty": "Easy",
+            "items": ["1 Item", "2 Items", "3 Items OR 2 Items"],
+            "price_estimate": "$52",
+            "harvesting": "No harvesting",
+            "watering": "Twice per week",
+            "steps": {
+                "Set up": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum", 
+                "More set up": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+                "Watering": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum", 
+                "Long term care" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+            },
+            "user_photo_ids": [4,4,4]
+        },
+        {
+            "id": 4,
+            "name": "PLANT NAME",
+            "keywords": ["keyword1", "keyword2"],
+            "required_plants": {"plant1": "project-image-test.jpg", "plant2": "project-image-test.jpg"},
+            "alt_plants": {"plant1": "project-image-test.jpg", "plant2": "project-image-test.jpg"},
+            "gallery_pics": ["gallery_generic.png","gallery_generic.png","gallery_generic.png"],
+            "size": "medium",
+            "lighting": "Dim light",
+            "humidity": "Dry",
+            "setup_difficulty": "Hard",
+            "care_difficulty": "Easy",
+            "items": ["1 Item", "2 Items", "3 Items OR 2 Items"],
+            "price_estimate": "$52",
+            "harvesting": "No harvesting",
+            "watering": "Twice per week",
+            "steps": {
+                "Set up": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum", 
+                "More set up": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+                "Watering": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum", 
+                "Long term care" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+            },
+            "user_photo_ids": [4,4,4]
+        },
+    ]
+}
