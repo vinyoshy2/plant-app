@@ -13,6 +13,7 @@
     "react-lightbox-component": "^1.2.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
+    "react-select": "^3.1.0",
     "stream-chat": "^2.7.4",
     "stream-chat-react": "^3.2.2",
     "styled-components": "^5.2.1",
