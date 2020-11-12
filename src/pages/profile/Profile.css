@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+.vertical-frame {
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-content {
+  display:flex;
+  flex-direction: column;
+  width: 60vw;
+}
+
+.profile-title {
+  padding-top: 3vw;
+  font-size: 30pt;
+  text-align:center;
+}
+
+.profile-subtitle {
+  margin-top: 1vw;
+  font-size: 20pt;
+}
+
+.profile-sub-content {
+  padding-bottom: 1vw;
+  padding-top: 1vw;
+  padding-left: 0.5vw;
+  width: 100%;
+  position: relative;
+}
+
+.sidebar {
+  margin-top: 2vw;
+  padding-left: 10vw;
+  padding-right: 0.5vw;
+}
+
+.profile-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid #C0C0C0;
+  object-fit: cover;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.profile-username {
+  line-height: 40px;
+  font-size: 16pt;
+  font-weight: bold;
+}
+
+.badge-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.horizontal-divider {
+  padding-top: 10pt;
+  margin-bottom: 10pt;
+  border-bottom: 1px solid black;
+  border-bottom-color: #C0C0C0;
+  width: 100%;
+}
+
+.vertical-divider {
+  padding-right: 2vw;
+  border-left:1px solid black;
+  border-left-color: #C0C0C0;
+}
+
+.ul-no-bullets {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.album {
+  margin-top: 10px;
+}
+
+/* For Care Reminder*/
+.list-title {
+  background-color: #C0C0C0;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  font-weight: bold;
+  font-size: 14pt;
+}
+
+.list-item {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  font-size: 13pt;
+  border-bottom:1px solid black;
+  border-bottom-color: #C0C0C0;
+}
+
+.content-text {
+  font-size: 13pt;
+  margin-bottom: 15px;
+}
+
+/* For MyProjects */
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 250px;
+  grid-gap: 10px;
+  margin: auto;
+}
+
+.project-cover-image {
+  display: flex;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  opacity: 60%;
+  filter: grayscale(80%);
+}
+
+/* Centered text */
+.text-over-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+.home,
+.reports,
+.products {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.badge-image {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin-left: 10px;
+  margin-right: 40px;
+  border: 2px solid #c99;
+  background-position: center center;
+  object-fit: cover;
+}
