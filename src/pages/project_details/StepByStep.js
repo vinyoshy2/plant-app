@@ -1,33 +1,54 @@
 import React from "react";
 import "./StepByStep.css"
 
-function StepByStep(props) {
-    return (
-        <div id="StepByStep">
-            <div id="timeline">
-	         {
-                     props.steps.slice(0, props.steps.length-1).map(step =>
-			 <div>
-                         <label class="step_button"> 
-			     <div class="step_text">{step["name"]}</div>
-                             <input type="radio" name="radio"/>
-                             <span class="checkmark"></span>
-                         </label>
-                         <div class="line"/>
-			 </div>
-		     )
-		 }
-                 <label class="step_button"> 
-	             <div class="step_text">{props.steps[props.steps.length-1]["name"]}</div>
-                     <input type="radio" name="radio"/>
-                     <span class="checkmark"></span>
-                 </label> 
+export default class StepByStep extends React.Component {
+
+    constructor(props) {
+        super(props)
+        this.state = { display: 0  }
+    }
+
+    handleClick(position) {
+        this.setState({display: position});
+    }
+
+    render() {   
+        return (
+            <div id="StepByStep">
+                <div id="timeline">
+                     <label class="step_button"> 
+	                 <div class="step_text">{this.props.steps[0]["name"]}</div>
+                         <input type="radio" name="radio" defaultChecked={true} onClick={() => this.handleClick(this.props.steps[0]["pos"])}/>
+                         <span class="checkmark"></span>
+                     </label> 
+                     <div class="line"/>
+	             {
+                         this.props.steps.slice(1, this.props.steps.length-1).map(step =>
+			     <div>
+                                 <label class="step_button"> 
+			             <div class="step_text">{step["name"]}</div>
+                                     <input type="radio" name="radio" onClick={() => this.handleClick(step["pos"])}/>
+                                     <span class="checkmark"></span>
+                                 </label>
+                                 <div class="line"/>
+			     </div>
+		         )
+		     }
+                     <label class="step_button"> 
+	                 <div class="step_text">{this.props.steps[this.props.steps.length-1]["name"]}</div>
+                         <input type="radio" name="radio" onClick={() => this.handleClick(this.props.steps[this.props.steps.length-1]["pos"])}/>
+                         <span class="checkmark"></span>
+                     </label> 
+	        </div>
+	        <div id="step">
+	            <p>
+		    {
+                        this.props.steps[this.state.display]["text"]
+		    }
+		    </p>
+	        </div>
 	    </div>
-	    <div id="step">
-	        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-	    </div>
-	</div>
-    )
+        )
+    }
 }
 
-export default StepByStep;
