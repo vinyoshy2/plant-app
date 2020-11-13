@@ -7,6 +7,8 @@ import Gallery from "../pages/profile/Gallery.js"
 import Messages from "../pages/profile/Messages.js"
 import CareReminder from "../pages/profile/CareReminder.js"
 import ProjectList from "../pages/project_list/ProjectList.js"
+import PlantOfTheDay from "../pages/plant_of_the_day/PlantOfTheDay.js"
+
 
 const ROUTES = [
     {path: "/", key: "HOME", component: () => <Home />},
@@ -16,7 +18,8 @@ const ROUTES = [
     {path: "/badges", key: "BADGES", component: () => <Badges />},
     {path: "/messages", key: "MESSAGES", component: () => <Messages />},
     {path: "/care-reminder", key: "CAREREMINDER", component: () => <CareReminder />},
-    {path: "/project-list", key: "PROJECTLIST", component: () => <ProjectList />}
+    {path: "/project-list", key: "PROJECTLIST", component: () => <ProjectList />},
+    {path: "/plant-of-the-day", key: "PLANTOFTHEDAY", component: () => <PlantOfTheDay />}
 ];
 
 export default ROUTES;
