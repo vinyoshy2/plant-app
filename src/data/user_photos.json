@@ -1,0 +1,32 @@
+{
+    "entries" : [
+        {
+	    "id": 0,
+            "profile_pic": "profile_pic.jpg",
+            "user": "Alice",
+            "likes": 15,
+            "plant_pic": "shelf2.jpg"
+        },
+        {
+	    "id": 1,
+            "profile_pic": "profile_pic.jpg",
+            "user": "Bob",
+            "likes": 6,
+            "plant_pic": "shelf3.jpg"
+        },
+        {
+	    "id": 2,
+            "profile_pic": "profile_pic.jpg",
+            "user": "Carol",
+            "likes": 3,
+            "plant_pic": "shelf4.jpg"
+        },
+        {
+	    "id": 3,
+            "profile_pic": "profile_pic.jpg",
+            "user": "Alice",
+            "likes": 15,
+            "plant_pic": "shelf2.jpg"
+        }
+    ]
+}

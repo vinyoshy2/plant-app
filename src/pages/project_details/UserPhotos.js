@@ -1,42 +1,28 @@
 import React from "react";
 import "./UserPhotos.css";
+import photosJSON from "../../data/user_photos.json";
+import {getEntryFromID} from "../../utils/utils.js";
 
-function UserPhotos() {
+function UserPhotos(props) {
+
+    var entries = props.photo_ids.map(id => getEntryFromID(id, photosJSON));
     return (
 	<div id="UserPhotos">
-	    <div class="entry">
-	        <div class="photo"/>
-	        <div class="user-info">
-   	            <div class="profile-pic"/>
-	            <div class="username"> Uploaded by Bob</div>
-	        </div>
-	        <div class="like">
-	            <input type="image" class="like-button" src={"/thumb.png"}/>
-	            <div class="like_count">5</div>
-	        </div>
-	    </div>
-	    <div class="entry">
-	        <div class="photo"/>
-	        <div class="user-info">
-	            <div class="profile-pic"/>
-	            <div class="username"> Uploaded by Alice</div>
-	        </div>
-	        <div class="like">
-	            <input type="image" class="like-button" src={"/thumb.png"}/>
-	            <div class="like_count">5</div>
-	        </div>
-	    </div>
-	    <div class="entry">
-	        <div class="photo"/>
-	        <div class="user-info">
-	            <div class="profile-pic"/>
-	            <div class="username"> Uploaded by Carol</div>
-	        </div>
-	        <div class="like">
-	            <input type="image" class="like-button" src={"/thumb.png"}/>
-	            <div class="like_count">5</div>
-	        </div>
-	    </div>
+	    {
+	        entries.map(entry => 
+                    <div class="entry">
+			<div class="photo" style={{backgroundImage: "url(" + "/" + entry["plant_pic"] + ")"}}/>
+  		        <div class="user-info">
+			    <div class="profile-pic" style={{backgroundImage: "url(" + "/" + entry["profile_pic"] + ")"}}/>
+			    <div class="username"> Uploaded by {entry["user"]}</div>
+		        </div>
+		        <div class="like">
+	                    <input type="image" class="like-button" src={"/thumb.png"}/>
+	                    <div class="like_count">{entry["likes"]}</div>
+			</div>
+		    </div>
+	    )
+	    }
 	</div>
     )
 }

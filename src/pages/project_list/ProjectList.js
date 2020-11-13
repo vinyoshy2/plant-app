@@ -1,16 +1,19 @@
 import React, { Component } from "react";
 import Select from 'react-select'
 import './ProjectList.css';
+import projectJSON from '../../data/projects.json';
+import {getEntryFromID} from "../../utils/utils.js";
 
 class ProjectCard extends Component {
   render() {
+    var proj = getEntryFromID(this.props.id, projectJSON);
     return (
       <div className="project-card">
-        <div className="project-image" style={{backgroundImage: "url(/project-image-test.jpg)"}}></div>
+        <div className="project-image" style={{backgroundImage: "url(" +"/"+ proj["gallery_pics"][0] + ")"}}></div>
         <div className="project-details">
-          <h3>Project Name</h3>
-          <p>Detail #1</p>
-          <p>Detail #2</p>
+          <h3>{proj["name"]}</h3>
+          <p>{proj["keywords"][0]}</p>
+          <p>{proj["keywords"][1]}</p>
         </div>
       </div>
     );
@@ -21,13 +24,13 @@ class Projects extends Component {
   render() {
     return (
     <div className="project-col">
-      <h2>You have been matched with 5 projects.</h2>
+      <h2>You have been matched with {projectJSON["entries"].length} projects.</h2>
       <div className="project-card-container">
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
+      { 
+        projectJSON["entries"].map(project => 
+	  <ProjectCard id={project.id}/>
+	)
+      }
       </div>
     </div>
     );

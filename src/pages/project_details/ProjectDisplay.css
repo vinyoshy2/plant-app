@@ -10,21 +10,18 @@
 }
 
 #Image1 {
-    background-color: #464646;
     grid-column-start: start;
     grid-column-end: middle;
     grid-row-start: top;
     grid-row-end: bottom;
 }
 #Image2 {
-    background-color: #464646;
     grid-column-start: middle;
     grid-column-end: end;
     grid-row-start: top;
     grid-row-end: center;
 }
 #Image3 {
-    background-color: #464646;
     grid-column-start: middle;
     grid-column-end: end;
     grid-row-start: center;

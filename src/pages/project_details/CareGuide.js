@@ -1,21 +1,21 @@
 import React from "react";
 import "./CareGuide.css";
 
-function CareGuide() {
+function CareGuide(props) {
     return (
         <div id="CareGuide">
 	    <div id="care-title"> Care Guide </div>
 	    <div class="care-item">
 	        <div class="care-icon"/>
-	        <div class="care-text"> 2x per week </div>
+	        <div class="care-text"> {props.water} </div>
 	    </div>
 	    <div class="care-item">
 	        <div class="care-icon"/>
-	        <div class="care-text"> Indirect Sunlight </div>
+	        <div class="care-text"> {props.light} </div>
 	    </div>
 	    <div class="care-item">
 	        <div class="care-icon"/>
-	        <div class="care-text"> No Harvesting </div>
+	        <div class="care-text"> {props.harvest} </div>
 	    </div>
 	</div>
     );
