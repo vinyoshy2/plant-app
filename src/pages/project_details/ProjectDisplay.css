@@ -1,12 +1,12 @@
 #ProjectDisplay {
     margin-top: 20px;
-    height: 50%;
+    height: 60%;
     width: 100%;
     display: grid;
-    grid-template-columns: [start] 55% [middle] 45% [end];
-    column-gap: 3px;
+    grid-template-columns: [start] 65% [middle] 33% [end];
+    column-gap: 2%;
     grid-template-rows: [top] 50% [center] 50% [bottom];
-    row-gap: 3px;
+    row-gap: 10px;
 }
 
 #Image1 {
@@ -14,16 +14,19 @@
     grid-column-end: middle;
     grid-row-start: top;
     grid-row-end: bottom;
+    background-size: 100%;
 }
 #Image2 {
     grid-column-start: middle;
     grid-column-end: end;
     grid-row-start: top;
     grid-row-end: center;
+    background-size: 100%;
 }
 #Image3 {
     grid-column-start: middle;
     grid-column-end: end;
     grid-row-start: center;
     grid-row-end: bottom;
+    background-size: 100%;
 }

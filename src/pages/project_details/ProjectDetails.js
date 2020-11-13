@@ -26,7 +26,7 @@ export default class ProjectDetails extends React.Component {
 	    <div id="ProjectDetails">
           	<DetailsHeader name={proj["name"]} setup={proj["setup_difficulty"]} care={proj["care_difficulty"]} matches={this.state.matches}/>
 		<ProjectDisplay images={proj["gallery_pics"]}/>
-		<h3> What You Will Need </h3>
+		<h3 style={{marginTop: "20px"}}> What You Will Need </h3>
 		<div id="QuickInfo">
 		    <Equipment items={proj["items"]} price={proj["price_estimate"]}/>
 		    <Plants required={proj["required_plants"]} alt={proj["alt_plants"]}/>

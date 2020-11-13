@@ -28,6 +28,7 @@
 .plant-pic {
     height: 100px;
     width: 100px;
+    background-size: 100px 100px;
     border-radius: 50%;
     display: inline-block;
 }
