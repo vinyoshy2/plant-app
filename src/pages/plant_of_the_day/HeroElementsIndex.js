@@ -32,12 +32,12 @@ function HeroSection() {
         </HeroP>
         <HeroBtnWrapper>
           <Button
-            to='about'
+            to='First'
             smooth={true}
             duration={500}
             spy={true}
             exact='true'
-            offset={-80}
+            offset={0}
             primary='true'
             dark='true'
             onMouseEnter={onHover}
