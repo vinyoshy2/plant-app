@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./Profile.css"
 import Sidebar from "./SideBar";
+import ProjectCard from "../project_list/ProjectCard"
+import projectJSON from "../../data/projects.json";
  
 class MyProjects extends Component {
   render() {
@@ -12,15 +14,12 @@ class MyProjects extends Component {
           <div className='profile-title'> My Projects </div>
           <div className='horizontal-divider'/>
           <div className='profile-sub-content'>
-            <div className='grid-layout'>
-              <div>
-                {/* TODO: how to add text over image in such grid? */}
-                <img className='project-cover-image' src={'http://24.media.tumblr.com/tumblr_ly7xjxn3QI1r62v9yo1_1280.png'}/>
-              </div>
-              <img className='project-cover-image' src={'http://24.media.tumblr.com/tumblr_ly7xjxn3QI1r62v9yo1_1280.png'}/>
-              <img className='project-cover-image' src={'http://24.media.tumblr.com/tumblr_ly7xjxn3QI1r62v9yo1_1280.png'}/>
-              <img className='project-cover-image' src={'http://24.media.tumblr.com/tumblr_ly7xjxn3QI1r62v9yo1_1280.png'}/>
-              <img className='project-cover-image' src={'http://24.media.tumblr.com/tumblr_ly7xjxn3QI1r62v9yo1_1280.png'}/>
+            <div className="project-card-container">
+              {
+                projectJSON["entries"].map(project =>
+                  <ProjectCard id={project.id}/>
+                )
+              }
             </div>
           </div>
         </div>
