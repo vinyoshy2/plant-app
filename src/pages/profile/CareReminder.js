@@ -1,8 +1,6 @@
 import React, {Component} from "react";
-import ReactDataGrid from '@inovua/reactdatagrid-enterprise';
-import '@inovua/reactdatagrid-enterprise/index.css';
 
-import {cr_columns, cr_dataSource, cr_gridStyle} from "./CareReminderData";
+import CareReminderSettings from "./CareReminderSetting"
 import Sidebar from "./SideBar";
 
 class CareReminder extends Component {
@@ -25,12 +23,7 @@ class CareReminder extends Component {
           <div className='profile-sub-content'>
             {/* Refer to lib in https://reactjsexample.com/empower-your-data-with-the-best-react-data-grid/*/}
             <p className='content-text'> Reminder Time: 9:30 AM, 5:00 PM</p>
-            <ReactDataGrid
-              idProperty="id"
-              columns={cr_columns}
-              dataSource={cr_dataSource}
-              style={cr_gridStyle}
-            />
+            <CareReminderSettings />
           </div>
 
           <div className='profile-subtitle'> Weekly Care Reminder Calender </div>
