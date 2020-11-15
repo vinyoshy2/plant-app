@@ -12,7 +12,10 @@ import {
   Subtitle,
   BtnWrap,
   ImgWrap,
-  Img
+  Img,
+  Card,
+  Column,
+  ThreeColumnContainer
 } from './InfoElements';
 
 const InfoSection = ({
@@ -29,7 +32,22 @@ const InfoSection = ({
   primary,
   darkText,
   dark,
-  dark2
+  dark2,
+  imageSrc,
+  imageContainerCss = null,
+  imageCss = null,
+  title1,
+  descriptions1,
+  title2,
+  descriptions2,
+  title3,
+  descriptions3,
+  title4,
+  descriptions4,
+  title5,
+  descriptions5,
+  title6,
+  descriptions6,
 }) => {
   console.log(primary);
   return (
@@ -42,6 +60,67 @@ const InfoSection = ({
                 <TopLine>{topLine}</TopLine>
                 <Heading lightText={lightText}>{headline}</Heading>
                 <Subtitle darkText={darkText}>{description}</Subtitle>
+                <ThreeColumnContainer>
+                  <Column>
+                    <Card>
+                      <span className="imageContainer" css={imageContainerCss}>
+                        <img src={imageSrc} alt="" css={imageCss} />
+                      </span>
+                      <span className="title" style={{ color:"#000000" }}>{title1}</span>
+                      <p className="description">{descriptions1}</p>
+                    </Card>
+                  </Column>
+
+                  <Column>
+                    <Card>
+                      <span className="imageContainer" css={imageContainerCss}>
+                        <img src={imageSrc} alt="" css={imageCss} />
+                      </span>
+                      <span className="title" style={{ color:"#000000" }}>{title2}</span>
+                      <p className="description">{descriptions2}</p>
+                    </Card>
+                  </Column>
+
+                  <Column>
+                    <Card>
+                      <span className="imageContainer" css={imageContainerCss}>
+                        <img src={imageSrc} alt="" css={imageCss}/>
+                      </span>
+                      <span className="title" style={{ color:"#000000" }}>{title3}</span>
+                      <p className="description">{descriptions3}</p>
+                    </Card>
+                  </Column>
+
+                  <Column>
+                    <Card>
+                      <span className="imageContainer" css={imageContainerCss}>
+                        <img src={imageSrc} alt="" css={imageCss} />
+                      </span>
+                      <span className="title" style={{ color:"#000000" }}>{title4}</span>
+                      <p className="description">{descriptions4}</p>
+                    </Card>
+                  </Column>
+
+                  <Column>
+                    <Card>
+                      <span className="imageContainer" css={imageContainerCss}>
+                        <img src={imageSrc} alt="" css={imageCss} />
+                      </span>
+                      <span className="title" style={{ color:"#000000" }}>{title5}</span>
+                      <p className="description">{descriptions5}</p>
+                    </Card>
+                  </Column>
+
+                  <Column>
+                    <Card>
+                      <span className="imageContainer" css={imageContainerCss}>
+                        <img src={imageSrc} alt="" css={imageCss} />
+                      </span>
+                      <span className="title" style={{ color:"#000000" }}>{title6}</span>
+                      <p className="description">{descriptions6}</p>
+                    </Card>
+                  </Column>
+                </ThreeColumnContainer>
                 <BtnWrap>
                   <Button
                     to=''

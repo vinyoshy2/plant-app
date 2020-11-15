@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import tw from "twin.macro";
 
 export const InfoContainer = styled.div`
   color: #fff;
@@ -108,4 +109,30 @@ export const Img = styled.img`
   margin-right: 0;
   margin-left: 10px;
   padding-right: 0;
+`;
+
+export const Card = styled.a`
+  ${tw`flex flex-col items-center text-center h-full mx-4 px-4 py-8 rounded transition-transform duration-300 hover:cursor-pointer transform hover:scale-105 `}
+  .imageContainer {
+    ${tw`text-center rounded-full p-4 bg-gray-100`}
+    img {
+      ${tw`w-8 h-8`}
+    }
+  }
+
+  .title {
+    ${tw`mt-4 font-bold text-xl leading-none`}
+  }
+
+  .description {
+    ${tw`mt-4 text-sm font-medium text-red-300`}
+  }
+`;
+
+export const Column = styled.div`
+  ${tw`p-0 ml--4 lg:w-1/3 max-w-xs`}
+`;
+
+export const ThreeColumnContainer = styled.div`
+  ${tw`mt-10 flex flex-col items-center lg:items-stretch lg:flex-row flex-wrap lg:justify-center max-w-screen-lg mx-auto`}
 `;
