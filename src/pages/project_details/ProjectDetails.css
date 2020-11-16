@@ -12,3 +12,11 @@
     justify-content: space-between;
     padding-bottom: 10px;
 }
+
+#QuickInfoAdded {
+    margin-top: 20px;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+}
+

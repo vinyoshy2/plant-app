@@ -5,10 +5,19 @@
     column-gap: 10%;
 }
 
+#StepByStepAdded {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 5%;
+    width: 70%;
+}
+
 #timeline {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-self: start;
 }
 
 #step {

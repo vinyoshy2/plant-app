@@ -1,5 +1,14 @@
-ul.no_bullets {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+.no_bullets {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
 }
+
+.equip_item {
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+

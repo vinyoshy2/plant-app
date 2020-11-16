@@ -24,3 +24,29 @@
     height: fit-content;
 
 }
+
+.progress-segment {
+    display: flex;
+    flex-direction: row;
+    align-self: end;
+    justify-self: end;
+    width: 90%;
+}
+
+.item {
+    width: 100%;
+    background-color: lightgray;
+    margin-right: 2px;
+    height: 8px;
+}
+.item:first-child {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.item:last-child {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+#completed {
+    background-color: green !important;
+}
