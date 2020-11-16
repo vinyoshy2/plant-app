@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 
+import CareReminderCalendar from "./CareReminderCalendar";
 import CareReminderSettings from "./CareReminderSetting"
 import Sidebar from "./SideBar";
 
@@ -28,6 +29,7 @@ class CareReminder extends Component {
 
           <div className='profile-subtitle'> Weekly Care Reminder Calender </div>
           <div className='profile-sub-content'>
+            <CareReminderCalendar />
           </div>
           </div>
       </div>

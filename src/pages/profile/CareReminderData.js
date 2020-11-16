@@ -3,6 +3,7 @@ import fs from "fs";
 export const cr_columns = [
   { key: 'project',
     name: 'Project',
+    resizable: true,
     editable: true
   },
   { key: 'plant',
@@ -10,24 +11,28 @@ export const cr_columns = [
     editable: true
   },
   { key: 'water',
-    name: 'Water (every N days)',
+    name: 'Water (per N days)',
     editable: true
   },
   { key: 'fertilize',
-    name: 'Fertilize  (every N days)',
+    name: 'Fertilize  (per N days)',
     editable: true
   },
   { key: 'dust',
-    name: 'Dust  (every N days)',
+    name: 'Dust  (per N days)',
+    editable: true
+  },
+  { key: 'harvest',
+    name: 'Harvest (per N days)',
     editable: true
   }
 ]
 
 export const cr_dataSource = [
-  { project: 'Bedroom Bonsai', plant: 'Bonsai', water: 2, fertilize: 7, dust: 30},
-  { project: 'Office Desk', plant: 'Bonsai', water: 2, fertilize: 7, dust: 30},
-  { project: 'Office Desk', plant: 'Bonsai', water: 2, fertilize: 7, dust: 30},
-  { project: 'Kitchen Sill', plant: 'Sill', water: 2, fertilize: 7, dust: 30},
+  { id: 'Bedroom Bonsai - Bonsai', project: 'Bedroom Bonsai', plant: 'Bonsai', water: 2, fertilize: 7, dust: 30, harvest: 90},
+  { id: 'Office Desk - Bonsai', project: 'Office Desk', plant: 'Bonsai', water: 2, fertilize: 7, dust: 30, harvest: 90},
+  { id: 'Kitchen Sill - Bonsai', project: 'Office Desk', plant: 'Bonsai', water: 2, fertilize: 7, dust: 30, harvest: 90},
+  { id: 'Kitchen Sill - Sill', project: 'Kitchen Sill', plant: 'Sill', water: 2, fertilize: 7, dust: 30, harvest: 90},
 ];
 
 export function readSettings() {
