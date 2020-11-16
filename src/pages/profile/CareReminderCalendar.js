@@ -6,7 +6,7 @@ import Scheduler, {SchedulerData, ViewTypes, DATE_FORMAT} from 'react-big-schedu
 
 import 'react-big-scheduler/lib/css/style.css'
 
-/* Reference Info
+/* Reference info
    React lib: https://github.com/StephenChou1017/react-big-scheduler
    Repetitive calendar rule: https://github.com/jakubroztocil/rrule
       (this relates to the rrule format in events variable)

@@ -3,6 +3,14 @@ import ReactDataGrid from "react-data-grid";
 
 import {cr_columns, cr_dataSource} from "./CareReminderData";
 
+/* Reference info:
+   lib info (v5): https://adazzle.github.io/react-data-grid/
+   lib github link: https://github.com/adazzle/react-data-grid
+       Note: the latest v7 is incomplete and missed features and example
+             (only w. example in tsx).
+             old v5 does not as fancy as v7, but is workable to some extend.
+*/
+
 class CareReminderSettings extends Component {
   state = { cr_dataSource };
 
