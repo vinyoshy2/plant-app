@@ -12,9 +12,18 @@ export default class UserPhotos extends React.Component {
 	var likes_updated = likes.map(like => false);
 	this.state = {
 	    likes: likes,
-	    updated: likes_updated
+	    updated: likes_updated,
+	    uploaded: false
 	}
-    }	
+	this.uploadHandler = this.uploadHandler.bind(this);
+    }
+
+    uploadHandler() {
+        if (!this.state.uploaded) {
+            this.setState({uploaded: true});
+	    this.props.increment();
+	}
+    }
 
     clickHandler(id) {
 	if (!this.state.updated[id]) {
@@ -47,6 +56,13 @@ export default class UserPhotos extends React.Component {
 			    </div>
 		        </div>
 	            )
+		} {
+		    this.props.increment && 
+                        <div id="upload_button">
+		            <input type="image" class="upload_icon" onClick={this.uploadHandler} src={"/camera_icon.png"}/>
+		            <div class="upload_text">Upload your photo</div>
+		        </div>
+		    
 	        }
 	    </div>
         )

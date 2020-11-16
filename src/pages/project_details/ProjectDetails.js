@@ -66,7 +66,7 @@ export default class ProjectDetails extends React.Component {
 		        <CareGuide light={proj["lighting"]} harvest={proj["harvesting"]} water={proj["watering"]}/>
 		    </div>
 		    <h3> User-Uploaded Photos </h3>
-		    <UserPhotos photo_ids={proj["user_photo_ids"]}/>
+		    <UserPhotos photo_ids={proj["user_photo_ids"]} increment={this.incrementStage}/>
 	        </div>
 	    )
         }
