@@ -1,9 +1,11 @@
 #CareGuide {
     background-color:#bbb;
-    padding: 10px 30px 10px 30px;
+    padding: 10px 20px 10px 20px;
     display: flex;
     flex-direction: column;
     row-gap: 20px;
+    height: fit-content;
+    width: 20%;
 }
 
 #care-title {

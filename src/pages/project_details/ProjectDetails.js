@@ -15,6 +15,7 @@ export default class ProjectDetails extends React.Component {
     constructor(props) {
         super(props);
 	this.incrementStage = this.incrementStage.bind(this);
+	this.decrementStage = this.decrementStage.bind(this);
 	this.state = {
 	    id: 0,
 	    matches: 13,
@@ -26,6 +27,11 @@ export default class ProjectDetails extends React.Component {
     incrementStage() {
         this.setState({ 
 	    stage: this.state.stage + 1
+	});
+    }
+    decrementStage() {
+        this.setState({ 
+	    stage: this.state.stage - 1
 	});
     }
 
@@ -55,8 +61,8 @@ export default class ProjectDetails extends React.Component {
 		    <ProjectDisplay images={proj["gallery_pics"]}/>
 		    <h3 style={{marginTop: "20px"}}> Step-by-Step Guide </h3>
 		    <div id="QuickInfoAdded">
-		        <Equipment items={proj["items"]} price={proj["price_estimate"]} req={proj["required_plants"]} alt={proj["alt_plants"]} handler={this.incrementStage}/>
-		        <StepByStep steps={proj["steps"]} handler={this.incrementStage}/>
+		        <Equipment items={proj["items"]} price={proj["price_estimate"]} req={proj["required_plants"]} alt={proj["alt_plants"]} increment={this.incrementStage} decrement={this.decrementStage}/>
+		        <StepByStep steps={proj["steps"]} increment={this.incrementStage} decrement={this.decrementStage}/>
 		        <CareGuide light={proj["lighting"]} harvest={proj["harvesting"]} water={proj["watering"]}/>
 		    </div>
 		    <h3> User-Uploaded Photos </h3>

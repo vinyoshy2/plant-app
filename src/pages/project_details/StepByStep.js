@@ -5,15 +5,26 @@ export default class StepByStep extends React.Component {
 
     constructor(props) {
         super(props)
-        this.state = { display: 0  }
+	var check = this.props.steps.map((step) => false);
+        this.state = { display: 0, checked: check}
     }
 
     handleClick(position) {
         this.setState({display: position});
     }
+    handleBoxClick(pos) {
+        var newChecked = [...this.state.checked];
+	newChecked[this.state.display] = !newChecked[this.state.display];
+	this.setState({checked: newChecked});
+	if (newChecked[this.state.display]) {
+            this.props.increment();   
+	} else {
+            this.props.decrement();
+	}
+    }
 
     render() {   
-        if (!this.props.handler) {
+        if (!this.props.increment) {
             return (
                 <div id="StepByStep">
                     <div id="timeline">
@@ -84,6 +95,10 @@ export default class StepByStep extends React.Component {
                             this.props.steps[this.state.display]["text"]
 		        }
 		        </p>
+		        <div class="step_completed">
+		            {!this.state.checked[this.state.display]? <input type="checkbox" onClick={()=>this.handleBoxClick(this.state.display)}/> : <input type="checkbox" checked onClick={() => this.handleBoxClick(this.state.display)}/>}
+		            <label for={this.props.steps[this.state.display]["name"]}>Completed</label>
+		        </div>
 	            </div>
 	        </div>
             )

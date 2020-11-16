@@ -8,8 +8,8 @@
 #StepByStepAdded {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    column-gap: 5%;
+    justify-content: left;
+    column-gap: 2%;
     width: 70%;
 }
 
@@ -97,3 +97,7 @@
   border-radius: 50%;
   background: white;
 } 
+
+.step_completed {
+    float: right;
+}
