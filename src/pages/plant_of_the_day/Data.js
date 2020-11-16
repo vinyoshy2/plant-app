@@ -14,7 +14,19 @@ export const homeObjOne = {
   dark: false,
   primary: false,
   darkText: true,
-  Overview: "Short Decription of the plant goes here"
+  imageSrc: require("../plant_of_the_day/Images/Mojito-Mint.jpeg"),
+  title1: "Water",
+  descriptions1: "2/Week",
+  title2: "Light",
+  descriptions2: "Full",
+  title3: "Temperature",
+  descriptions3: "60F~80F",
+  title4: "Site",
+  descriptions4: "Bedroom",
+  title5: "Toxicity",
+  descriptions5: "None",
+  title6: "Difficulty",
+  descriptions6: "Easy", 
 };
 
 export const homeObjTwo = {
@@ -33,7 +45,19 @@ export const homeObjTwo = {
   dark: true,
   primary: true,
   darkText: false,
-  Overview: "Short Decription of the plant goes here"
+  imageSrc: require("../plant_of_the_day/Images/Mojito-Mint.jpeg"),
+  title1: "Water",
+  descriptions1: "2/Week",
+  title2: "Light",
+  descriptions2: "Full",
+  title3: "Temperature",
+  descriptions3: "60F~80F",
+  title4: "Site",
+  descriptions4: "Bedroom",
+  title5: "Toxicity",
+  descriptions5: "None",
+  title6: "Difficulty",
+  descriptions6: "Easy", 
 };
 
 export const homeObjThree = {
@@ -52,7 +76,19 @@ export const homeObjThree = {
   dark: false,
   primary: false,
   darkText: true,
-  Overview: "Short Decription of the plant goes here"
+  imageSrc: require("../plant_of_the_day/Images/Mojito-Mint.jpeg"),
+  title1: "Water",
+  descriptions1: "2/Week",
+  title2: "Light",
+  descriptions2: "Full",
+  title3: "Temperature",
+  descriptions3: "60F~80F",
+  title4: "Site",
+  descriptions4: "Bedroom",
+  title5: "Toxicity",
+  descriptions5: "None",
+  title6: "Difficulty",
+  descriptions6: "Easy", 
 };
 
 export const homeObjFour = {
@@ -71,5 +107,17 @@ export const homeObjFour = {
   dark: true,
   primary: true,
   darkText: false,
-  Overview: "Short Decription of the plant goes here"
+  imageSrc: require("../plant_of_the_day/Images/Mojito-Mint.jpeg"),
+  title1: "Water",
+  descriptions1: "2/Week",
+  title2: "Light",
+  descriptions2: "Full",
+  title3: "Temperature",
+  descriptions3: "60F~80F",
+  title4: "Site",
+  descriptions4: "Bedroom",
+  title5: "Toxicity",
+  descriptions5: "None",
+  title6: "Difficulty",
+  descriptions6: "Easy", 
 };
