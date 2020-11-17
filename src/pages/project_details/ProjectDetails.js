@@ -69,12 +69,12 @@ export default class ProjectDetails extends React.Component {
 		    <ProjectDisplay images={proj["gallery_pics"]}/>
 		    <h3 style={{marginTop: "20px"}}> Step-by-Step Guide </h3>
 		    <div id="QuickInfoAdded">
-		        <Equipment items={proj["items"]} price={proj["price_estimate"]} req={proj["required_plants"]} alt={proj["alt_plants"]} increment={this.incrementStage} decrement={this.decrementStage}/>
-		        <StepByStep steps={proj["steps"]} increment={this.incrementStage} decrement={this.decrementStage}/>
+		        <Equipment items={proj["items"]} price={proj["price_estimate"]} req={proj["required_plants"]} alt={proj["alt_plants"]} stage={this.state.stage} increment={this.incrementStage} decrement={this.decrementStage}/>
+		        <StepByStep steps={proj["steps"]} stage={this.state.stage} increment={this.incrementStage} decrement={this.decrementStage}/>
 		        <CareGuide light={proj["lighting"]} harvest={proj["harvesting"]} water={proj["watering"]}/>
 		    </div>
 		    <h3> User-Uploaded Photos </h3>
-		    <UserPhotos photo_ids={proj["user_photo_ids"]} increment={this.incrementStage}/>
+		    <UserPhotos photo_ids={proj["user_photo_ids"]} activate={proj["steps"].length+2}  stage={this.state.stage} increment={this.incrementStage}/>
 	        </div>
 	    )
         }
