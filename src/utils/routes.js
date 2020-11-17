@@ -12,7 +12,6 @@ import PlantOfTheDay from "../pages/plant_of_the_day/PlantOfTheDay.js"
 
 const ROUTES = [
     {path: "/", key: "HOME", component: () => <Home />},
-    {path:"/project-details", key: "DETAILS", component:() => <ProjectDetails />},
     {path: "/my-projects", key: "PROJECTS", component: () => <MyProjects />},
     {path: "/gallery", key: "GALLERY", component: () => <Gallery />},
     {path: "/badges", key: "BADGES", component: () => <Badges />},

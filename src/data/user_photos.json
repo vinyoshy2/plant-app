@@ -24,9 +24,9 @@
         {
 	    "id": 3,
             "profile_pic": "profile_pic.jpg",
-            "user": "Alice",
-            "likes": 15,
-            "plant_pic": "shelf2.jpg"
+            "user": "Name",
+            "likes": 1,
+            "plant_pic": "project-image-test.jpg"
         }
     ]
 }

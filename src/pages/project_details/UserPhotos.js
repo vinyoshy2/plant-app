@@ -7,9 +7,9 @@ export default class UserPhotos extends React.Component {
 
     constructor(props) {
         super(props)
-        this.entries = props.photo_ids.map(id => getEntryFromID(id, photosJSON));
-	var likes = this.entries.map(entry => entry["likes"]);
-	var likes_updated = likes.map(like => false);
+        this.entries = props.photo_ids.map((id) => getEntryFromID(id, photosJSON));
+	var likes = this.entries.map((entry) => entry["likes"]);
+	var likes_updated = likes.map((like) => false);
 	this.state = {
 	    likes: likes,
 	    updated: likes_updated,

@@ -17,7 +17,6 @@ export default class ProjectDetails extends React.Component {
 	this.incrementStage = this.incrementStage.bind(this);
 	this.decrementStage = this.decrementStage.bind(this);
 	this.state = {
-	    id: 0,
 	    matches: 13,
 	    filters: 15,
 	    stage: 0
@@ -36,10 +35,16 @@ export default class ProjectDetails extends React.Component {
     }
 
     render() {
-        var proj = getEntryFromID(this.state.id, projectJSON);
+	if (!this.props.open) {
+	    return(<div/>);
+	}
+        var proj = getEntryFromID(this.props.id, projectJSON);
 	if (this.state.stage == 0) {
             return(
 	        <div id="ProjectDetails">
+		    <a class="close" onClick={this.props.closer}>
+		        &times;
+		    </a>
           	    <DetailsHeader name={proj["name"]} setup={proj["setup_difficulty"]} care={proj["care_difficulty"]} matches={this.state.matches} handler={this.incrementStage}/>
 		    <ProjectDisplay images={proj["gallery_pics"]}/>
 		    <h3 style={{marginTop: "20px"}}> What You Will Need </h3>
@@ -57,6 +62,9 @@ export default class ProjectDetails extends React.Component {
         } else {
             return(
 	        <div id="ProjectDetails">
+		    <a class="close" onClick={this.props.closer}>
+		        &times;
+		    </a>
           	    <DetailsHeader name={proj["name"]} setup={proj["setup_difficulty"]} care={proj["care_difficulty"]} matches={this.state.matches} stage={this.state.stage} steps={proj["steps"]}/>
 		    <ProjectDisplay images={proj["gallery_pics"]}/>
 		    <h3 style={{marginTop: "20px"}}> Step-by-Step Guide </h3>

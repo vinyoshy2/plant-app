@@ -1,9 +1,15 @@
 #ProjectDetails {
+    position: absolute;
     height: 100%;
+    width: 70%;
+    top: 0%;
+    left: 15%;
     margin-top: 1%;
-    margin-left: 15%;
-    margin-right: 15%;
+    padding-left: 2%;
+    padding-right: 2%;
+    background-color: white;
 }
+
 
 #QuickInfo {
     height: fit-content;
@@ -20,3 +26,6 @@
     flex-direction: row;
 }
 
+.close {
+    float: right;
+}
