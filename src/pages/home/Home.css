@@ -1,38 +1,322 @@
-.Home {
-  text-align: center;
+.navlink {
+    text-decoration: none;
+    color: black;
 }
 
-.Home-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar{
+    background-color: rgba(255, 255, 255, 1);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-style: solid;
+    border-width: 1px;
+    border-top-color: white;
+    border-left-color: white;
+    border-right-color: white;
+    border-bottom-color: black;
+    overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .Home-logo {
-    animation: Home-logo-spin infinite 20s linear;
-  }
+.dropDown{
+    margin-right: 20%;
+    padding-top: 0%;
+    padding-bottom: 0%;
 }
 
-.Home-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.dropdown-content {
+    display: none;
+    position: absolute;
+    margin-top: 2.127%;
+    background-color: #FFFFFF;
+    min-width: 14.7905%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
 }
 
-.Home-link {
-  color: #61dafb;
+.dropdown-content-show {
+    display: block;
+    position: absolute;
+    margin-top: 2.127%;
+    background-color: #FFFFFF;
+    min-width: 14.7905%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
 }
 
-@keyframes Home-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.menuItems{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 8%;
+    padding-bottom: 8%;
+}
+
+.menuItem{
+    margin-top: 8%;
+    margin-bottom: 8%;
+    margin-left: 15%;
+    color: rgba(0, 0, 0, 1);
+    font-family: "Open Sans";
+    font-size: 160%;
+    font-weight: normal;
+}
+
+#menuItemHome{
+    font-weight: bold;
+}
+
+.appname{
+    padding-left: 3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-size: 200%;
+    text-decoration: none;
+    color: black;
+}
+
+.username{
+    margin-bottom: 0%;
+    font-size: 200%;
+    white-space: nowrap;
+}
+
+.navbar-right{
+    display: flex;
+    flex-direction: row;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    margin-right: 2%;
+}
+/*
+    border-style: solid;
+    border-width: 1px;
+    border-top-color: white;
+    border-left-color: black;
+    border-right-color: white;
+    border-bottom-color: white;
+*/
+.MenuWrapper{
+    padding-left: 0%;
+    padding-right: 0%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bar1, .bar2, .bar3{
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.bar1Changed{
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.bar2Changed{
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+    opacity: 0;
+}
+
+.bar3Changed{
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.PODwrapper{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(196, 196, 196, 1);
+    justify-content: space-around;
+}
+
+.PODtext{
+    margin-top: 5%;
+    margin-left: 7%;
+    margin-bottom: 5%;
+    margin-right: 50%;
+}
+
+.POD{
+    color: rgba(51, 51, 51, 1);
+    font-family: "Open Sans";
+    font-size: 150%;
+    margin-bottom: 1%;
+}
+
+.plantName{
+    color: rgba(0, 0, 0, 1);
+    font-family: "Open Sans";
+    font-size: 450%;
+    font-weight: bold;
+    margin-bottom: 1%;
+}
+
+.plantDesc{
+    color: rgba(0, 0, 0, 1);
+    font-family: "Open Sans";
+    font-size: 150%;
+    font-weight: normal;
+    margin-bottom: 2%;
+}
+
+.buttonToPOD{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    white-space: nowrap;
+    text-align: center;
+}
+
+#LearnMore{
+    font-weight: 500;
+    margin: 3%;
+    font-size: 150%;
+}
+
+#FeaturedProjects{
+    font-weight: bold;
+    font-size: 330%;
+    color: rgba(0, 0, 0, 1);
+    margin-top: 3%;
+    text-align: center;
+}
+
+.FeaturedProjectsWrapper{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+}
+
+.FeaturedProject{
+    width: 25%;
+    text-align: center;
+}
+
+.FPimg{
+    width: 70%;
+    height: auto;
+}
+
+.projectName{
+    margin: 3%;
+    font-weight: bold;
+    font-size: 180%;
+    font-family: "Open Sans";
+}
+
+.UCRborder{
+    margin-left: 7%;
+    margin-right: 7%;
+    border-style: solid;
+    border-width: 1px;
+    border-top-color: white;
+    border-left-color: white;
+    border-right-color: white;
+    border-bottom-color: black;
+    text-align: left;
+}
+
+#UpcomingCareReminders{
+    color: rgba(0, 0, 0, 1);
+    font-family: "Open Sans";
+    font-size: 200%;
+    font-weight: bold;
+    padding-bottom: 1%;
+}
+
+.DateSplit{
+    display: flex;
+    flex-direction: row;
+    margin-left: 7%;
+    margin-bottom: 3%;
+}
+
+.TaskSplit{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.TaskWrapper{
+    margin-top: 2%;
+}
+
+.UCRdate{
+    font-size: 173%;
+    color: rgba(0, 0, 0, 1);
+    font-family: "Open Sans";
+    font-weight: 500;
+}
+
+.divideTimeAndTask{
+    display: flex;
+    flex-direction: row;
+}
+
+.timeWrapper{
+    
+    border-style: solid;
+    border-width: 3px;
+    border-top-color: white;
+    border-left-color: white;
+    border-right-color: black;
+    border-bottom-color: white;
+    white-space: nowrap;   
+    padding-right: 2%;
+}
+
+.UCRtime{
+    font-weight: bold;
+    font-size: 186%;
+    color: rgba(0, 0, 0, 1);
+    font-family: "Open Sans";
+}
+
+.locationAndTaskWrapper{
+    padding-left: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.UCRlocation{
+    color: #666;
+    font-family: "Open Sans";
+    font-weight: normal;
+    font-size: 106%;
+}
+
+.UCRtask{
+    color: rgba(0, 0, 0, 1);
+    font-family: "Open Sans";
+    font-weight: normal;
+    font-size: 160%;
 }
