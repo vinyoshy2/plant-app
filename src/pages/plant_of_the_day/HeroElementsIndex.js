@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Button } from '../plant_of_the_day/ButtonElements.js';
 
 import Video from '../plant_of_the_day/Videos/video.mp4';
 import {
@@ -11,7 +10,8 @@ import {
   HeroP,
   HeroBtnWrapper,
   ArrowForward,
-  ArrowRight
+  ArrowRight,
+  Button
 } from './HeroElements';
 
 function HeroSection() {
@@ -32,7 +32,7 @@ function HeroSection() {
         </HeroP>
         <HeroBtnWrapper>
           <Button
-            to='First'
+            to='panel'
             smooth={true}
             duration={500}
             spy={true}
