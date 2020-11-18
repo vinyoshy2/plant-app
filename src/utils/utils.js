@@ -52,11 +52,25 @@ export function getProjectPlants(json) {
     return sortByValue(allPlants, 'value');
 }
 
-export function getProjectsWithFilters(sizeValues, lightingValues, humidityValues, json) {
+export function getProjectsWithFilters(keywords, plants, sizeValues, lightingValues, humidityValues, json) {
     var filteredProjects = [];
     for (let entry of json["entries"]) {
         if (includesValue(sizeValues, entry.size) || includesValue(lightingValues, entry.lighting) || includesValue(humidityValues, entry.humidity)) {
             filteredProjects.push(entry);
+        }
+        if (keywords.length > 0) {
+            for (let keyword of keywords) {
+                if (includesValue(entry.keywords, keyword.value) && !filteredProjects.includes(entry)) {
+                        filteredProjects.push(entry);
+                }
+            }
+        }
+        if (plants.length > 0) {
+            for (let plant of plants) {
+                if ((includesValue(entry.required_plants, plant.value) || includesValue(entry.alt_plants, plant.value)) && !filteredProjects.includes(entry)) {
+                    filteredProjects.push(entry);
+                }
+            }
         }
     }
     return filteredProjects;

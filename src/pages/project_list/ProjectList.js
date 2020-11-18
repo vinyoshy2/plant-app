@@ -70,7 +70,7 @@ class Projects extends Component {
   }
 
   searchProjects=() => {
-    var filteredProjects = getProjectsWithFilters(this.state.sizeValues, this.state.lightingValues, this.state.humidityValues, projectJSON);
+    var filteredProjects = getProjectsWithFilters(this.state.selectedKeywords, this.state.selectedPlants, this.state.sizeValues, this.state.lightingValues, this.state.humidityValues, projectJSON);
 
     this.setState({
       projectsHeading: "You have been matched with " + filteredProjects.length + " projects.",
