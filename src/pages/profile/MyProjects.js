@@ -5,6 +5,9 @@ import ProjectCard from "../project_list/ProjectCard"
 import projectJSON from "../../data/projects.json";
  
 class MyProjects extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <div className='vertical-frame'>
@@ -16,8 +19,8 @@ class MyProjects extends Component {
           <div className='profile-sub-content'>
             <div className="project-card-container">
               {
-                projectJSON["entries"].map(project =>
-                  <ProjectCard id={project.id}/>
+                Object.keys(this.props.added).map(id =>
+                  <ProjectCard id={id} added={this.props.added} increment={()=>this.props.increment(id)} decrement={()=>this.props.decrement(id)}/>
                 )
               }
             </div>

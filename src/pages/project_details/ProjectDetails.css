@@ -1,6 +1,7 @@
 #ProjectDetails {
-    position: absolute;
-    height: 100%;
+    position: fixed;
+    height: 100vh;
+    overflow-y: scroll;
     width: 70%;
     top: 0%;
     left: 15%;

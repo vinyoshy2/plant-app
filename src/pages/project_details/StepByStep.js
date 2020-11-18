@@ -5,18 +5,14 @@ export default class StepByStep extends React.Component {
 
     constructor(props) {
         super(props)
-	var check = this.props.steps.map((step) => this.props.stage >= step["pos"] +2);
-        this.state = { display: 0, checked: check}
+        this.state = { display: 0}
     }
 
     handleClick(position) {
         this.setState({display: position});
     }
     handleBoxClick(pos) {
-        var newChecked = [...this.state.checked];
-	newChecked[this.state.display] = !newChecked[this.state.display];
-	this.setState({checked: newChecked});
-	if (newChecked[this.state.display]) {
+	if (this.props.stage == pos+2) {
             this.props.increment();   
 	} else {
             this.props.decrement();
@@ -24,6 +20,8 @@ export default class StepByStep extends React.Component {
     }
 
     render() {   
+	console.log(this.state.display);
+	console.log(this.props.stage);
         if (!this.props.increment) {
             return (
                 <div id="StepByStep">
@@ -95,15 +93,15 @@ export default class StepByStep extends React.Component {
                             this.props.steps[this.state.display]["text"]
 		        }
 		        </p>
-		        { !(this.props.stage >= this.state.display + 2) ?
+		        { (this.props.stage < this.state.display + 2) ?
 		            <div/>
-		            : !(this.props.stage <= this.state.display + 3) ?
+		            : (this.props.stage > this.state.display + 3) ?
 		                <div class="step_completed">
-		                    {!this.state.checked[this.state.display] ? <input type="checkbox" disabled="disabled"/> : <input type="checkbox"  disabled="disabled" checked/>}
+		                    {<input value={this.state.display.toString()} type="checkbox"  disabled="disabled" checked/>}
 		                    <label for={this.props.steps[this.state.display]["name"]}>Completed</label>
 		                </div>  
 		                : <div class="step_completed">
-		                    {!this.state.checked[this.state.display]? <input type="checkbox" onClick={()=>this.handleBoxClick(this.state.display)}/> : <input type="checkbox" checked onClick={() => this.handleBoxClick(this.state.display)}/>}
+		                    {this.props.stage == this.state.display + 2 ? <input key={this.state.display.toString()}type="checkbox" onClick={()=>this.handleBoxClick(this.state.display)}/> : <input key={this.state.display.toString()} type="checkbox" defaultChecked onClick={() => this.handleBoxClick(this.state.display)}/>}
 		                    <label for={this.props.steps[this.state.display]["name"]}>Completed</label>
 		                </div> }
 				
