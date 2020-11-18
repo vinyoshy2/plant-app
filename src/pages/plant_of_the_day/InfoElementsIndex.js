@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '../plant_of_the_day/ButtonElements.js';
+import { Link } from 'react-router-dom';
 import {
   InfoContainer,
   InfoWrapper,
@@ -49,6 +50,7 @@ const InfoSection = ({
   title6,
   descriptions6,
 }) => {
+
   console.log(primary);
   return (
     <>
@@ -122,8 +124,8 @@ const InfoSection = ({
                   </Column>
                 </ThreeColumnContainer>
                 <BtnWrap>
-                  <Button
-                    to=''
+                  <Button as= {Link}
+                    to='/project-list'
                     smooth={true}
                     duration={500}
                     spy={true}
