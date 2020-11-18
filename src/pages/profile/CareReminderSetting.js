@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import ReactDataGrid from "react-data-grid";
 
-import {cr_columns, cr_dataSource} from "./CareReminderData";
+import {cr_columns} from "./CareReminderData";
 
 /* Reference info:
    lib info (v5): https://adazzle.github.io/react-data-grid/
@@ -12,8 +12,6 @@ import {cr_columns, cr_dataSource} from "./CareReminderData";
 */
 
 class CareReminderSettings extends Component {
-  state = { cr_dataSource };
-
   // ===== Insert care settings =====
   // Usage: when starting a new project inject new settings.
   // Input:
@@ -22,23 +20,27 @@ class CareReminderSettings extends Component {
   // TODO: not sure whether this will automatically update the table.
   insertCareSettings(settings) {
     for (let i = 0; i < settings.length; ++i) {
-      cr_dataSource.push(settings[i]);
+      this.props.settings.push(settings[i]);
     }
   }
 
   onGridRowsUpdated = ({ fromRow, toRow, updated }) => {
     this.setState(state => {
+      const rows = this.props.settings;
       for (let i = fromRow; i <= toRow; i++) {
-        cr_dataSource[i] = { ...cr_dataSource[i], ...updated };
+        rows[i] = { ...rows[i], ...updated };
       }
-      return { cr_dataSource };
+      this.props.handleSettingChange(rows);
+      return rows;
     });
+
   };
+
   render() {
     return (
       <ReactDataGrid
         columns={cr_columns}
-        rowGetter={i => this.state.cr_dataSource[i]}
+        rowGetter={i => this.props.settings[i]}
         rowsCount={3}
         onGridRowsUpdated={this.onGridRowsUpdated}
         enableCellSelect={true}

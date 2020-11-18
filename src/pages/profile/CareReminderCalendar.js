@@ -47,7 +47,15 @@ class CareReminderCalendar extends React.Component {
   constructor(props){
     super(props);
 
-    let schedulerData = new SchedulerData(new moment().format(DATE_FORMAT), ViewTypes.Week);
+    let schedulerData = new SchedulerData(
+      new moment().format(DATE_FORMAT),
+      ViewTypes.Week, false, false,
+      {
+        startResizable: false,
+        endResizable: false,
+        movable: false,
+        creatable: false,
+      });
     moment.locale('en');
     schedulerData.setLocaleMoment(moment);
     schedulerData.setResources(available_times);
@@ -60,26 +68,27 @@ class CareReminderCalendar extends React.Component {
   render() {
     const {schedulerData} = this.state;
     return (
-      <Scheduler schedulerData={schedulerData}
-                 prevClick={this.prevClick}
-                 nextClick={this.nextClick}
-                 onSelectDate={this.onSelectDate}
-                 onViewChange={this.onViewChange}
-                 eventItemClick={this.eventClicked}
-                 viewEventClick={this.ops1}
-                 viewEventText="Ops 1"
-                 viewEvent2Text="Ops 2"
-                 viewEvent2Click={this.ops2}
-                 updateEventStart={this.updateEventStart}
-                 updateEventEnd={this.updateEventEnd}
-                 moveEvent={this.moveEvent}
-                 newEvent={this.newEvent}
-                 onScrollLeft={this.onScrollLeft}
-                 onScrollRight={this.onScrollRight}
-                 onScrollTop={this.onScrollTop}
-                 onScrollBottom={this.onScrollBottom}
-                 toggleExpandFunc={this.toggleExpandFunc}
-      />
+      <div>
+        <Scheduler
+          schedulerData={schedulerData}
+          prevClick={this.prevClick}
+          nextClick={this.nextClick}
+          onSelectDate={this.onSelectDate}
+          onViewChange={this.onViewChange}
+          eventItemClick={this.eventClicked}
+          viewEventClick={this.ops1}
+          viewEventText="Ops 1"
+          viewEvent2Text="Ops 2"
+          viewEvent2Click={this.ops2}
+          newEvent={this.newEvent}
+          onScrollLeft={this.onScrollLeft}
+          onScrollRight={this.onScrollRight}
+          onScrollTop={this.onScrollTop}
+          onScrollBottom={this.onScrollBottom}
+          toggleExpandFunc={this.toggleExpandFunc}
+        />
+        <div> {this.props.settings[0].water} </div>
+      </div>
     );
   }
   prevClick = (schedulerData)=> {
