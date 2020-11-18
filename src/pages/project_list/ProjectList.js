@@ -11,10 +11,13 @@ class Projects extends Component {
     super(props);
 
     this.state = {
-      projectsHeading: "Showing all " + projectJSON["entries"].length + " projects.",
+      projectsHeading: "Showing all " + projectJSON["entries"].length + " projects in the database.",
       filteredProjects: projectJSON["entries"],
       selectedKeywords: [],
-      selectedPlants: []
+      selectedPlants: [],
+      sizeValues: [],
+      lightingValues: [],
+      humidityValues: []
     };
 
     this.baseState = this.state; 
@@ -27,16 +30,47 @@ class Projects extends Component {
 
   handleKeywordSelection=(selected) => {
     this.setState({ selectedKeywords: selected });
-    console.log(this.state.selectedKeywords);
   }
 
   handlePlantSelection=(selected) => {
     this.setState({ selectedPlants: selected });
-    console.log(this.state.selectedPlants);
+  }
+
+  handleSizeSelection=(event) => {
+    var array = [...this.state.sizeValues];
+    var index = array.indexOf(event.target.value);
+    if (index > -1) {
+      array.splice(index, 1);
+      this.setState({sizeValues: array})
+    } else {
+      this.setState({sizeValues: this.state.sizeValues.concat([event.target.value])});
+    }
+  }
+
+  handleLightingSelection=(event) => {
+    var array = [...this.state.lightingValues];
+    var index = array.indexOf(event.target.value);
+    if (index > -1) {
+      array.splice(index, 1);
+      this.setState({lightingValues: array})
+    } else {
+      this.setState({lightingValues: this.state.lightingValues.concat([event.target.value])});
+    }
+  }
+
+  handleHumiditySelection=(event) => {
+    var array = [...this.state.humidityValues];
+    var index = array.indexOf(event.target.value);
+    if (index > -1) {
+      array.splice(index, 1);
+      this.setState({humidityValues: array})
+    } else {
+      this.setState({humidityValues: this.state.humidityValues.concat([event.target.value])});
+    }
   }
 
   searchProjects=() => {
-    var filteredProjects = getProjectsWithFilters(getSizeFilterValues(), getLightingFilterValues(), getHumidityFilterValues(), projectJSON);
+    var filteredProjects = getProjectsWithFilters(this.state.sizeValues, this.state.lightingValues, this.state.humidityValues, projectJSON);
 
     this.setState({
       projectsHeading: "You have been matched with " + filteredProjects.length + " projects.",
@@ -83,49 +117,49 @@ class Projects extends Component {
       <div id="size" className="filter">
         <p><strong>Plant size</strong></p>
         <div className="checkbox">
-          <input type="checkbox" id="small" name="size" value="Small"/>
+          <input type="checkbox" id="small" name="size" value="Small" onChange={this.handleSizeSelection}/>
           <label for="small">Small (less than 6" tall)</label>
         </div>
         <div className="checkbox">
-          <input type="checkbox" id="medium" name="size" value="Medium"/>
+          <input type="checkbox" id="medium" name="size" value="Medium" onChange={this.handleSizeSelection}/>
           <label for="medium">Medium (6 - 10" tall)</label>
         </div>
         <div className="checkbox">
-          <input type="checkbox" id="large" name="size" value="Large"/>
+          <input type="checkbox" id="large" name="size" value="Large" onChange={this.handleSizeSelection}/>
           <label for="large">Large (more than 10" tall)</label>
         </div>
       </div>
       <div id="lighting" className="filter">
         <p><strong>Lighting needs</strong></p>
         <div className="checkbox">
-          <input type="checkbox" id="no-light" name="lighting" value="No light"/>
+          <input type="checkbox" id="no-light" name="lighting" value="No light" onChange={this.handleLightingSelection}/>
           <label for="no-light">No light</label>
         </div>
         <div className="checkbox">
-          <input type="checkbox" id="dim-light" name="lighting" value="Dim light"/>
+          <input type="checkbox" id="dim-light" name="lighting" value="Dim light" onChange={this.handleLightingSelection}/>
           <label for="dim-light">Dim light</label>
         </div>
         <div className="checkbox">
-          <input type="checkbox" id="partial-sun" name="lighting" value="Partial sun"/>
+          <input type="checkbox" id="partial-sun" name="lighting" value="Partial sun" onChange={this.handleLightingSelection}/>
           <label for="partial-sun">Partial sun</label>
         </div>
         <div className="checkbox">
-          <input type="checkbox" id="full-sun" name="lighting" value="Full sun"/>
+          <input type="checkbox" id="full-sun" name="lighting" value="Full sun" onChange={this.handleLightingSelection}/>
           <label for="full-sun">Full sun</label>
         </div>
       </div>
       <div id="humidity" className="filter">
         <p><strong>Humidity needs</strong></p>
         <div className="checkbox">
-          <input type="checkbox" id="dry" name="humidity" value="Dry"/>
+          <input type="checkbox" id="dry" name="humidity" value="Dry" onChange={this.handleHumiditySelection}/>
           <label for="dry">Dry</label>
         </div>
         <div className="checkbox">
-          <input type="checkbox" id="slightly-humid" name="humidity" value="Slightly humid"/>
+          <input type="checkbox" id="slightly-humid" name="humidity" value="Slightly humid" onChange={this.handleHumiditySelection}/>
           <label for="slightly-humid">Slightly humid</label>
         </div>
         <div className="checkbox">
-          <input type="checkbox" id="humid" name="humidity" value="Humid"/>
+          <input type="checkbox" id="humid" name="humidity" value="Humid" onChange={this.handleHumiditySelection}/>
           <label for="humid">Humid</label>
         </div>
       </div>
@@ -147,8 +181,6 @@ class Projects extends Component {
   }
 }
 
-
-
 function ProjectList(props) {
     return (
       <Projects added={props.added} increment={props.increment} decrement={props.decrement} add={props.add}/>
@@ -157,42 +189,6 @@ function ProjectList(props) {
   
   export default ProjectList;
 
-
-  /* Get values from size filters */
-  function getSizeFilterValues() {
-    var sizeValues = [];
-    var sizeInputs = document.getElementById("size").getElementsByTagName("input");
-    for (let input of sizeInputs) {
-        if (input.checked == true) {
-            sizeValues.push(input.value);
-        }
-    }
-    return sizeValues;
-}
-
-/* Get values from lighting filters */
-function getLightingFilterValues() {
-  var lightingValues = [];
-  var lightingInputs = document.getElementById("lighting").getElementsByTagName("input");
-  for (let input of lightingInputs) {
-      if (input.checked == true) {
-          lightingValues.push(input.value);
-      }
-  }
-  return lightingValues;
-}
-
-/* Get values from humidity filters */
-function getHumidityFilterValues() {
-  var humidityValues = [];
-  var humidityInputs = document.getElementById("humidity").getElementsByTagName("input");
-  for (let input of humidityInputs) {
-      if (input.checked == true) {
-          humidityValues.push(input.value);
-      }
-  }
-  return humidityValues;
-}
 
 /* uncheck all checkboxes */
 function clearCheckboxes() {
