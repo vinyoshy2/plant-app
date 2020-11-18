@@ -3,129 +3,183 @@ import Select from 'react-select'
 import './ProjectList.css';
 import ProjectCard from './ProjectCard.js'
 import projectJSON from '../../data/projects.json';
-import {getEntryFromID} from "../../utils/utils.js";
+import {getProjectKeywords, getProjectPlants, getProjectsWithFilters} from "../../utils/utils.js";
 
 
 class Projects extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
+
+    this.state = {
+      projectsHeading: "Showing all " + projectJSON["entries"].length + " projects.",
+      filteredProjects: projectJSON["entries"],
+    };
   }
 
+  searchProjects=() => {
+    var filteredProjects = getProjectsWithFilters(getSizeFilterValues(), getLightingFilterValues(), getHumidityFilterValues(), projectJSON);
+    this.setState({
+      projectsHeading: "You have been matched with " + filteredProjects.length + " projects.",
+      filteredProjects: filteredProjects,
+    });
+  }
+
+  clearFilters=() => {
+    this.setState({
+      projectsHeading: "Showing all " + projectJSON["entries"].length + " projects.",
+      filteredProjects: projectJSON["entries"],
+    });
+    clearCheckboxes();
+  }
+  
   render() {
+    const keywords = getProjectKeywords(projectJSON);
+    const plants = getProjectPlants(projectJSON);
+
     return (
-    <div className="project-col">
-      <h2>You have been matched with {projectJSON["entries"].length} projects.</h2>
-      <div className="project-card-container">
-      { 
-        projectJSON["entries"].map(project => 
-	  <ProjectCard id={project.id} added={this.props.added} increment={()=>this.props.increment(project.id)} decrement={()=>this.props.decrement(project.id)} add={()=>this.props.add(project.id)}/>
-	)
-      }
-      </div>
-    </div>
-    );
-  }
-}
-
-const keywords = [
-  { value: 'air-purifying', label: 'Air Purifying' },
-  { value: 'cheap', label: 'Cheap' },
-  { value: 'easy', label: 'Easy Set-up'},
-  { value: 'non-toxic', label: 'Non-toxic' },
-]
-
-const plants = [
-  { value: 'cactus', label: 'Cactus'},
-  { value: 'lucky-bamboo', label: 'Lucky Bamboo' },
-  { value: 'snake-plant', label: 'Snake Plant' },
-  { value: 'succulent', label: 'Succulent' },
-]
-
-class Filters extends Component {
-  render () {
-  return (
+    <div id="project-list">
     <div className="filters-col">
     <div className="filters-container">
       <div className="filters-header">
         <div className="heading">
           <h2>Filters</h2>
-          <button className="filters-clear">Clear all</button>
+          <button className="filters-clear" onClick={this.clearFilters}>Clear all</button>
         </div>
       </div>
-      <div className="filter keywords">
+      <div id="keywords" className="filter">
         <p><strong>Keywords</strong></p>
-        <Select isMulti options={keywords} placeholder="e.g. Air purifying"/>
+        <Select 
+          isMulti
+          options={keywords} 
+          placeholder="e.g. Air purifying"
+        />
       </div>
-      <div className="filter plants">
+      <div id="plants" className="filter">
         <p><strong>Plants</strong></p>
-        <Select isMulti options={plants} placeholder="e.g. Cactus"/>
+        <Select
+          isMulti
+          options={plants}
+          placeholder="e.g. Cactus"
+        />
       </div>
-      <div className="filter size">
+      <div id="size" className="filter">
         <p><strong>Plant size</strong></p>
         <div className="checkbox">
-          <input type="checkbox" id="small" name="size" value="small"/>
+          <input type="checkbox" id="small" name="size" value="Small"/>
           <label for="small">Small (less than 6" tall)</label>
         </div>
         <div className="checkbox">
-          <input type="checkbox" id="medium" name="size" value="medium"/>
+          <input type="checkbox" id="medium" name="size" value="Medium"/>
           <label for="medium">Medium (6 - 10" tall)</label>
         </div>
         <div className="checkbox">
-          <input type="checkbox" id="large" name="size" value="large"/>
+          <input type="checkbox" id="large" name="size" value="Large"/>
           <label for="large">Large (more than 10" tall)</label>
         </div>
       </div>
-      <div className="filter lighting">
+      <div id="lighting" className="filter">
         <p><strong>Lighting needs</strong></p>
         <div className="checkbox">
-          <input type="checkbox" id="no-light" name="lighting" value="no-light"/>
+          <input type="checkbox" id="no-light" name="lighting" value="No light"/>
           <label for="no-light">No light</label>
         </div>
         <div className="checkbox">
-          <input type="checkbox" id="dim-light" name="lighting" value="dim-light"/>
+          <input type="checkbox" id="dim-light" name="lighting" value="Dim light"/>
           <label for="dim-light">Dim light</label>
         </div>
         <div className="checkbox">
-          <input type="checkbox" id="partial-sun" name="lighting" value="partial-sun"/>
+          <input type="checkbox" id="partial-sun" name="lighting" value="Partial sun"/>
           <label for="partial-sun">Partial sun</label>
         </div>
         <div className="checkbox">
-          <input type="checkbox" id="full-sun" name="lighting" value="full-sun"/>
+          <input type="checkbox" id="full-sun" name="lighting" value="Full sun"/>
           <label for="full-sun">Full sun</label>
         </div>
       </div>
-      <div className="filter humidity">
+      <div id="humidity" className="filter">
         <p><strong>Humidity needs</strong></p>
         <div className="checkbox">
-          <input type="checkbox" id="dry" name="humidity" value="dry"/>
+          <input type="checkbox" id="dry" name="humidity" value="Dry"/>
           <label for="dry">Dry</label>
         </div>
         <div className="checkbox">
-          <input type="checkbox" id="slightly-humid" name="humidity" value="slightly-humid"/>
+          <input type="checkbox" id="slightly-humid" name="humidity" value="Slightly humid"/>
           <label for="slightly-humid">Slightly humid</label>
         </div>
         <div className="checkbox">
-          <input type="checkbox" id="humid" name="humidity" value="humid"/>
+          <input type="checkbox" id="humid" name="humidity" value="Humid"/>
           <label for="humid">Humid</label>
         </div>
       </div>
-      <button id="filter-search">Search</button>
+      <button id="filter-search" onClick={this.searchProjects}>Search</button>
     </div>
     </div>
-  );
+    <div className="project-col">
+      <h2>{this.state.projectsHeading}</h2>
+      <div className="project-card-container">
+      { 
+        this.state.filteredProjects.map(project => 
+	  <ProjectCard id={project.id} added={this.props.added} increment={()=>this.props.increment(project.id)} decrement={()=>this.props.decrement(project.id)} add={()=>this.props.add(project.id)}/>
+	)
+      }
+      </div>
+    </div>
+    </div>
+    );
+  }
 }
-}
+
+
 
 function ProjectList(props) {
     return (
-      <div id="project-list">
-      <Filters/>
       <Projects added={props.added} increment={props.increment} decrement={props.decrement} add={props.add}/>
-      </div>
     );
   }
   
   export default ProjectList;
 
-  
-  
+
+  /* Get values from size filters */
+  function getSizeFilterValues() {
+    var sizeValues = [];
+    var sizeInputs = document.getElementById("size").getElementsByTagName("input");
+    for (let input of sizeInputs) {
+        if (input.checked == true) {
+            sizeValues.push(input.value);
+        }
+    }
+    return sizeValues;
+}
+
+/* Get values from lighting filters */
+function getLightingFilterValues() {
+  var lightingValues = [];
+  var lightingInputs = document.getElementById("lighting").getElementsByTagName("input");
+  for (let input of lightingInputs) {
+      if (input.checked == true) {
+          lightingValues.push(input.value);
+      }
+  }
+  return lightingValues;
+}
+
+/* Get values from humidity filters */
+function getHumidityFilterValues() {
+  var humidityValues = [];
+  var humidityInputs = document.getElementById("humidity").getElementsByTagName("input");
+  for (let input of humidityInputs) {
+      if (input.checked == true) {
+          humidityValues.push(input.value);
+      }
+  }
+  return humidityValues;
+}
+
+/* uncheck all checkboxes */
+function clearCheckboxes() {
+  var inputs = document.getElementsByTagName("input");
+  for (let input of inputs) {
+    input.checked = false;
+  }
+}

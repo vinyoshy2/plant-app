@@ -28,8 +28,9 @@ class ProjectCard extends Component {
           <div className="project-image" style={{backgroundImage: "url(" +"/"+ proj["gallery_pics"][0] + ")"}} onClick={this.open}></div>
           <div className="project-details" onClick={this.open}>
             <h3>{proj["name"]}</h3>
-            <p>{proj["keywords"][0]}</p>
-            <p>{proj["keywords"][1]}</p>
+            <p>{proj["size"]}</p>
+            <p>{proj["lighting"]}</p>
+            <p>{proj["humidity"]}</p>
           </div>
         </div>
       );
