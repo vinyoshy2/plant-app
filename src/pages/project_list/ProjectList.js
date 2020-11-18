@@ -13,28 +13,42 @@ class Projects extends Component {
     this.state = {
       projectsHeading: "Showing all " + projectJSON["entries"].length + " projects.",
       filteredProjects: projectJSON["entries"],
+      selectedKeywords: [],
+      selectedPlants: []
     };
+
+    this.baseState = this.state; 
+  }
+
+  clearFilters=() => {
+    clearCheckboxes();
+    this.setState(this.baseState);
+  }
+
+  handleKeywordSelection=(selected) => {
+    this.setState({ selectedKeywords: selected });
+    console.log(this.state.selectedKeywords);
+  }
+
+  handlePlantSelection=(selected) => {
+    this.setState({ selectedPlants: selected });
+    console.log(this.state.selectedPlants);
   }
 
   searchProjects=() => {
     var filteredProjects = getProjectsWithFilters(getSizeFilterValues(), getLightingFilterValues(), getHumidityFilterValues(), projectJSON);
+
     this.setState({
       projectsHeading: "You have been matched with " + filteredProjects.length + " projects.",
       filteredProjects: filteredProjects,
     });
   }
-
-  clearFilters=() => {
-    this.setState({
-      projectsHeading: "Showing all " + projectJSON["entries"].length + " projects.",
-      filteredProjects: projectJSON["entries"],
-    });
-    clearCheckboxes();
-  }
   
   render() {
     const keywords = getProjectKeywords(projectJSON);
     const plants = getProjectPlants(projectJSON);
+    const { selectedKeywords } = this.state;
+    const { selectedPlants } = this.state;
 
     return (
     <div id="project-list">
@@ -50,16 +64,20 @@ class Projects extends Component {
         <p><strong>Keywords</strong></p>
         <Select 
           isMulti
+          value={selectedKeywords}
           options={keywords} 
           placeholder="e.g. Air purifying"
+          onChange={this.handleKeywordSelection}
         />
       </div>
       <div id="plants" className="filter">
         <p><strong>Plants</strong></p>
         <Select
           isMulti
+          value={selectedPlants}
           options={plants}
           placeholder="e.g. Cactus"
+          onChange={this.handlePlantSelection}
         />
       </div>
       <div id="size" className="filter">

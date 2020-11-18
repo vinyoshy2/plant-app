@@ -61,28 +61,3 @@ export function getProjectsWithFilters(sizeValues, lightingValues, humidityValue
     }
     return filteredProjects;
 }
-
-// export function getProjectsWithFilters(sizeValues, lightingValues, humidityValues, json) {
-//     var filteredProjects = [];
-//     var projectsWithSizeFilter = getProjectsWithOneFilter("size", sizeValues, json);
-//     var projectsWithLightingFilter = getProjectsWithOneFilter("lighting", lightingValues, json);
-//     var projectsWithHumidityFilter = getProjectsWithOneFilter("humidity", humidityValues, json);
-//     for (let entry of json["entries"]) {
-//         if (projectsWithSizeFilter.some(e => e.id === entry.id) || projectsWithLightingFilter.some(e => e.id === entry.id) || projectsWithHumidityFilter.some(e => e.id === entry.id)) {
-//             filteredProjects.push(entry);
-//         }
-//     }
-//     return filteredProjects;
-// }
-
-// function getProjectsWithOneFilter (filterName, filterArray, json) {
-//     var projectsWithOneFilter = [];
-//     for (let entry of json["entries"]) {
-//         for (let filter of filterArray) {
-//             if (entry[filterName] == filter) {
-//                 projectsWithOneFilter.push(entry);
-//             }
-//         }
-//     }
-//     return projectsWithOneFilter;
-// }
