@@ -7,6 +7,10 @@ import {getEntryFromID} from "../../utils/utils.js";
 
 
 class Projects extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
     <div className="project-col">
@@ -14,7 +18,7 @@ class Projects extends Component {
       <div className="project-card-container">
       { 
         projectJSON["entries"].map(project => 
-	  <ProjectCard id={project.id}/>
+	  <ProjectCard id={project.id} added={this.props.added} increment={()=>this.props.increment(project.id)} decrement={()=>this.props.decrement(project.id)} add={()=>this.props.add(project.id)}/>
 	)
       }
       </div>
@@ -112,11 +116,11 @@ class Filters extends Component {
 }
 }
 
-function ProjectList() {
+function ProjectList(props) {
     return (
       <div id="project-list">
       <Filters/>
-      <Projects />
+      <Projects added={props.added} increment={props.increment} decrement={props.decrement} add={props.add}/>
       </div>
     );
   }
