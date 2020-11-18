@@ -66,7 +66,7 @@ const InfoSection = ({
                       <span className="imageContainer" css={imageContainerCss}>
                         <img src={imageSrc} alt="" css={imageCss} />
                       </span>
-                      <span className="title" style={{ color:"#000000" }}>{title1}</span>
+                      <span className="title" style={{ color:"#000000", fontStyle:"normal", fontSize:"16px" }}>{title1}</span>
                       <p className="description">{descriptions1}</p>
                     </Card>
                   </Column>
@@ -76,7 +76,7 @@ const InfoSection = ({
                       <span className="imageContainer" css={imageContainerCss}>
                         <img src={imageSrc} alt="" css={imageCss} />
                       </span>
-                      <span className="title" style={{ color:"#000000" }}>{title2}</span>
+                      <span className="title" style={{  color:"#000000", fontStyle:"normal", fontSize:"16px"  }}>{title2}</span>
                       <p className="description">{descriptions2}</p>
                     </Card>
                   </Column>
@@ -86,7 +86,7 @@ const InfoSection = ({
                       <span className="imageContainer" css={imageContainerCss}>
                         <img src={imageSrc} alt="" css={imageCss}/>
                       </span>
-                      <span className="title" style={{ color:"#000000" }}>{title3}</span>
+                      <span className="title" style={{  color:"#000000", fontStyle:"normal", fontSize:"16px"  }}>{title3}</span>
                       <p className="description">{descriptions3}</p>
                     </Card>
                   </Column>
@@ -96,7 +96,7 @@ const InfoSection = ({
                       <span className="imageContainer" css={imageContainerCss}>
                         <img src={imageSrc} alt="" css={imageCss} />
                       </span>
-                      <span className="title" style={{ color:"#000000" }}>{title4}</span>
+                      <span className="title" style={{  color:"#000000", fontStyle:"normal", fontSize:"16px"  }}>{title4}</span>
                       <p className="description">{descriptions4}</p>
                     </Card>
                   </Column>
@@ -106,7 +106,7 @@ const InfoSection = ({
                       <span className="imageContainer" css={imageContainerCss}>
                         <img src={imageSrc} alt="" css={imageCss} />
                       </span>
-                      <span className="title" style={{ color:"#000000" }}>{title5}</span>
+                      <span className="title" style={{  color:"#000000", fontStyle:"normal", fontSize:"16px"  }}>{title5}</span>
                       <p className="description">{descriptions5}</p>
                     </Card>
                   </Column>
@@ -116,7 +116,7 @@ const InfoSection = ({
                       <span className="imageContainer" css={imageContainerCss}>
                         <img src={imageSrc} alt="" css={imageCss} />
                       </span>
-                      <span className="title" style={{ color:"#000000" }}>{title6}</span>
+                      <span className="title" style={{  color:"#000000", fontStyle:"normal", fontSize:"16px"  }}>{title6}</span>
                       <p className="description">{descriptions6}</p>
                     </Card>
                   </Column>
