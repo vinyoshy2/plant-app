@@ -9,6 +9,7 @@ import UserPhotos from "./UserPhotos.js"
 import StepByStep from "./StepByStep.js"
 import projectJSON from "../../data/projects.json"
 import {getEntryFromID} from "../../utils/utils.js"
+import {Link} from "react-router-dom"
 
 export default class ProjectDetails extends React.Component {
     
@@ -16,10 +17,6 @@ export default class ProjectDetails extends React.Component {
         super(props);
 	this.incrementStage = this.incrementStage.bind(this);
 	this.decrementStage = this.decrementStage.bind(this);
-	this.state = {
-	    matches: 13,
-	    filters: 15,
-	};
     }
 
     incrementStage() {
@@ -40,7 +37,7 @@ export default class ProjectDetails extends React.Component {
 		    <a class="close" onClick={this.props.closer}>
 		        &times;
 		    </a>
-          	    <DetailsHeader name={proj["name"]} setup={proj["setup_difficulty"]} care={proj["care_difficulty"]} matches={this.state.matches} handler={this.props.add}/>
+          	    <DetailsHeader name={proj["name"]} setup={proj["setup_difficulty"]} care={proj["care_difficulty"]}  handler={this.props.add}/>
 		    <ProjectDisplay images={proj["gallery_pics"]}/>
 		    <h3 style={{marginTop: "20px"}}> What You Will Need </h3>
 		    <div id="QuickInfo">
@@ -60,13 +57,15 @@ export default class ProjectDetails extends React.Component {
 		    <a class="close" onClick={this.props.closer}>
 		        &times;
 		    </a>
-          	    <DetailsHeader name={proj["name"]} setup={proj["setup_difficulty"]} care={proj["care_difficulty"]} matches={this.state.matches} stage={this.props.added[this.props.id]} steps={proj["steps"]}/>
+          	    <DetailsHeader name={proj["name"]} setup={proj["setup_difficulty"]} care={proj["care_difficulty"]} stage={this.props.added[this.props.id]} steps={proj["steps"]}/>
 		    <ProjectDisplay images={proj["gallery_pics"]}/>
 		    <h3 style={{marginTop: "20px"}}> Step-by-Step Guide </h3>
 		    <div id="QuickInfoAdded">
 		        <Equipment items={proj["items"]} price={proj["price_estimate"]} req={proj["required_plants"]} alt={proj["alt_plants"]} stage={this.props.added[this.props.id]} increment={this.props.increment} decrement={this.props.decrement}/>
 		        <StepByStep steps={proj["steps"]} stage={this.props.added[this.props.id]} increment={this.props.increment} decrement={this.props.decrement}/>
-		        <CareGuide light={proj["lighting"]} harvest={proj["harvesting"]} water={proj["watering"]}/>
+		        <Link to="/care-reminder">
+		            <CareGuide light={proj["lighting"]} harvest={proj["harvesting"]} water={proj["watering"]}/>
+		        </Link>
 		    </div>
 		    <h3> User-Uploaded Photos </h3>
 		    <UserPhotos photo_ids={proj["user_photo_ids"]} activate={proj["steps"].length+2}  stage={this.props.added[this.props.id]} increment={this.props.increment}/>

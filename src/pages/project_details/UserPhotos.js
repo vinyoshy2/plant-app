@@ -2,17 +2,14 @@ import React from "react";
 import "./UserPhotos.css";
 import photosJSON from "../../data/user_photos.json";
 import {getEntryFromID} from "../../utils/utils.js";
+import {Link} from "react-router-dom";
 
 export default class UserPhotos extends React.Component {
 
     constructor(props) {
         super(props)
         this.entries = props.photo_ids.map((id) => getEntryFromID(id, photosJSON));
-	var likes = this.entries.map((entry) => entry["likes"]);
-	var likes_updated = likes.map((like) => false);
 	this.state = {
-	    likes: likes,
-	    updated: likes_updated,
 	    uploaded: false
 	}
 	this.uploadHandler = this.uploadHandler.bind(this);
@@ -25,36 +22,12 @@ export default class UserPhotos extends React.Component {
 	}
     }
 
-    clickHandler(id) {
-	if (!this.state.updated[id]) {
-	    var new_likes = [...this.state.likes];
-            new_likes[id] = new_likes[id] + 1;
-            this.setState(
-                { likes: new_likes  }
-	    );
-	    var new_updated = [...this.state.updated];
-            new_updated[id] = true;
-	    this.setState(
-	        {updated: new_updated}
-	    );
-	}
-    }
     render() {
         return (
 	    <div id="UserPhotos">
 	        {
 	            this.entries.map(entry => 
-                        <div class="entry">
-			    <div class="photo" style={{backgroundImage: "url(" + "/" + entry["plant_pic"] + ")"}}/>
-  		            <div class="user-info">
-			        <div class="profile-pic" style={{backgroundImage: "url(" + "/" + entry["profile_pic"] + ")"}}/>
-			        <div class="username"> Uploaded by {entry["user"]}</div>
-		            </div>
-		            <div class="like">
-	                        <input type="image" class="like-button" onClick={() => this.clickHandler(entry["id"])} src={!this.state.updated[entry["id"]] ? "/thumb.png" : "/thumb_green.png"}/>
-	                        <div class="like_count">{this.state.likes[entry["id"]]}</div>
-			    </div>
-		        </div>
+	                <UserUploadCard plant_pic={entry["plant_pic"]} likes={entry["likes"]} profile_pic={entry["profile_pic"]} username={entry["user"]}/>
 	            )
 		} {
 		     this.props.stage >= this.props.activate && 
@@ -66,6 +39,69 @@ export default class UserPhotos extends React.Component {
 	        }
 	    </div>
         )
+    }
+}
+
+
+class UserUploadCard extends React.Component {
+    constructor(props) {
+        super(props)
+	this.state = {
+	    updated: false,
+            open: false
+	}
+	this.closer = this.closer.bind(this);
+	this.clickHandler = this.clickHandler.bind(this);
+    }
+    clickHandler() {
+        if (!this.state.updated) {
+            this.setState({updated: true});
+	} 
+    }
+    
+    closer() {
+        this.setState({open: false});
+    }
+
+    render() {
+	return (
+            <div class="entry">
+                <UserInfo open={this.state.open} profile_pic={this.props.profile_pic} username={this.props.username} closer={this.closer}/>
+                <div class="photo" style={{backgroundImage: "url(" + "/" + this.props.plant_pic + ")"}} onClick={() => this.setState({open: true})}/>
+                <div class="like">
+	            <input type="image" class="like-button" onClick={this.clickHandler} src={!this.state.updated ? "/thumb.png" : "/thumb_green.png"}/>
+	            <div class="like_count">{!this.state.updated ? this.props.likes : this.props.likes+1}</div>
+	        </div>
+            </div>
+	)
+    }
+}
+
+class UserInfo extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+	if (!this.props.open) {
+            return (
+	        <div/>
+	    );
+	} else {
+            return (
+		<div class="user-container">
+		    <a class="close" onClick={this.props.closer}>
+		        &times;
+		    </a>
+                    <div class="user-info">
+		        <div class="profile-pic" style={{backgroundImage: "url(" + "/" + this.props.profile_pic + ")"}}/>
+	                <div class="username"> {this.props.username}</div>
+		    </div>
+		    <Link to="/messages">
+		        <div class="Message">Message</div>
+		    </Link>
+		</div>
+	    );
+	}
     }
 }
 

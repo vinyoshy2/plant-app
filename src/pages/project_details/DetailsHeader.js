@@ -16,7 +16,6 @@ function DetailsHeader(props) {
 	        <div id="Ratings">
       	            <div id="Difficulty1">Set-up Difficulty: {props.setup}</div>
 	            <div id="Difficulty2">Care Difficulty: {props.care}</div>
-	            <div id="Criterion">Meets {props.matches} out of 15 Criterion</div>
 	        </div>
 	    </div>
 	    { !props.stage ?
