@@ -43,7 +43,8 @@
 
 .username {
     margin-left: 5px;
-    align-self: center;
+    margin-bottom: 5px;
+    align-self: start;
     font-size: 20px;
 }
 
@@ -90,4 +91,25 @@
     justify-items: center;
     align-self: center;
     padding-bottom: 30px;
+}
+
+.vertical-frame {
+    display: flex;
+    flex-direction: row;
+}
+
+.horizontal-frame {
+    display: flex;
+    flex-direction: column;
+}
+
+.badge-image {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 2px solid #e0e0e0;
+    background-position: center center;
+    object-fit: cover;
 }
