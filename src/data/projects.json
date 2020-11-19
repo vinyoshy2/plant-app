@@ -3,7 +3,7 @@
         {
             "id": 0,
             "name": "Herb Shelf",
-            "keywords": ["Cheap", "Easy Set-up"],
+            "keywords": ["Cheap", "Easy Set-up", "Air-purifying"],
             "required_plants": [{"name": "Basil", "pic": "basil.jpeg"}, {"name": "Mint", "pic": "mint.jpg"}, {"name": "Chives", "pic": "chives.jpg"}],
             "alt_plants": [{"name": "Oregano", "pic": "oregano.jpeg"}, {"name": "Parsley", "pic": "parsley.jpg"}, {"name": "Rosemary", "pic": "rosemary.jpeg"}],
             "gallery_pics": ["shelf_gallery.jpeg", "shelf2.jpg", "shelf3.jpg"],

@@ -3,15 +3,15 @@ var QuestionsData = [
       question: "How large do you want your plant to be?",
       answers: [
           {
-              type: "small",
+              type: "Small",
               content: "Small (less than 6 inches tall)"
           },
           {
-              type: "medium",
+              type: "Medium",
               content: "Medium (6-10 inches tall)"
           },
           {
-              type: "large",
+              type: "Large",
               content: "Large (more than 10 inches tall)"
           }
       ]
@@ -20,19 +20,19 @@ var QuestionsData = [
       question: "What's the lighting condition of the place for your future plant?",
       answers: [
           {
-              type: "no",
+              type: "No light",
               content: "No light"
           },
           {
-              type: "dim",
+              type: "Dim light",
               content: "Dim light"
           },
           {
-              type: "partial",
+              type: "Partial sun",
               content: "Partial sun"
           },
           {
-              type: "full",
+              type: "Full sun",
               content: "Full sum"
           }
       ]
@@ -41,15 +41,15 @@ var QuestionsData = [
       question: "What's the humidity at the place for your future plant?",
       answers: [
           {
-              type: "dry",
+              type: "Dry",
               content: "Dry"
           },
           {
-              type: "slightly",
+              type: "Slightly humid",
               content: "Slightly humid"
           },
           {
-              type: "humid",
+              type: "Humid",
               content: "humid"
           }
       ]
@@ -58,7 +58,7 @@ var QuestionsData = [
       question: "Are there children or pets where you live?",
       answers: [
           {
-              type: "nontoxic",
+              type: "Non-toxic",
               content: "Yes"
           },
           {
@@ -71,7 +71,7 @@ var QuestionsData = [
       question: "Do you want plant that purifies the air?",
       answers: [
           {
-              type: "airpurify",
+              type: "Air-purifying",
               content: "Yes"
           },
           {

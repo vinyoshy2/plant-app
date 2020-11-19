@@ -64,8 +64,8 @@ export default class App extends React.Component {
 		        <Route exact path={"/care-reminder"} 
 		            render={() =>  <CareReminder added={this.state.added}/>}/>
 		        <Route exact path={"/project-list"}
-		            render={() => 
-                               <ProjectList added={this.state.added} increment={this.increment} decrement={this.decrement} add={this.add_new}/>
+		            render={(props) => 
+                               <ProjectList {...props} added={this.state.added} increment={this.increment} decrement={this.decrement} add={this.add_new}/>
 			    }
 		        />
 		        <Route exact path={"/my-projects"}
