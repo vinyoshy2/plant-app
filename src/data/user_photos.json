@@ -24,9 +24,23 @@
         {
 	    "id": 3,
             "profile_pic": "profile_pic.jpg",
-            "user": "Name",
-            "likes": 1,
-            "plant_pic": "project-image-test.jpg"
+            "user": "Bob",
+            "likes": 120,
+            "plant_pic": "project2-2.jpg"
+        },
+        {
+            "id": 4,
+            "profile_pic": "profile_pic.jpg",
+            "user": "Bob",
+            "likes": 10,
+            "plant_pic": "project2-1.jpg"
+        },
+        {
+            "id": 5,
+            "profile_pic": "profile_pic.jpg",
+            "user": "Bob",
+            "likes": 3,
+            "plant_pic": "project2-3.jpeg"
         }
     ]
 }
