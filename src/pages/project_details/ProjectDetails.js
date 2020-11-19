@@ -34,7 +34,7 @@ export default class ProjectDetails extends React.Component {
 	if (!this.props.added[this.props.id]) {
             return(
 	        <div id="ProjectDetails">
-		    <a class="close" onClick={this.props.closer}>
+		    <a class="details_close" onClick={this.props.closer}>
 		        &times;
 		    </a>
           	    <DetailsHeader name={proj["name"]} setup={proj["setup_difficulty"]} care={proj["care_difficulty"]}  handler={this.props.add}/>
@@ -63,9 +63,7 @@ export default class ProjectDetails extends React.Component {
 		    <div id="QuickInfoAdded">
 		        <Equipment items={proj["items"]} price={proj["price_estimate"]} req={proj["required_plants"]} alt={proj["alt_plants"]} stage={this.props.added[this.props.id]} increment={this.props.increment} decrement={this.props.decrement}/>
 		        <StepByStep steps={proj["steps"]} stage={this.props.added[this.props.id]} increment={this.props.increment} decrement={this.props.decrement}/>
-		        <Link to="/care-reminder">
-		            <CareGuide light={proj["lighting"]} harvest={proj["harvesting"]} water={proj["watering"]}/>
-		        </Link>
+		        <CareGuide added={true} light={proj["lighting"]} harvest={proj["harvesting"]} water={proj["watering"]}/>
 		    </div>
 		    <h3> User-Uploaded Photos </h3>
 		    <UserPhotos photo_ids={proj["user_photo_ids"]} activate={proj["steps"].length+2}  stage={this.props.added[this.props.id]} increment={this.props.increment}/>

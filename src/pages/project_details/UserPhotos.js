@@ -88,18 +88,18 @@ class UserInfo extends React.Component {
 	    );
 	} else {
             return (
-		<div class="user-container">
-		    <a class="close" onClick={this.props.closer}>
-		        &times;
-		    </a>
-                    <div class="user-info">
-		        <div class="profile-pic" style={{backgroundImage: "url(" + "/" + this.props.profile_pic + ")"}}/>
-	                <div class="username"> {this.props.username}</div>
-		    </div>
-		    <Link to="/messages">
-		        <div class="Message">Message</div>
-		    </Link>
-		</div>
+		    <div class="user-container">
+		        <a class="close" onClick={this.props.closer}>
+		            &times;
+		        </a>
+		        <div class="user-popup-content">
+                            <div class="user-info">
+		                <div class="profile-pic" style={{backgroundImage: "url(" + "/" + this.props.profile_pic + ")"}}/>
+	                        <div class="username"> {this.props.username}</div>
+		            </div>
+		            <div class="messages"><Link to="/messages">Message</Link></div>
+		        </div>
+                    </div>
 	    );
 	}
     }

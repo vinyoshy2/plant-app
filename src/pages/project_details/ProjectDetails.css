@@ -27,6 +27,8 @@
     flex-direction: row;
 }
 
-.close {
+.details_close {
+    margin-left: 95%;
+    position: absolute;
     float: right;
 }
