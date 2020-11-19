@@ -1,7 +1,7 @@
-import React, { useState } from "react";
 import Slider from "react-slick";
 import tw from "twin.macro";
 import styled from "styled-components";
+import { Link } from 'react-scroll';
 
 export const Container = tw.div`relative`;
 export const Content = tw.div`max-w-screen-xl mx-auto py-16 lg:py-20`;
@@ -56,4 +56,26 @@ export const IconContainer = styled.div`
   }
 `;
 export const Text = tw.div`ml-2 text-sm font-semibold text-gray-800`;
-export const PrimaryButton = tw(PrimaryButtonBase)`bg-gray-500 hover:bg-green-400 mt-auto sm:text-lg rounded-none w-full rounded sm:rounded-full sm:rounded-br-full py-3 sm:py-6`;
+
+export const Button = styled(Link)`
+  border-radius: 50px;
+  background: #01BF71;
+  white-space: nowrap;
+  padding: 14px 48px;
+  color: #000000;
+  font-size: 20px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: #0a945b;
+    
+  }
+`;

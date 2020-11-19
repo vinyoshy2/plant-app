@@ -26,11 +26,10 @@ import {
     IconWithText,
     IconContainer,
     Text,
-    PrimaryButton
+    Button
   } from './PanelElements';
 
   export default () => {
-    // useState is used instead of useRef below because we want to re-render when sliderRef becomes available (not null)
     const [sliderRef, setSliderRef] = useState(null);
     const sliderSettings = {
       arrows: false,
@@ -133,7 +132,15 @@ import {
                 </SecondaryInfoContainer>
                 <Description>{card.description}</Description>
               </TextInfo>
-          <PrimaryButton>More info with the {card.title}</PrimaryButton>
+          <Button
+            to= 'Aloe Vera'
+            smooth={true}
+            duration={500}
+            spy={true}
+            exact='true'
+            offset={-70}
+          >More info with the {card.title}
+          </Button>
             </Card>
           ))}
         </CardSlider>
