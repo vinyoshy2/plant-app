@@ -1,0 +1,160 @@
+.navlink {
+    text-decoration: none;
+    color: black;
+}
+
+.PreQuizWrapper{
+    background-color: #C4C4C4;
+    
+}
+
+.PreQuizText{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.howdowemat{
+    font-size: 320%;
+    font-family: "Open sans";
+    color: #333333;
+    margin-top:3%;
+}
+
+.alreadyhav{
+    font-size: 240%;
+    font-family: "Open sans";
+    color: #000000;
+    font-weight: 500;
+    margin-top: 3%;
+}
+
+.yesiwantto, .noiwantsom{
+    font-size: 160%;
+    font-family: "Open sans";
+    color: #000000;
+    font-weight: 500;
+}
+
+.aquizmayhe, .projectrec, .aprojectwi{
+    font-size: 160%;
+    font-family: "Open sans";
+    color: #000000;
+    font-weight: 500;
+}
+
+.skipthistu{
+    font-size: 160%;
+    font-family: "Open sans";
+    color: #000000;
+    font-weight: 500;
+}
+
+.startthequ{
+    font-size: 240%;
+    font-family: "Roboto";
+    color: #000000;
+}
+
+.choose{
+    text-decoration: none;
+    color: black;
+    
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0px;
+    display: inline-block;
+    margin-top: 1%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
+    white-space: nowrap;
+    text-align: center;
+    background-color: #C4C4C4;
+}
+
+.buttonWrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #FFFFFF;
+    margin-top: 3%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+#yes{
+    margin-right: 10%;
+}
+
+.quizReason{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3%;
+}
+
+.skipWrapper{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0px;
+    display: inline-block;
+    margin-top: 1%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    white-space: nowrap;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+
+.checkSkipWrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+}
+
+.inputBox{
+    transform: scale(3);
+    margin-right: 3.9%;
+}
+
+.QuizQuestionsWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.container{
+    position: relative;
+    min-width: 45%;
+    max-width: 45%;
+    margin: 0 auto;
+    background: #FFF;
+    border-radius: 3px;
+}
+
+.StartQuizWrapper{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0px;
+    display: inline-block;
+    margin-top: 2.5%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    white-space: nowrap;
+    text-align: center;
+    background-color: #C0BEBE;
+}
