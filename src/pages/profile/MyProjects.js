@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import "./Profile.css"
 import Sidebar from "./SideBar";
 import ProjectCard from "../project_list/ProjectCard"
-import projectJSON from "../../data/projects.json";
- 
+import { Container, Button, Link } from 'react-floating-action-button'
+import {NavLink} from "react-router-dom";
+
 class MyProjects extends Component {
   constructor(props) {
     super(props);
@@ -23,6 +24,14 @@ class MyProjects extends Component {
               }
             </div>
           </div>
+
+          <Container>
+            <NavLink to="/quiz" className={'new-project-nav'}>
+              <Button
+                tooltip="Start a new project"
+                className='new-project-icon'> + </Button>
+            </NavLink>
+          </Container>
         </div>
 
       </div>
