@@ -34,11 +34,20 @@ const date_today = new moment().format(DATE_FORMAT);
 const events = [
   {
     id: 1,
-    start: date_today + ' 08:30:00',
+    start: date_today + ' 08:30',
+    end: date_today + ' 09:00',
+    resourceId: 'Kitchen Sill - Bonsai',
+    title: 'R2 has recurring tasks every week on Tuesday, Friday',
+    rrule: 'FREQ=DAILY;INTERVAL=3;BYDAY=MO,TU,WE,TH,FR,SA,SU;COUNT=3',
+    bgColor: '#f759ab'
+  },
+  {
+    id: 2,
+    start: date_today + ' 08:30',
     end: date_today + ' 09:00:00',
     resourceId: 'Kitchen Sill - Bonsai',
     title: 'R2 has recurring tasks every week on Tuesday, Friday',
-    rrule: 'FREQ=DAILY;DTSTART=20171219T000000Z;INTERVAL=3;BYDAY=MO,TU,WE,TH,FR,SA,SU;COUNT=3',
+    rrule: 'FREQ=DAILY;DTSTART=20201119T000000Z;INTERVAL=3;BYDAY=MO,TU,WE,TH,FR,SA,SU;COUNT=3',
     bgColor: '#f759ab'
   }
 ];
@@ -59,7 +68,6 @@ class CareReminderCalendar extends React.Component {
     moment.locale('en');
     schedulerData.setLocaleMoment(moment);
     schedulerData.setResources(available_times);
-    schedulerData.setEvents(events);
     this.state = {
       schedulerData: schedulerData,
       events: events
@@ -67,8 +75,8 @@ class CareReminderCalendar extends React.Component {
   }
   render() {
     const {schedulerData} = this.state;
+    schedulerData.setEvents(this.props.care_cal_events);
     return (
-      <div>
         <Scheduler
           schedulerData={schedulerData}
           prevClick={this.prevClick}
@@ -87,8 +95,6 @@ class CareReminderCalendar extends React.Component {
           onScrollBottom={this.onScrollBottom}
           toggleExpandFunc={this.toggleExpandFunc}
         />
-        <div> {this.props.settings[0].water} </div>
-      </div>
     );
   }
   prevClick = (schedulerData)=> {

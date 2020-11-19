@@ -41,7 +41,7 @@ class CareReminderSettings extends Component {
       <ReactDataGrid
         columns={cr_columns}
         rowGetter={i => this.props.settings[i]}
-        rowsCount={3}
+        rowsCount={this.props.settings.length}
         onGridRowsUpdated={this.onGridRowsUpdated}
         enableCellSelect={true}
       />
