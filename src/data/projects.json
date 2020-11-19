@@ -33,7 +33,7 @@
             "alt_plants": [{"name": "plant1", "pic": "project-image-test.jpg"}, {"name": "plant2", "pic": "project-image-test.jpg"}],
             "gallery_pics": ["gallery_generic.png","gallery_generic.png","gallery_generic.png"],
             "size": "Medium",
-            "lighting": "Full Sun",
+            "lighting": "Full sun",
             "humidity": "Slightly humid",
             "setup_difficulty": "Hard",
             "care_difficulty": "Easy",

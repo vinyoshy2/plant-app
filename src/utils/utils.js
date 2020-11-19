@@ -55,23 +55,33 @@ export function getProjectPlants(json) {
 export function getProjectsWithFilters(keywords, plants, sizeValues, lightingValues, humidityValues, json) {
     var filteredProjects = [];
     for (let entry of json["entries"]) {
-        if (includesValue(sizeValues, entry.size) || includesValue(lightingValues, entry.lighting) || includesValue(humidityValues, entry.humidity)) {
-            filteredProjects.push(entry);
-        }
-        if (keywords.length > 0) {
+	var qualify = true
+	if (sizeValues && sizeValues.length > 0) {
+            qualify = qualify && includesValue(sizeValues, entry.size);
+	}
+	if (lightingValues && lightingValues.length > 0) {
+            qualify = qualify && includesValue(lightingValues, entry.lighting); 
+	}
+	if (humidityValues && humidityValues.length > 0) {
+	    qualify = qualify && includesValue(humidityValues, entry.humidity);
+	}
+        if (keywords && keywords.length > 0) {
+	    var keyword_match = false;
             for (let keyword of keywords) {
-                if (includesValue(entry.keywords, keyword.value) && !filteredProjects.includes(entry)) {
-                        filteredProjects.push(entry);
-                }
+                keyword_match = keyword_match || includesValue(entry.keywords, keyword.value)
             }
+	    qualify = qualify && keyword_match;
         }
-        if (plants.length > 0) {
+        if (plants && plants.length > 0) {
+	    var plant_match = false;
             for (let plant of plants) {
-                if ((includesValue(entry.required_plants, plant.value) || includesValue(entry.alt_plants, plant.value)) && !filteredProjects.includes(entry)) {
-                    filteredProjects.push(entry);
-                }
+                plant_match = plant_match || (includesValue(entry.required_plants, plant.value) || includesValue(entry.alt_plants, plant.value));
             }
+	    qualify = qualify && plant_match;
         }
+	if (qualify) {
+            filteredProjects.push(entry)
+	}
     }
     return filteredProjects;
 }

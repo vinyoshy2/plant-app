@@ -130,21 +130,21 @@ class Projects extends Component {
       <div id="size" className="filter">
         <p><strong>Plant size</strong></p>
         <div className="checkbox">
-	  {this.props.presets && this.props.presets.size != "Small" ?
+	  {this.props.presets == undefined ||  this.props.presets.size != "Small" ?
               <input type="checkbox" id="small" name="size" value="Small" onChange={this.handleSizeSelection}/>
               : <input type="checkbox" id="small" name="size" value="Small" defaultChecked onChange={this.handleSizeSelection}/>
 	  }
           <label for="small">Small (less than 6" tall)</label>
         </div>
         <div className="checkbox">
-	  {this.props.presets && this.props.presets.size != "Medium" ?
+	  {this.props.presets == undefined || this.props.presets.size != "Medium" ?
               <input type="checkbox" id="medium" name="size" value="Medium" onChange={this.handleSizeSelection}/>
               : <input type="checkbox" id="medium" name="size" value="Medium" defaultChecked onChange={this.handleSizeSelection}/>
 	  }
           <label for="medium">Medium (6 - 10" tall)</label>
         </div>
         <div className="checkbox">
-	  {this.props.presets && this.props.presets.size != "Large" ?
+	  {this.props.presets ==undefined || this.props.presets.size != "Large" ?
               <input type="checkbox" id="large" name="size" value="Large" onChange={this.handleSizeSelection}/> 
               : <input type="checkbox" id="large" name="size" value="Large" defaultChecked onChange={this.handleSizeSelection}/> 
 	  }
@@ -154,28 +154,28 @@ class Projects extends Component {
       <div id="lighting" className="filter">
         <p><strong>Lighting needs</strong></p>
         <div className="checkbox">
-	  {this.props.presets && this.props.presets.light != "No light" ?
+	  {this.props.presets == undefined || this.props.presets.light != "No light" ?
               <input type="checkbox" id="no-light" name="lighting" value="No light" onChange={this.handleLightingSelection}/> 
 	      : <input type="checkbox" id="no-light" name="lighting" value="No light" defaultChecked onChange={this.handleLightingSelection}/> 
 	  }
           <label for="no-light">No light</label>
         </div>
         <div className="checkbox">
-	  {this.props.presets && this.props.presets.light != "Dim light" ?
+	  {this.props.presets == undefined || this.props.presets.light != "Dim light" ?
               <input type="checkbox" id="dim-light" name="lighting" value="Dim light" onChange={this.handleLightingSelection}/> 
               : <input type="checkbox" id="dim-light" name="lighting" value="Dim light" defaultChecked onChange={this.handleLightingSelection}/> 
 	  }
           <label for="dim-light">Dim light</label>
         </div>
         <div className="checkbox">
-	  {this.props.presets && this.props.presets.light != "Partial sun" ?
+	  {this.props.presets == undefined ||  this.props.presets.light != "Partial sun" ?
               <input type="checkbox" id="partial-sun" name="lighting" value="Partial sun" onChange={this.handleLightingSelection}/> 
               : <input type="checkbox" id="partial-sun" name="lighting" value="Partial sun" defaultChecked onChange={this.handleLightingSelection}/> 
 	  }
           <label for="partial-sun">Partial sun</label>
         </div>
         <div className="checkbox">
-	  {this.props.presets && this.props.presets.light != "Full sun" ?
+	  {this.props.presets == undefined ||  this.props.presets.light != "Full sun" ?
               <input type="checkbox" id="full-sun" name="lighting" value="Full sun" onChange={this.handleLightingSelection}/> 
               : <input type="checkbox" id="full-sun" name="lighting" value="Full sun" defaultChecked onChange={this.handleLightingSelection}/> 
 	  }
@@ -185,21 +185,21 @@ class Projects extends Component {
       <div id="humidity" className="filter">
         <p><strong>Humidity needs</strong></p>
         <div className="checkbox">
-	  {this.props.presets && this.props.presets.humid != "Dry" ?
+	  {this.props.presets == undefined ||  this.props.presets.humid != "Dry" ?
               <input type="checkbox" id="dry" name="humidity" value="Dry" onChange={this.handleHumiditySelection}/> 
               : <input type="checkbox" id="dry" name="humidity" value="Dry" defaultChecked onChange={this.handleHumiditySelection}/> 
 	  }
           <label for="dry">Dry</label>
         </div>
         <div className="checkbox">
-	  {this.props.presets && this.props.presets.humid != "Slightly humid" ?
+	  {this.props.presets == undefined ||  this.props.presets.humid != "Slightly humid" ?
               <input type="checkbox" id="slightly-humid" name="humidity" value="Slightly humid" onChange={this.handleHumiditySelection}/> 
               : <input type="checkbox" id="slightly-humid" name="humidity" value="Slightly humid" defaultChecked onChange={this.handleHumiditySelection}/> 
 	  }
           <label for="slightly-humid">Slightly humid</label>
         </div>
         <div className="checkbox">
-	  {this.props.presets && this.props.presets.humid != "Humid" ?
+	  {this.props.presets == undefined ||  this.props.presets.humid != "Humid" ?
               <input type="checkbox" id="humid" name="humidity" value="Humid" onChange={this.handleHumiditySelection}/> 
               : <input type="checkbox" id="humid" name="humidity" value="Humid" defaultChecked onChange={this.handleHumiditySelection}/> 
 	  }
