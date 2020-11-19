@@ -8,6 +8,7 @@ import {DATE_FORMAT, DATETIME_FORMAT} from "react-big-scheduler";
 import Sidebar from "./SideBar";
 import projectJSON from "../../data/projects.json";
 import {getEntryFromID} from "../../utils/utils.js";
+import CareReminderDownload from "./CareReminderDownload";
 
 class CareReminder extends Component {
 
@@ -187,7 +188,7 @@ class CareReminder extends Component {
             />
           </div>
 
-          <div className='profile-subtitle'> Weekly Care Reminder Calender </div>
+          <div className='profile-subtitle'> Care Reminder Calender </div>
           <div className='profile-sub-content'>
             <CareReminderCalendar
               settings={this.state.settings}
@@ -195,7 +196,8 @@ class CareReminder extends Component {
               care_cal_events={this.state.care_cal_events}
             />
           </div>
-          </div>
+          <CareReminderDownload />
+        </div>
       </div>
     );
   }
