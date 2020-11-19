@@ -56,10 +56,18 @@ export class Navbar extends React.Component {
                                     <NavLink className="navlink" to="/my-projects">
                                         <div className="menuItem">Your Profile</div>
                                     </NavLink>
-                                    <div className="menuItem">Messages</div>
-                                    <div className="menuItem">Care Reminders</div>
-                                    <div className="menuItem">Plant of the Day</div>
-                                    <div className="menuItem">Account Settings</div>
+                                    <NavLink className="navlink" to="/messages">
+                                        <div className="menuItem">Messages</div>
+                                    </NavLink>
+                                    <NavLink className="navlink" to="/care-reminder">
+                                        <div className="menuItem">Care Reminders</div>
+                                    </NavLink>
+                                    <NavLink className="navlink" to="/plant-of-the-day">
+                                        <div className="menuItem">Plant of the Day</div>
+                                    </NavLink>
+                                    <NavLink className="navlink" to="/account-settings">
+                                        <div className="menuItem">Account Settings</div>
+                                    </NavLink>
                                 </div>
                             </div>
                         </div>
