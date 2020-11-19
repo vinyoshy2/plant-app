@@ -1,20 +1,14 @@
 #project-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 1440px;
-    margin: 2rem auto 0 auto;
-    padding: 0 1rem;
+    margin-right: 2rem;
 }
 
 .filters-col {
-    flex: 0 0 25%;
-    max-width: 25%;
-}
-
-.filters-container {
-    background-color: #f0f0f0;
-    padding: 1.5rem 0;
+    width: 25%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: #f0f0f0;
 }
 
 .filters-header {
@@ -22,10 +16,11 @@
 }
 
 .filters-header .heading {
-    padding: 0 1.5rem 1.5rem 1.5rem;
+    padding-bottom: 1rem;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
+    padding: 2rem 2rem 1.5rem 2rem;
 }
 
 .filters-header .heading button {
@@ -33,9 +28,12 @@
     text-transform: uppercase;
 }
 
+.filters-container {
+    padding: 0 2rem 2rem 2rem;
+}
+
 .filter {
     margin-top: 1.5rem;
-    padding: 0 1.5rem;
 }
 
 .filter p {
@@ -47,7 +45,7 @@
     font-weight: 600;
     text-transform: uppercase;
     display: block;
-    width: 70%;
+    width: 80%;
     padding: 10px 30px;
     margin: 2rem auto 0 auto;
     border-radius: 30px;
@@ -65,8 +63,8 @@
 }
 
 .project-col {
-    flex: 0 0 70%;
-    margin-top: 1.5rem;
+    margin-left: 30%;
+    margin-top: 2rem;
 }
 
 .project-col h2 {

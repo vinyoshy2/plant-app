@@ -1,8 +1,7 @@
 import { NavLink as Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const Nav = styled.nav`
-  background: #FFFFFF;
+export const Nav = styled.nav` 
   display: flex-column;
   justify-content: space-between;
   z-index: 10;
@@ -22,6 +21,7 @@ export const NavLink = styled(Link)`
   cursor: pointer;
   font-size: 14pt;
   &.active {
+    font-weight: bold;
     background: #E0E0E0;
     color: #000000;
   }
@@ -30,7 +30,6 @@ export const NavLink = styled(Link)`
 export const NavMenu = styled.div`
   display: flex-column;
   align-items: center;
-  width: 15vw;
   // margin-right: -24px;
   /* Second Nav */
   /* margin-right: 24px; */

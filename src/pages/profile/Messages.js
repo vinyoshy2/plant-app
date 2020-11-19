@@ -5,13 +5,11 @@ import Conversation from "./MessagesConversation"
 class Messages extends Component {
   render() {
     return (
-      <div className='vertical-frame'>
+      <div id="profile">
         <Sidebar />
-        <div className='vertical-divider' />
         <div className='profile-content'>
           {/* Title */}
-          <div className='profile-title'>  Messages </div>
-          <div className='horizontal-divider'/>
+          <h1 className='profile-title'>  Messages </h1>
           <div className='profile-sub-content'>
             <div className='vertical-frame'>
               <Conversation />

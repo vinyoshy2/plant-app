@@ -1,46 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
+#profile {
+  margin-right: 2rem;
+}
+
 .vertical-frame {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .profile-content {
-  display:flex;
-  flex-direction: column;
-  width: 60vw;
+  margin-left: 30%;
+  margin-top: 3rem;
 }
 
 .profile-title {
-  padding-top: 3vw;
-  font-size: 30pt;
-  text-align:center;
-}
-
-.profile-subtitle {
-  margin-top: 1vw;
-  font-size: 20pt;
+  margin-bottom: 1.5rem;
 }
 
 .profile-sub-content {
-  padding-bottom: 1vw;
-  padding-top: 1vw;
-  padding-left: 0.5vw;
-  width: 100%;
-  position: relative;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
 .sidebar {
-  margin-top: 2vw;
-  padding-left: 10vw;
-  padding-right: 0.5vw;
+  width: 25%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: #f0f0f0;
+}
+
+.sidebar .vertical-frame:first-child {
+  border-bottom: 1px solid #ccc;
+  padding: 2rem 2rem 1.5rem 2rem;
+  align-items: center;
 }
 
 .profile-photo {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  border: 2px solid #C0C0C0;
+  
   object-fit: cover;
   margin-left: 10px;
   margin-right: 20px;
@@ -152,11 +155,12 @@
 
 .badge-image {
   display: inline-block;
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   margin-left: 10px;
   margin-right: 40px;
-  border: 2px solid #c99;
+  margin-bottom: 20px;
+  border: none;
   background-position: center center;
   object-fit: cover;
 }

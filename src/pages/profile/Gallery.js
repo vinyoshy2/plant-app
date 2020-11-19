@@ -8,17 +8,15 @@ import { GalleryItems } from "./GalleryData"
 class Gallery extends Component {
   render() {
     return (
-      <div className='vertical-frame'>
+      <div id="profile">
         <Sidebar />
-        <div className='vertical-divider' />
         <div className='profile-content'>
-          <div className='profile-title'> Gallery </div>
-          <div className='horizontal-divider'/>
+          <h1 className='profile-title'>Gallery</h1>
           <ul className='ul-no-bullets'>
             { GalleryItems.map((item, index) => {
               return (
                 <li key={index} className='album'>
-                  <div className='profile-subtitle'> {item.albumName} </div>
+                  <h2 className='profile-subtitle'> {item.albumName} </h2>
                   {/* Lightbox lib info: https://reactjsexample.com/an-image-lightbox-component-for-reactjs/*/}
                   <Lightbox images={ item.photos }
                             thumbnailWidth='150px'

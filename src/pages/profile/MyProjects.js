@@ -10,12 +10,10 @@ class MyProjects extends Component {
   }
   render() {
     return (
-      <div className='vertical-frame'>
+      <div id="profile">
         <Sidebar />
-        <div className='vertical-divider' />
         <div className='profile-content'>
-          <div className='profile-title'> My Projects </div>
-          <div className='horizontal-divider'/>
+          <h1 className='profile-title'> My Projects </h1>
           <div className='profile-sub-content'>
             <div className="project-card-container">
               {
