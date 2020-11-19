@@ -92,13 +92,22 @@ class UserInfo extends React.Component {
 		        <a class="close" onClick={this.props.closer}>
 		            &times;
 		        </a>
-		        <div class="user-popup-content">
-                            <div class="user-info">
-		                <div class="profile-pic" style={{backgroundImage: "url(" + "/" + this.props.profile_pic + ")"}}/>
-	                        <div class="username"> {this.props.username}</div>
-		            </div>
-		            <div class="messages"><Link to="/messages">Message</Link></div>
-		        </div>
+            <div class="user-popup-content">
+              <div class="user-info">
+                <div className="vertical-frame">
+                  <div class="profile-pic" style={{backgroundImage: "url(" + "/" + this.props.profile_pic + ")"}}/>
+                  <div className="horizontal-frame">
+                    <div class="username"> {this.props.username}</div>
+                    <div className='vertical-frame'>
+                      <img className='badge-image' src={'http://24.media.tumblr.com/tumblr_ly7xjxn3QI1r62v9yo1_1280.png'}/>
+                      <img className='badge-image' src={'http://24.media.tumblr.com/tumblr_ly7xjxn3QI1r62v9yo1_1280.png'}/>
+                      <img className='badge-image' src={'http://24.media.tumblr.com/tumblr_ly7xjxn3QI1r62v9yo1_1280.png'}/>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="messages"><Link to="/messages">Message</Link></div>
+            </div>
                     </div>
 	    );
 	}
