@@ -5,7 +5,7 @@ import "./Plants.css"
 function Plants(props) {
     return (
         <div id="Plants">
-	    <div class="section-text">Required plants: </div>
+	    <h4 class="section-text">Required plants</h4>
 	    <div id="Required">
 	        {
 		    props.required.map(plant => 
@@ -16,7 +16,7 @@ function Plants(props) {
 		    )
 		}
 	    </div>
-	    <div class="section-text">Alternatives: </div>
+	    <h4 class="section-text">Alternatives</h4>
 	    <div id="Alternate">
 	        {
 		    props.alt.map(plant => 

@@ -38,7 +38,7 @@ export class Equipment extends React.Component {
             );
         } else {
             return (
-                <div id="Equipment">
+                <div id="EquipmentAdded">
 		    {this.props.stage <=2 ? 
 	                <div class="no_bullets">
 		            <div class="equip_item">

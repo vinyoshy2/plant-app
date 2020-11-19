@@ -1,18 +1,18 @@
 #Plants {
     display: flex;
     flex-direction: column;
+    flex: 0 0 39%
 }
 
 #Required {
-    margin-left: 30%;
     margin-top: 10px;
     display: flex;
     column-gap: 20px;
     flex-direction: row;
+    margin-bottom: 20px;
 }
 
 #Alternate {
-    margin-left: 30%;
     margin-top: 10px;
     display: flex;
     column-gap: 20px;
@@ -26,9 +26,11 @@
 }
 
 .plant-pic {
-    height: 100px;
-    width: 100px;
-    background-size: 100px 100px;
+    height: 80px;
+    width: 80px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     border-radius: 50%;
-    display: inline-block;
+    margin-bottom: 5px;
 }

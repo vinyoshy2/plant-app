@@ -1,12 +1,19 @@
-#CareGuide {
+#CareGuide,
+#CareGuideAdded {
     background-color:#bbb;
-    padding: 10px 20px 10px 20px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     row-gap: 20px;
-    height: fit-content;
-    width: 20%;
 }
+#CareGuide {
+    flex: 0 0 24%;
+}
+
+#CareGuideAdded {
+    flex: 0 0 33%;
+}
+
 
 #care-title {
     font-size: 20px;

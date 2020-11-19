@@ -22,7 +22,16 @@
     grid-column-end: end;
     width: fit-content;
     height: fit-content;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+    background: #ccc;
+}
 
+#AddProject:hover {
+    cursor: pointer;
+    background: #000;
+    color: #ffffff;
 }
 
 .progress-segment {

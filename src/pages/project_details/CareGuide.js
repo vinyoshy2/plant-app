@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 function CareGuide(props) {
     if (props.added) {
 	return (
-            <div id="CareGuide">
+            <div id="CareGuideAdded">
 	        <div id="care-title"> Suggested Care Guide </div>
 	        <div class="care-item">
 	            <div class="care-icon" style={{backgroundImage: "url(/water.png)"}}/>
