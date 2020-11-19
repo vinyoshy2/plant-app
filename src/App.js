@@ -13,6 +13,7 @@ import Messages from "./pages/profile/Messages.js"
 import CareReminder from "./pages/profile/CareReminder.js"
 import ProjectList from "./pages/project_list/ProjectList.js"
 import PlantOfTheDay from "./pages/plant_of_the_day/PlantOfTheDay.js"
+import Quiz from "./pages/quiz/Quiz.js"
 
 export default class App extends React.Component {
 
@@ -59,6 +60,7 @@ export default class App extends React.Component {
 		        <Route exact path={"/badges"} render={() => <Badges />} />
 		        <Route exact path={"/messages"} render={() => <Messages />} />
  		        <Route exact path={"/plant-of-the-day"} render={() => <PlantOfTheDay />} />
+		        <Route exact path={"/quiz"} render={() => <Quiz />}/>
 		        <Route exact path={"/care-reminder"} 
 		            render={() =>  <CareReminder added={this.state.added}/>}/>
 		        <Route exact path={"/project-list"}
