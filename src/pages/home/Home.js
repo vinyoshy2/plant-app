@@ -2,6 +2,10 @@ import './Home.css';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { NavLink } from "react-router-dom";
+import SpiderPlant from "./spider-plant.jpg";
+import ProjectCard from "../project_list/ProjectCard.js"
+import "../project_list/ProjectList.css"
+import projectJSON from '../../data/projects.json';
 
 function Home() {
   return (
@@ -9,7 +13,6 @@ function Home() {
         <Navbar />
         <POD />
         <FeaturedProjects />
-        <UpcomingCareReminders />
     </div>
   );
 }
@@ -94,17 +97,17 @@ class POD extends React.Component {
     }
     
     render() {
-        var plantName = "Golden Pothos";
-        var plantDesc = "Pothos is arguably the easiest of all houseplants to grow. It has pointed, heart-shaped green leaves, sometimes variegated with white, yellow, or pale green. While pothos likes bright, indirect light it can thrive in areas that don't get a lot of sunlight or have only fluorescent lighting. It's an excellent plant for locations such as offices and dorm rooms.";
+        var plantName = "Spider Plant";
+        var plantDesc = "The spider plant is considered one of the most adaptable of houseplants and the easiest to grow. This plant can grow in a wide range of conditions and suffers from few problems, other than brown tips. The spider plant is so named because of its spider-like plants, or spiderettes, which dangle down from the mother plant like spiders on a web. Available in green or variegated varieties, these spiderettes often start out as small white flowers"
         return (
-            <div className="PODwrapper">
+            <div className="PODwrapper" style={{ backgroundImage:`url(${SpiderPlant})` }}>
                 <div className="PODtext">
-                    <div className="POD">
+                    <h2 className="POD">
                         PLANT OF THE DAY
-                    </div>
-                    <div className="plantName">
+                    </h2>
+                    <h3 className="plantName">
                         {plantName}
-                    </div>
+                    </h3>
                     <div className="plantDesc">
                         {plantDesc}
                     </div>
@@ -134,13 +137,21 @@ class FeaturedProjects extends React.Component {
         var ProjectName2 = "Project Name 2";
         var ProjectName3 = "Project Name 3";
         var ProjectName4 = "Project Name 4";
+        var featuredProjectsArray = [projectJSON["entries"][0],projectJSON["entries"][1],projectJSON["entries"][2]];
         return (
             <div>
-                <div id="FeaturedProjects">
+                <h2 id="FeaturedProjects">
                     {FeaturedProjects}
-                </div>
+                </h2>
                 <div className="FeaturedProjectsWrapper">
-                    <div class="FeaturedProject">
+                <div className="project-card-container">
+                    { 
+                        featuredProjectsArray.map(project => 
+                    <ProjectCard id={project.id} added={this.props.added} increment={()=>this.props.increment(project.id)} decrement={()=>this.props.decrement(project.id)} add={()=>this.props.add(project.id)}/>
+                    )
+                    }
+                </div>
+                    {/* <div class="FeaturedProject">
                         <img class="FPimg" src="https://avatars0.githubusercontent.com/u/3456749" width="600" height="400"></img>
                         <div class="projectName">{ProjectName1}</div>
                     </div>
@@ -155,14 +166,16 @@ class FeaturedProjects extends React.Component {
                     <div class="FeaturedProject">
                         <img class="FPimg" src="https://avatars0.githubusercontent.com/u/3456749" width="600" height="400"></img>
                         <div class="projectName">{ProjectName4}</div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         )
     }
 }
 
-class UpcomingCareReminders extends React.Component {
+export default Home;
+
+/*class UpcomingCareReminders extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -257,8 +270,7 @@ class UpcomingCareReminders extends React.Component {
         )
     }
 }
-
-export default Home;
+*/
 
 /*
 function QuestionCount(props) {
