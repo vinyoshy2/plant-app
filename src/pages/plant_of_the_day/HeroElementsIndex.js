@@ -32,7 +32,7 @@ function HeroSection() {
         </HeroP>
         <HeroBtnWrapper>
           <Button
-            to='panel'
+            to='Spider Plant'
             smooth={true}
             duration={500}
             spy={true}
