@@ -17,13 +17,6 @@ class CareReminderSettings extends Component {
   // Input:
   //   settings: an array of object with format same with cr_dataSource.
 
-  // TODO: not sure whether this will automatically update the table.
-  insertCareSettings(settings) {
-    for (let i = 0; i < settings.length; ++i) {
-      this.props.settings.push(settings[i]);
-    }
-  }
-
   onGridRowsUpdated = ({ fromRow, toRow, updated }) => {
     this.setState(state => {
       const rows = this.props.settings;

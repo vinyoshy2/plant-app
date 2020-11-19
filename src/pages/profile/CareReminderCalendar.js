@@ -67,14 +67,13 @@ class CareReminderCalendar extends React.Component {
       });
     moment.locale('en');
     schedulerData.setLocaleMoment(moment);
-    schedulerData.setResources(available_times);
     this.state = {
       schedulerData: schedulerData,
-      events: events
     }
   }
   render() {
     const {schedulerData} = this.state;
+    schedulerData.setResources(this.props.care_cal_header);
     schedulerData.setEvents(this.props.care_cal_events);
     return (
         <Scheduler
@@ -95,7 +94,7 @@ class CareReminderCalendar extends React.Component {
   }
   prevClick = (schedulerData)=> {
     schedulerData.prev();
-    schedulerData.setEvents(this.state.events);
+    schedulerData.setEvents(this.props.care_cal_events);
     this.setState({
       viewModel: schedulerData
     })
@@ -103,7 +102,7 @@ class CareReminderCalendar extends React.Component {
 
   nextClick = (schedulerData)=> {
     schedulerData.next();
-    schedulerData.setEvents(this.state.events);
+    schedulerData.setEvents(this.props.care_cal_events);
     this.setState({
       viewModel: schedulerData
     })
@@ -111,7 +110,7 @@ class CareReminderCalendar extends React.Component {
 
   onViewChange = (schedulerData, view) => {
     schedulerData.setViewType(view.viewType, view.showAgenda, view.isEventPerspective);
-    schedulerData.setEvents(this.state.events);
+    schedulerData.setEvents(this.props.care_cal_events);
     this.setState({
       viewModel: schedulerData
     })
@@ -119,7 +118,7 @@ class CareReminderCalendar extends React.Component {
 
   onSelectDate = (schedulerData, date) => {
     schedulerData.setDate(date);
-    schedulerData.setEvents(this.state.events);
+    schedulerData.setEvents(this.props.care_cal_events);
     this.setState({
       viewModel: schedulerData
     })
@@ -195,7 +194,7 @@ class CareReminderCalendar extends React.Component {
   onScrollRight = (schedulerData, schedulerContent, maxScrollLeft) => {
     if(schedulerData.ViewTypes === ViewTypes.Day) {
       schedulerData.next();
-      schedulerData.setEvents(this.state.events);
+      schedulerData.setEvents(this.props.care_cal_events);
       this.setState({
         viewModel: schedulerData
       });
@@ -207,7 +206,7 @@ class CareReminderCalendar extends React.Component {
   onScrollLeft = (schedulerData, schedulerContent, maxScrollLeft) => {
     if(schedulerData.ViewTypes === ViewTypes.Day) {
       schedulerData.prev();
-      schedulerData.setEvents(this.state.events);
+      schedulerData.setEvents(this.props.care_cal_events);
       this.setState({
         viewModel: schedulerData
       });

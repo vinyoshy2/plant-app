@@ -4,7 +4,6 @@ import moment from "moment";
 import CareReminderCalendar from "./CareReminderCalendar";
 import CareReminderSettings from "./CareReminderSetting"
 import {capitalize} from "../../utils/utils";
-import {cr_dataSource} from "./CareReminderData";
 import {DATE_FORMAT, DATETIME_FORMAT} from "react-big-scheduler";
 import Sidebar from "./SideBar";
 import projectJSON from "../../data/projects.json";
@@ -14,6 +13,8 @@ class CareReminder extends Component {
 
   constructor(props) {
     super(props);
+
+    // Generate calendar setting table based on added project.
     let added_ids = Object.keys(this.props.added);
     let entries = [];
     for (let i = 0; i < added_ids.length; i++) {
@@ -24,26 +25,44 @@ class CareReminder extends Component {
             id: info["name"] + " - " + plant_entry["name"],
             project: info["name"],
             plant: plant_entry["name"],
-            harvest: parseInt(info["harvesting"]),
-            fertilize: parseInt(info["fertilizing"]),
-            water: parseInt(info["watering"]),
-            dust: parseInt(info["dusting"]),
+            // The reason for " || 0" below:
+            //     parseInt might return null, which will stuck the logic.
+            harvest: parseInt(info["harvesting"]) || 0,
+            fertilize: parseInt(info["fertilizing"]) || 0,
+            water: parseInt(info["watering"]) || 0,
+            dust: parseInt(info["dusting"]) || 0,
+
           }
         )
       );
     }
 
+    // Extract the header (left most column) for Calendar.
+    let headers = [];
+    entries.forEach(plant_entry => {
+      headers.push({
+        id: plant_entry.id,
+        name: plant_entry.id,
+      });
+    })
+
     this.state = {
-      // settings: entries,
-      settings: cr_dataSource,
+      settings: entries,
       care_available_time: '08:30',
+      care_cal_header: headers,
       care_cal_events: []
     };
 
+    // Initialize all calendar events based on care reminder settings.
     this.state.care_cal_events = this.getAllCalendarEvents(this.state.settings);
 
     this.handleSettingChange = this.handleSettingChange.bind(this);
   }
+
+  /**
+   * Handler function when care reminder settings are updated by the user.
+   * This function is called by CareReminderSetting class.
+   * */
 
   handleSettingChange = (new_settings) => {
     this.setState({settings: new_settings}, () => {
@@ -57,8 +76,11 @@ class CareReminder extends Component {
   }
 
   /**
+   * Get all calendar events for all plants in the settings.
+   *
    * @param  {object} setting: full care calendar setting
    *
+   * @return {array} all_events: array of objects. Each objects is a recursive event.
    * */
   getAllCalendarEvents = (setting) => {
     // Refresh calendars.
@@ -74,6 +96,8 @@ class CareReminder extends Component {
   }
 
   /**
+   * Get all calendar events for a single plant in the settings.
+   *
    * @param  {object} setting
    * @param  {number} start_event_id: start event_id for each plant.
    *
@@ -87,7 +111,8 @@ class CareReminder extends Component {
     // Get events for different care actions
     for (let i = 0; i < care_actions.length; ++i) {
       let action = care_actions[i];
-      if (!(action in setting)) continue;
+      // If the action is not available
+      if (!(action in setting) || !setting[action]) continue;
       single_plant_events.push(
         this.getCalEventSingleAction(
           setting.id,
@@ -103,6 +128,8 @@ class CareReminder extends Component {
   }
 
   /**
+   * Get all calendar events for an action of a single plant in the settings.
+   *
    * @param  {object} plant_id: the id of plant, unique cross projects.
    * @param  {string} reminding_time: the time for reminder on each day.
    * @param  {string} action: name of care action. E.g. water, fertilize.
@@ -164,6 +191,7 @@ class CareReminder extends Component {
           <div className='profile-sub-content'>
             <CareReminderCalendar
               settings={this.state.settings}
+              care_cal_header={this.state.care_cal_header}
               care_cal_events={this.state.care_cal_events}
             />
           </div>
