@@ -40,7 +40,7 @@ class CareReminder extends Component {
       care_cal_events: []
     };
 
-    this.state.care_cal_events = this.getAllCalendarEvents(entries)
+    this.state.care_cal_events = this.getAllCalendarEvents(this.state.settings);
 
     this.handleSettingChange = this.handleSettingChange.bind(this);
   }
@@ -140,12 +140,15 @@ class CareReminder extends Component {
         <div className='profile-content'>
           <div className='profile-title'> Plant Care Calendar </div>
           <div className='horizontal-divider'/>
+          {/*
+          // Upcoming Caring Events
           <div className='profile-subtitle'> Upcoming Caring Events </div>
           <div className='profile-sub-content'>
             <div className='list-title'> Today </div>
             <div className='list-item'> <b>9:30 AM</b>  Dust leaves of Bonsai in Bedroom </div>
             <div className='list-item'> <b>5:00 PM</b>  Water Sill in Kitchen </div>
           </div>
+          */}
 
           <div className='profile-subtitle'> Care Reminder Settings </div>
           <div className='profile-sub-content'>
