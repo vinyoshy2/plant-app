@@ -110,6 +110,12 @@
   margin-bottom: 15px;
 }
 
+.download_button {
+  padding-left: 2px;
+  padding-top: 5px;
+  margin-bottom: 20px;
+}
+
 /* For MyProjects */
 .grid-layout {
   display: grid;
