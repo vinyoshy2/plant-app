@@ -60,7 +60,7 @@ export default class App extends React.Component {
 		        <Route exact path={"/messages"} render={() => <Messages />} />
  		        <Route exact path={"/plant-of-the-day"} render={() => <PlantOfTheDay />} />
 		        <Route exact path={"/care-reminder"} 
-		            render={() =>  <CareReminder added={this.props.added}/>}/>
+		            render={() =>  <CareReminder added={this.state.added}/>}/>
 		        <Route exact path={"/project-list"}
 		            render={() => 
                                <ProjectList added={this.state.added} increment={this.increment} decrement={this.decrement} add={this.add_new}/>

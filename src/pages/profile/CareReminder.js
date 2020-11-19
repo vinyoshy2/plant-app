@@ -4,11 +4,32 @@ import CareReminderCalendar from "./CareReminderCalendar";
 import CareReminderSettings from "./CareReminderSetting"
 import {cr_dataSource} from "./CareReminderData";
 import Sidebar from "./SideBar";
+import projectJSON from "../../data/projects.json";
+import {getEntryFromID} from "../../utils/utils.js";
 
 class CareReminder extends Component {
-  state = {
-    settings: cr_dataSource,
-    cal_events: []
+
+  constructor(props) {
+    super(props);
+    var added_ids = Object.keys(this.props.added);
+    var entries = []
+    for (var i=0; i < added_ids.length; i++) {
+        var info = getEntryFromID(parseInt(added_ids[i]), projectJSON);
+	info["required_plants"].forEach(plant_entry =>
+	    entries.push(
+                {
+	            id: info["name"] + " - " + plant_entry["name"],
+		    project: info["name"],
+		    plant: plant_entry["name"],
+		    harvest: parseInt(info["harvesting"]),
+		    fertilize: parseInt(info["fertilizing"]),
+		    water: parseInt(info["watering"]),
+		    dust: parseInt(info["dusting"]),
+		}
+	    )
+	);
+    }
+    this.state = { settings: entries, calEvents: []}
   }
 
   handleSettingChange = (new_settings) => {
