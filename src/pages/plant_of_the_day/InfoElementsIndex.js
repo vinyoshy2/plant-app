@@ -6,8 +6,8 @@ import { ReactComponent as Water } from "feather-icons/dist/icons/droplet.svg";
 import { ReactComponent as Sun } from "feather-icons/dist/icons/sun.svg";
 import { ReactComponent as Temperature } from "feather-icons/dist/icons/wind.svg";
 import { ReactComponent as Flag } from "feather-icons/dist/icons/flag.svg";
-
 import { ReactComponent as Difficulty } from "feather-icons/dist/icons/book-open.svg";
+import { ReactComponent as QuestionMark } from "@ant-design/icons/svg/outline/question-circle.svg";
 
 import {
   InfoContainer,
@@ -28,8 +28,10 @@ import {
   Controls,
   SubtitleContainer,
   SubtitleImg,
-  Subtitle2
+  Subtitle2,
+  Subtitle3
 } from './InfoElements';
+import { Tooltip } from 'react-bootstrap';
 
 const InfoSection = ({
   lightBg,

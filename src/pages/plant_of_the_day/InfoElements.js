@@ -14,7 +14,7 @@ export const InfoContainer = styled.div`
 export const InfoWrapper = styled.div`
   display: grid;
   z-index: 1;
-  height: 860px;
+  height: 920px;
   width: 100%;
   max-width: 1100px;
   margin-right: auto;
@@ -119,6 +119,15 @@ export const Subtitle2 = styled.p`
   font-size: 20px;
   line-height: 24px;
   color: ${({ darkText }) => (darkText ? '#010606' : '#fff')};
+`;
+
+export const Subtitle3 = styled.p`
+  max-width: 440px;
+  margin-left: 8px;
+  padding-top: 7px;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ff421c;
 `;
 
 export const BtnWrap = styled.div`
