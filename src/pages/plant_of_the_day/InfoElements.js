@@ -87,10 +87,37 @@ export const Heading = styled.h1`
   }
 `;
 
-export const Subtitle = styled.p`
+export const SubtitleContainer = styled.p`
+  height: 40px;
   max-width: 440px;
   margin-bottom: 35px;
-  font-size: 18px;
+  line-height: 24px;
+  background: #2a2a2a;
+  display: flex;
+`;
+
+export const SubtitleImg = styled.div`
+  height: 40px;
+  width: 4px;
+  padding-top: 6px;
+  padding-left: 3px;
+  color: #000;
+`;
+
+export const Subtitle = styled.p`
+  max-width: 440px;
+  margin-left: 35px;
+  padding-top: 7px;
+  font-size: 20px;
+  line-height: 24px;
+  color: ${({ darkText }) => (darkText ? '#010606' : '#fff')};
+`;
+
+export const Subtitle2 = styled.p`
+  max-width: 440px;
+  margin-left: 30px;
+  padding-top: 7px;
+  font-size: 20px;
   line-height: 24px;
   color: ${({ darkText }) => (darkText ? '#010606' : '#fff')};
 `;
