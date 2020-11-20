@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-scroll';
+import tw from "twin.macro";
 
 export const InfoContainer = styled.div`
   color: #fff;
@@ -105,6 +106,7 @@ export const ImgWrap = styled.div`
 `;
 
 export const Img = styled.img`
+  max-height: 750px;
   width: 100%;
   margin-top: 0;
   margin-right: 0;
@@ -134,3 +136,14 @@ export const Button = styled(Link)`
     
   }
 `;
+export const Controls = tw.div`w-64 ml-3 flex items-center`;
+
+const PrimaryButtonBase = tw.button`px-8 py-3 font-bold rounded bg-blue-500 text-gray-100 hocus:bg-green-400 hocus:text-gray-200 focus:shadow-outline focus:outline-none transition duration-300`;
+const ControlButton = styled(PrimaryButtonBase)`
+  ${tw`mt-4 sm:mt-0 first:ml-0 ml-6 rounded-full p-2`}
+  svg {
+    ${tw`w-6 h-6`}
+  }
+`;
+export const PrevButton = tw(ControlButton)`first:ml-40 w-16 bg-gray-500 hover:bg-green-400 rounded sm:rounded-full sm:rounded-br-full`;
+export const NextButton = tw(ControlButton)`first:ml-6 w-16 bg-gray-500 hover:bg-green-400 rounded sm:rounded-full sm:rounded-br-full`;

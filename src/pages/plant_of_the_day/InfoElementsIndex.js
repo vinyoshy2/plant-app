@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
+import { ReactComponent as ChevronLeftIcon } from "feather-icons/dist/icons/chevron-left.svg";
+import { ReactComponent as ChevronRightIcon } from "feather-icons/dist/icons/chevron-right.svg";
 
 import {
   InfoContainer,
@@ -14,7 +16,10 @@ import {
   BtnWrap,
   ImgWrap,
   Img,
-  Button
+  Button,
+  PrevButton,
+  NextButton,
+  Controls
 } from './InfoElements';
 
 const InfoSection = ({
@@ -37,9 +42,19 @@ const InfoSection = ({
   const [picIndex, setPicIndex] = useState(0)
   const [pic, setPic] = useState(img[picIndex]);
   
-  function returnToFirstPic() {
-    if (picIndex == img.length-1) {
-      setPicIndex(0);
+  function changePicIndex(moveRight) {
+    if (moveRight == true) {
+      if (picIndex != img.length-1) {
+        setPicIndex(picIndex+1)
+      } else {
+        setPicIndex(0)
+      }
+    } else {
+      if (picIndex == 0) {
+        setPicIndex(img.length-1)
+      } else {
+        setPicIndex(picIndex-1)
+      }
     }
   }
 
@@ -71,7 +86,14 @@ const InfoSection = ({
               <ImgWrap>
                 <Img src={pic} alt={alt} />
               </ImgWrap>
-              <Button onMouseDown={() => {setPicIndex(picIndex+1)}} onClick={() => {setPic(img[picIndex]); returnToFirstPic()}}>More Photos</Button>
+              <BtnWrap>
+              <Controls>
+              <PrevButton onMouseDown={() => {changePicIndex(false)}} onClick={() => {setPic(img[picIndex])}}><ChevronLeftIcon/></PrevButton>
+              </Controls>
+              <Controls>
+              <NextButton onMouseDown={() => {changePicIndex(true)}} onClick={() => {setPic(img[picIndex])}}><ChevronRightIcon/></NextButton>
+              </Controls>
+              </BtnWrap>
             </Column2>
           </InfoRow>
         </InfoWrapper>
