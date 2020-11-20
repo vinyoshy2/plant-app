@@ -15,11 +15,14 @@ import {
 } from './HeroElements';
 
 function HeroSection() {
+
   const [hover, setHover] = useState(false);
 
   const onHover = () => {
     setHover(!hover);
   };
+
+
   return (
     <HeroContainer id='home'>
       <HeroBg>
@@ -32,7 +35,7 @@ function HeroSection() {
         </HeroP>
         <HeroBtnWrapper>
           <Button
-            to='Spider Plant'
+            to='panel'
             smooth={true}
             duration={500}
             spy={true}

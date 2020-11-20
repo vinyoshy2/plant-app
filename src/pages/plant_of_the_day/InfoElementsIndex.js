@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 
 import {
@@ -33,7 +33,16 @@ const InfoSection = ({
   dark,
   dark2
 }) => {
-  console.log(primary);
+
+  const [picIndex, setPicIndex] = useState(0)
+  const [pic, setPic] = useState(img[picIndex]);
+  
+  function returnToFirstPic() {
+    if (picIndex == img.length-1) {
+      setPicIndex(0);
+    }
+  }
+
   return (
     <>
       <InfoContainer lightBg={lightBg} id={id}>
@@ -60,8 +69,9 @@ const InfoSection = ({
             </Column1>
             <Column2>
               <ImgWrap>
-                <Img src={img} alt={alt} />
+                <Img src={pic} alt={alt} />
               </ImgWrap>
+              <Button onMouseDown={() => {setPicIndex(picIndex+1)}} onClick={() => {setPic(img[picIndex]); returnToFirstPic()}}>More Photos</Button>
             </Column2>
           </InfoRow>
         </InfoWrapper>

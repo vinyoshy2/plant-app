@@ -30,6 +30,7 @@ import {
   } from './PanelElements';
 
   export default () => {
+
     const [sliderRef, setSliderRef] = useState(null);
     const sliderSettings = {
       arrows: false,
@@ -133,7 +134,7 @@ import {
                 <Description>{card.description}</Description>
               </TextInfo>
           <Button
-            to= 'Aloe Vera'
+            to= ""
             smooth={true}
             duration={500}
             spy={true}
