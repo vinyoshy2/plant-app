@@ -163,12 +163,10 @@ class CareReminder extends Component {
 
   render() {
     return (
-      <div className='vertical-frame'>
+      <div id="profile">
         <Sidebar />
-        <div className='vertical-divider' />
         <div className='profile-content'>
-          <div className='profile-title'> Plant Care Calendar </div>
-          <div className='horizontal-divider'/>
+          <h1 className='profile-title'>Plant Care Calendar</h1>
           {/*
           // Upcoming Caring Events
           <div className='profile-subtitle'> Upcoming Caring Events </div>
@@ -179,7 +177,7 @@ class CareReminder extends Component {
           </div>
           */}
 
-          <div className='profile-subtitle'> Care Reminder Settings </div>
+          <h2 className='profile-subtitle'> Care Reminder Settings </h2>
           <div className='profile-sub-content'>
             {/* Refer to lib in https://reactjsexample.com/empower-your-data-with-the-best-react-data-grid/*/}
             <p className='content-text'> Reminder Time: 9:30 AM, 5:00 PM</p>
@@ -189,7 +187,7 @@ class CareReminder extends Component {
             />
           </div>
 
-          <div className='profile-subtitle'> Care Reminder Calender </div>
+          <h2 className='profile-subtitle'> Care Reminder Calender </h2>
           <div className='profile-sub-content'>
             <CareReminderCalendar
               settings={this.state.settings}
