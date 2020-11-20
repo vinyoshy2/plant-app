@@ -41,6 +41,27 @@
             "user": "Bob",
             "likes": 3,
             "plant_pic": "project2-3.jpeg"
-        }
+        },
+        {
+            "id": 6,
+                "profile_pic": "profile_pic.jpg",
+                "user": "Alice",
+                "likes": 5,
+                "plant_pic": "corner2.jpg"
+            },
+            {
+            "id": 7,
+                "profile_pic": "profile_pic.jpg",
+                "user": "Carol",
+                "likes": 10,
+                "plant_pic": "corner1.jpg"
+            },
+            {
+            "id": 8,
+                "profile_pic": "profile_pic.jpg",
+                "user": "Bob",
+                "likes": 12,
+                "plant_pic": "corner3.jpg"
+            }
     ]
 }
