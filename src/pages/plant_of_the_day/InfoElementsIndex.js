@@ -28,8 +28,7 @@ import {
   Controls,
   SubtitleContainer,
   SubtitleImg,
-  Subtitle2,
-  Subtitle3
+  Subtitle2
 } from './InfoElements';
 import { Tooltip } from 'react-bootstrap';
 

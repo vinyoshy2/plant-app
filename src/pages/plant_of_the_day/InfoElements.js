@@ -121,15 +121,6 @@ export const Subtitle2 = styled.p`
   color: ${({ darkText }) => (darkText ? '#010606' : '#fff')};
 `;
 
-export const Subtitle3 = styled.p`
-  max-width: 440px;
-  margin-left: 8px;
-  padding-top: 7px;
-  font-size: 20px;
-  line-height: 24px;
-  color: #ff421c;
-`;
-
 export const BtnWrap = styled.div`
   display: flex;
   justify-content: flex-start;
