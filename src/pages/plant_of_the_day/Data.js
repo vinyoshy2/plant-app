@@ -16,7 +16,14 @@ export const homeObjOne = {
     alt: 'Phalaenopsis',
     dark: false,
     primary: false,
-    darkText: true
+    darkText: true,
+    attributes: [
+      "2 times / Week",
+      "Full",
+      "60F ~ 90F",
+      "Bedroom",
+      "Beginner"
+    ]
   };
 
 export const homeObjTwo = {
@@ -37,7 +44,14 @@ export const homeObjTwo = {
     alt: 'Spider Plant',
     dark: true,
     primary: true,
-    darkText: false
+    darkText: false,
+    attributes: [
+      "2 times / Week",
+      "Full",
+      "60F ~ 90F",
+      "Bedroom",
+      "Beginner"
+    ]
   };
   
   export const homeObjThree = {
@@ -58,7 +72,14 @@ export const homeObjTwo = {
     alt: 'Aloe Vera',
     dark: false,
     primary: false,
-    darkText: true
+    darkText: true,
+    attributes: [
+      "2 times / Week",
+      "Full",
+      "60F ~ 90F",
+      "Bedroom",
+      "Beginner"
+    ]
   };
   
   export const homeObjFour = {
@@ -79,7 +100,14 @@ export const homeObjTwo = {
     alt: 'Mojito Mint',
     dark: true,
     primary: true,
-    darkText: false
+    darkText: false,
+    attributes: [
+      "2 times / Week",
+      "Full",
+      "60F ~ 90F",
+      "Bedroom",
+      "Beginner"
+    ]
   };
 
   export const homeObjFive = {
@@ -100,7 +128,14 @@ export const homeObjTwo = {
     alt: 'Lavender Tree',
     dark: false,
     primary: false,
-    darkText: true
+    darkText: true,
+    attributes: [
+      "2 times / Week",
+      "Full",
+      "60F ~ 90F",
+      "Bedroom",
+      "Beginner"
+    ]
   };
  
   

@@ -92,7 +92,6 @@ export const SubtitleContainer = styled.p`
   max-width: 440px;
   margin-bottom: 35px;
   line-height: 24px;
-  background: #2a2a2a;
   display: flex;
 `;
 
@@ -101,7 +100,7 @@ export const SubtitleImg = styled.div`
   width: 4px;
   padding-top: 6px;
   padding-left: 3px;
-  color: #000;
+  color: #10c753;
 `;
 
 export const Subtitle = styled.p`
@@ -115,7 +114,7 @@ export const Subtitle = styled.p`
 
 export const Subtitle2 = styled.p`
   max-width: 440px;
-  margin-left: 30px;
+  margin-left: 8px;
   padding-top: 7px;
   font-size: 20px;
   line-height: 24px;

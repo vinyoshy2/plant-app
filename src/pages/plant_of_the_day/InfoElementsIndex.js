@@ -45,7 +45,8 @@ const InfoSection = ({
   primary,
   darkText,
   dark,
-  dark2
+  dark2,
+  attributes
 }) => {
 
   const [picIndex, setPicIndex] = useState(0)
@@ -80,27 +81,27 @@ const InfoSection = ({
                 <SubtitleContainer>
                   <SubtitleImg><Water/></SubtitleImg>
                   <Subtitle darkText={darkText}>Water:</Subtitle>
-                  <Subtitle2 darkText={darkText}>{description}</Subtitle2>
+                  <Subtitle2 darkText={darkText}>{attributes[0]}</Subtitle2>
                 </SubtitleContainer>
                 <SubtitleContainer>
                   <SubtitleImg><Sun/></SubtitleImg>
                   <Subtitle darkText={darkText}>Light:</Subtitle>
-                  <Subtitle2 darkText={darkText}>{description}</Subtitle2>
+                  <Subtitle2 darkText={darkText}>{attributes[1]}</Subtitle2>
                 </SubtitleContainer>
                 <SubtitleContainer>
                   <SubtitleImg><Temperature/></SubtitleImg>
                   <Subtitle darkText={darkText}>Temperature:</Subtitle>
-                  <Subtitle2 darkText={darkText}>{description}</Subtitle2>
+                  <Subtitle2 darkText={darkText}>{attributes[2]}</Subtitle2>
                 </SubtitleContainer>
                 <SubtitleContainer>
                   <SubtitleImg><Flag/></SubtitleImg>
                   <Subtitle darkText={darkText}>Site:</Subtitle>
-                  <Subtitle2 darkText={darkText}>{description}</Subtitle2>
+                  <Subtitle2 darkText={darkText}>{attributes[3]}</Subtitle2>
                 </SubtitleContainer>
                 <SubtitleContainer>
                   <SubtitleImg><Difficulty/></SubtitleImg>
                   <Subtitle darkText={darkText}>Difficulty:</Subtitle>
-                  <Subtitle2 darkText={darkText}>{description}</Subtitle2>
+                  <Subtitle2 darkText={darkText}>{attributes[4]}</Subtitle2>
                 </SubtitleContainer>
                 
                 <BtnWrap>
