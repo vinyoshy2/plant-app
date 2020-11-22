@@ -40,7 +40,7 @@ export const Title = tw.h5`text-2xl font-bold`;
 export const RatingsInfo = styled.div`
   ${tw`flex items-center sm:ml-4 mt-2 sm:mt-0`}
   svg {
-    ${tw`w-6 h-6 text-yellow-500 fill-current`}
+    ${tw`w-6 h-6 text-red-500 fill-current`}
   }
 `;
 export const Rating = tw.span`ml-2 font-bold`;

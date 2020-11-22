@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-scroll';
+import tw from "twin.macro";
 
 export const InfoContainer = styled.div`
   color: #fff;
@@ -13,7 +14,7 @@ export const InfoContainer = styled.div`
 export const InfoWrapper = styled.div`
   display: grid;
   z-index: 1;
-  height: 860px;
+  height: 920px;
   width: 100%;
   max-width: 1100px;
   margin-right: auto;
@@ -86,10 +87,36 @@ export const Heading = styled.h1`
   }
 `;
 
-export const Subtitle = styled.p`
+export const SubtitleContainer = styled.p`
+  height: 40px;
   max-width: 440px;
   margin-bottom: 35px;
-  font-size: 18px;
+  line-height: 24px;
+  display: flex;
+`;
+
+export const SubtitleImg = styled.div`
+  height: 40px;
+  width: 4px;
+  padding-top: 6px;
+  padding-left: 3px;
+  color: #10c753;
+`;
+
+export const Subtitle = styled.p`
+  max-width: 440px;
+  margin-left: 35px;
+  padding-top: 7px;
+  font-size: 20px;
+  line-height: 24px;
+  color: ${({ darkText }) => (darkText ? '#010606' : '#fff')};
+`;
+
+export const Subtitle2 = styled.p`
+  max-width: 440px;
+  margin-left: 8px;
+  padding-top: 7px;
+  font-size: 20px;
   line-height: 24px;
   color: ${({ darkText }) => (darkText ? '#010606' : '#fff')};
 `;
@@ -105,6 +132,7 @@ export const ImgWrap = styled.div`
 `;
 
 export const Img = styled.img`
+  max-height: 750px;
   width: 100%;
   margin-top: 0;
   margin-right: 0;
@@ -134,3 +162,14 @@ export const Button = styled(Link)`
     
   }
 `;
+export const Controls = tw.div`w-64 ml-3 flex items-center`;
+
+const PrimaryButtonBase = tw.button`px-8 py-3 font-bold rounded bg-blue-500 text-gray-100 hocus:bg-green-400 hocus:text-gray-200 focus:shadow-outline focus:outline-none transition duration-300`;
+const ControlButton = styled(PrimaryButtonBase)`
+  ${tw`mt-4 sm:mt-0 first:ml-0 ml-6 rounded-full p-2`}
+  svg {
+    ${tw`w-6 h-6`}
+  }
+`;
+export const PrevButton = tw(ControlButton)`first:ml-40 w-16 bg-gray-500 hover:bg-green-400 rounded sm:rounded-full sm:rounded-br-full`;
+export const NextButton = tw(ControlButton)`first:ml-6 w-16 bg-gray-500 hover:bg-green-400 rounded sm:rounded-full sm:rounded-br-full`;
