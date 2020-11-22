@@ -1,5 +1,4 @@
 import './Home.css';
-import PropTypes from 'prop-types';
 import React from 'react';
 import { NavLink } from "react-router-dom";
 import SpiderPlant from "./spider-plant.jpg";
@@ -33,18 +32,18 @@ export class Navbar extends React.Component {
     }
     
     render() {
-        var appname = "Thrive";
-        var username = "Alice";
+        let appname = "Thrive";
+        let username = "Alice";
         return (
             <div>
                 <div className="navbar">
                     <NavLink className="appname" to="/">
-                        <img src={Logo} alt="thrive" width="120px"/>
+                        <img src={Logo} alt={appname} width="120px"/>
                     </NavLink>
                     <div className="navbar-right">
                         <div className="dropDown">
                             <div className="username">
-                                {'Hello, ' + username + '!'}
+                                <NavLink className='nav-no-underline' to='/my-projects'> {'Hello, ' + username + '!'} </NavLink>
                             </div>
                             <div className={ this.state.menu ? "dropdown-content" : "dropdown-content-show"}>
                                 <div className="menuItems">
