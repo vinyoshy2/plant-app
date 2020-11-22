@@ -10,7 +10,7 @@ function Plants(props) {
 	        {
 		    props.required.map(plant => 
                         <div class="Plant">
-			    <div class="plant-pic" style={{backgroundImage: "url(" + "/" + plant["pic"] + ")"}}></div>
+			    <div class="plant-pic" style={{backgroundImage: "url(" + plant["pic"] + ")"}}></div>
 			    <div class="plant-text"> {plant["name"]}</div>
 			</div>
 		    )
@@ -21,7 +21,7 @@ function Plants(props) {
 	        {
 		    props.alt.map(plant => 
                         <div class="Plant">
-			    <div class="plant-pic" style={{backgroundImage: "url(" + "/" + plant["pic"] + ")"}}></div>
+			    <div class="plant-pic" style={{backgroundImage: "url(" + plant["pic"] + ")"}}></div>
 			    <div class="plant-text"> {plant["name"]}</div>
 			</div>
 		    )
