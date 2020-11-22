@@ -32,7 +32,7 @@ class ProjectCard extends Component {
         <div className="project-card">
           <div className="card-inner-wrapper">
             <ProjectDetails open={this.state.open} closer={this.close} id={int_id} added={this.props.added} increment={this.props.increment} decrement={this.props.decrement} add={this.props.add}/>
-            <div className="project-image" style={{backgroundImage: "url(/" + proj["gallery_pics"][0] + ")"}} onClick={this.open}></div>
+            <div className="project-image" style={{backgroundImage: "url(" + proj["gallery_pics"][0] + ")"}} onClick={this.open}></div>
             <div className="project-details" onClick={this.open}>
               <h2>{proj["name"]}</h2>
               <p>{proj["size"]}</p>
