@@ -9,7 +9,7 @@ import CareReminder from "../pages/profile/CareReminder.js"
 import ProjectList from "../pages/project_list/ProjectList.js"
 import PlantOfTheDay from "../pages/plant_of_the_day/PlantOfTheDay.js"
 import Quiz from "../pages/quiz/Quiz.js"
-
+import PreQuizPage from "../pages/quiz/PreQuiz.js"
 
 const ROUTES = [
     {path: "/", key: "HOME", component: () => <Home />},
@@ -20,7 +20,8 @@ const ROUTES = [
     {path: "/care-reminder", key: "CAREREMINDER", component: () => <CareReminder />},
     {path: "/project-list", key: "PROJECTLIST", component: () => <ProjectList />},
     {path: "/plant-of-the-day", key: "PLANTOFTHEDAY", component: () => <PlantOfTheDay />},
-    {path: "/quiz", key: "QUIZ", component: () => <Quiz />}
+    {path: "/quiz", key: "QUIZ", component: () => <Quiz />},
+    {path: "/prequizpage", key: "PREQUIZPAGE", component: () => <PreQuizPage />}
 ];
 
 export default ROUTES;

@@ -32,17 +32,20 @@ export class Navbar extends React.Component {
     }
     
     render() {
-        var appname = "Application Name";
+        var appname = "Thrive";
         var username = "Alice";
+        const fontsize200 = {
+            fontSize: '200%',
+        };
         return (
             <div>
                 <div className="navbar">
-                    <NavLink className="appname" to="/">
+                    <NavLink style={fontsize200} className="appname" to="/">
                         {appname}
                     </NavLink>
                     <div className="navbar-right">
                         <div className="dropDown">
-                            <div className="username">
+                            <div style={fontsize200} className="username">
                                 {'Hello, ' + username + '!'}
                             </div>
                             <div className={ this.state.menu ? "dropdown-content" : "dropdown-content-show"}>
@@ -50,7 +53,7 @@ export class Navbar extends React.Component {
                                     <NavLink className="navlink" to="/">
                                         <div className="menuItem" id="menuItemHome">Home</div>
                                     </NavLink>
-                                    <NavLink className="navlink" to="/quiz">
+                                    <NavLink className="navlink" to="/prequizpage">
                                         <div className="menuItem">Plant Finder</div>
                                     </NavLink>
                                     <NavLink className="navlink" to="/my-projects">
@@ -108,7 +111,7 @@ class POD extends React.Component {
         var plantName = "Spider Plant";
         var plantDesc = "The spider plant is considered one of the most adaptable of houseplants and the easiest to grow. This plant can grow in a wide range of conditions and suffers from few problems, other than brown tips. The spider plant is so named because of its spider-like plants, or spiderettes, which dangle down from the mother plant like spiders on a web. Available in green or variegated varieties, these spiderettes often start out as small white flowers"
         return (
-            <div className="PODwrapper" style={{ backgroundImage:`url(${SpiderPlant})` }}>
+            <div className="PODwrapper" style={{ backgroundImage:`url(${ SpiderPlant})` }}>
                 <div className="PODtext">
                     <h2 className="POD">
                         PLANT OF THE DAY

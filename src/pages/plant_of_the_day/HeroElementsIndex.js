@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import "./HeroElementsIndex.css";
 import Video from '../plant_of_the_day/Videos/video.mp4';
 import {
   HeroContainer,

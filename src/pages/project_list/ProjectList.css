@@ -1,3 +1,5 @@
+
+
 #project-list {
     margin-right: 2rem;
 }
@@ -5,7 +7,7 @@
 .filters-col {
     width: 25%;
     position: fixed;
-    top: 0;
+    top: 12.2%;
     left: 0;
     bottom: 0;
     background: #f0f0f0;
@@ -63,8 +65,11 @@
 }
 
 .project-col {
+    position: relative;
+    top: 0;
+    
     margin-left: 30%;
-    margin-top: 2rem;
+    margin-top: ;
 }
 
 .project-col h2 {

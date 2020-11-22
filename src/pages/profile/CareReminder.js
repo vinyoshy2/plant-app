@@ -9,6 +9,7 @@ import CareReminderSettings from "./CareReminderSetting"
 import {getEntryFromID} from "../../utils/utils.js";
 import projectJSON from "../../data/projects.json";
 import Sidebar from "./SideBar";
+import { Navbar } from '../home/Home.js'
 
 
 class CareReminder extends Component {
@@ -163,41 +164,44 @@ class CareReminder extends Component {
 
   render() {
     return (
-      <div id="profile">
-        <Sidebar />
-        <div className='profile-content'>
-          <h1 className='profile-title'>Plant Care Calendar</h1>
-          {/*
-          // Upcoming Caring Events
-          <div className='profile-subtitle'> Upcoming Caring Events </div>
-          <div className='profile-sub-content'>
-            <div className='list-title'> Today </div>
-            <div className='list-item'> <b>9:30 AM</b>  Dust leaves of Bonsai in Bedroom </div>
-            <div className='list-item'> <b>5:00 PM</b>  Water Sill in Kitchen </div>
-          </div>
-          */}
+        <div>
+            <Navbar />
+              <div id="profile">
+                <Sidebar />
+                <div className='profile-content'>
+                  <h1 className='profile-title'>Plant Care Calendar</h1>
+                  {/*
+                  // Upcoming Caring Events
+                  <div className='profile-subtitle'> Upcoming Caring Events </div>
+                  <div className='profile-sub-content'>
+                    <div className='list-title'> Today </div>
+                    <div className='list-item'> <b>9:30 AM</b>  Dust leaves of Bonsai in Bedroom </div>
+                    <div className='list-item'> <b>5:00 PM</b>  Water Sill in Kitchen </div>
+                  </div>
+                  */}
 
-          <h2 className='profile-subtitle'> Care Reminder Settings </h2>
-          <div className='profile-sub-content'>
-            {/* Refer to lib in https://reactjsexample.com/empower-your-data-with-the-best-react-data-grid/*/}
-            <p className='content-text'> Reminder Time: 9:30 AM, 5:00 PM</p>
-            <CareReminderSettings
-              settings={this.state.settings}
-              handleSettingChange={this.handleSettingChange}
-            />
-          </div>
+                  <h2 className='profile-subtitle'> Care Reminder Settings </h2>
+                  <div className='profile-sub-content'>
+                    {/* Refer to lib in https://reactjsexample.com/empower-your-data-with-the-best-react-data-grid/*/}
+                    <p className='content-text'> Reminder Time: 9:30 AM, 5:00 PM</p>
+                    <CareReminderSettings
+                      settings={this.state.settings}
+                      handleSettingChange={this.handleSettingChange}
+                    />
+                  </div>
 
-          <h2 className='profile-subtitle'> Care Reminder Calender </h2>
-          <div className='profile-sub-content'>
-            <CareReminderCalendar
-              settings={this.state.settings}
-              care_cal_header={this.state.care_cal_header}
-              care_cal_events={this.state.care_cal_events}
-            />
-          </div>
-          <CareReminderDownload />
+                  <h2 className='profile-subtitle'> Care Reminder Calender </h2>
+                  <div className='profile-sub-content'>
+                    <CareReminderCalendar
+                      settings={this.state.settings}
+                      care_cal_header={this.state.care_cal_header}
+                      care_cal_events={this.state.care_cal_events}
+                    />
+                  </div>
+                  <CareReminderDownload />
+                </div>
+              </div>
         </div>
-      </div>
     );
   }
 }

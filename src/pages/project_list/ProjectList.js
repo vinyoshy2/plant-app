@@ -4,6 +4,7 @@ import './ProjectList.css';
 import ProjectCard from './ProjectCard.js'
 import projectJSON from '../../data/projects.json';
 import {getProjectKeywords, getProjectPlants, getProjectsWithFilters} from "../../utils/utils.js";
+import { Navbar } from '../home/Home.js'
 
 
 class Projects extends Component {
@@ -99,126 +100,127 @@ class Projects extends Component {
     const { selectedPlants } = this.state;
     return (
     <div id="project-list">
-    <div className="filters-col">
-      <div className="filters-header">
-        <div className="heading">
-          <h2>Filters</h2>
-          <button className="filters-clear" onClick={this.clearFilters}>Clear all</button>
+            <div className="filters-col">
+                <div className="filters-header">
+                    <div className="heading">
+                        <h2>Filters</h2>
+                            <button className="filters-clear" onClick={this.clearFilters}>Clear all</button>
+                    </div>
+                </div>
+                <div className="filters-container">
+                    <div id="keywords" className="filter">
+                        <p><strong>Keywords</strong></p>
+                        <Select 
+                            isMulti
+                            value={selectedKeywords}
+                            options={keywords} 
+                            placeholder="e.g. Air purifying"
+                            onChange={this.handleKeywordSelection}
+                        />
+                    </div>
+                    <div id="plants" className="filter">
+                        <p><strong>Plants</strong></p>
+                        <Select
+                            isMulti
+                            value={selectedPlants}
+                            options={plants}
+                            placeholder="e.g. Cactus"
+                            onChange={this.handlePlantSelection}
+                        />
+                    </div>
+                    <div id="size" className="filter">
+                        <p><strong>Plant size</strong></p>
+                        <div className="checkbox">
+                            {this.props.presets == undefined ||  this.props.presets.size != "Small" ?
+                            <input type="checkbox" id="small" name="size" value="Small" onChange={this.handleSizeSelection}/>
+                            : <input type="checkbox" id="small" name="size" value="Small" defaultChecked onChange={this.handleSizeSelection}/>
+                        }
+                        <label for="small">Small (less than 6" tall)</label>
+                    </div>
+                    <div className="checkbox">
+                        {this.props.presets == undefined || this.props.presets.size != "Medium" ?
+                        <input type="checkbox" id="medium" name="size" value="Medium" onChange={this.handleSizeSelection}/>
+                        : <input type="checkbox" id="medium" name="size" value="Medium" defaultChecked onChange={this.handleSizeSelection}/>
+                    }
+                    <label for="medium">Medium (6 - 10" tall)</label>
+                </div>
+                <div className="checkbox">
+                    {this.props.presets ==undefined || this.props.presets.size != "Large" ?
+                    <input type="checkbox" id="large" name="size" value="Large" onChange={this.handleSizeSelection}/> 
+                    : <input type="checkbox" id="large" name="size" value="Large" defaultChecked onChange={this.handleSizeSelection}/> 
+                    }
+                    <label for="large">Large (more than 10" tall)</label>
+                </div>
+            </div>
+            <div id="lighting" className="filter">
+                <p><strong>Lighting needs</strong></p>
+                    <div className="checkbox">
+                        {this.props.presets == undefined || this.props.presets.light != "No light" ?
+                        <input type="checkbox" id="no-light" name="lighting" value="No light" onChange={this.handleLightingSelection}/> 
+                        : <input type="checkbox" id="no-light" name="lighting" value="No light" defaultChecked onChange={this.handleLightingSelection}/> 
+                        }
+                        <label for="no-light">No light</label>
+                    </div>
+                <div className="checkbox">
+                    {this.props.presets == undefined || this.props.presets.light != "Dim light" ?
+                        <input type="checkbox" id="dim-light" name="lighting" value="Dim light" onChange={this.handleLightingSelection}/> 
+                        : <input type="checkbox" id="dim-light" name="lighting" value="Dim light" defaultChecked onChange={this.handleLightingSelection}/> 
+                    }
+                    <label for="dim-light">Dim light</label>
+                </div>
+                <div className="checkbox">
+                    {this.props.presets == undefined ||  this.props.presets.light != "Partial sun" ?
+                        <input type="checkbox" id="partial-sun" name="lighting" value="Partial sun" onChange={this.handleLightingSelection}/> 
+                        : <input type="checkbox" id="partial-sun" name="lighting" value="Partial sun" defaultChecked onChange={this.handleLightingSelection}/> 
+                    }
+                    <label for="partial-sun">Partial sun</label>
+                </div>
+                <div className="checkbox">
+                    {this.props.presets == undefined ||  this.props.presets.light != "Full sun" ?
+                        <input type="checkbox" id="full-sun" name="lighting" value="Full sun" onChange={this.handleLightingSelection}/> 
+                        : <input type="checkbox" id="full-sun" name="lighting" value="Full sun" defaultChecked onChange={this.handleLightingSelection}/> 
+                    }
+                    <label for="full-sun">Full sun</label>
+                </div>
+            </div>
+            <div id="humidity" className="filter">
+                <p><strong>Humidity needs</strong></p>
+                    <div className="checkbox">
+                        {this.props.presets == undefined ||  this.props.presets.humid != "Dry" ?
+                            <input type="checkbox" id="dry" name="humidity" value="Dry" onChange={this.handleHumiditySelection}/> 
+                            : <input type="checkbox" id="dry" name="humidity" value="Dry" defaultChecked onChange={this.handleHumiditySelection}/> 
+                        }
+                        <label for="dry">Dry</label>
+                    </div>
+                <div className="checkbox">
+                    {this.props.presets == undefined ||  this.props.presets.humid != "Slightly humid" ?
+                        <input type="checkbox" id="slightly-humid" name="humidity" value="Slightly humid" onChange={this.handleHumiditySelection}/> 
+                        : <input type="checkbox" id="slightly-humid" name="humidity" value="Slightly humid" defaultChecked onChange={this.handleHumiditySelection}/> 
+                    }
+                    <label for="slightly-humid">Slightly humid</label>
+                </div>
+                <div className="checkbox">
+                    {this.props.presets == undefined ||  this.props.presets.humid != "Humid" ?
+                        <input type="checkbox" id="humid" name="humidity" value="Humid" onChange={this.handleHumiditySelection}/> 
+                        : <input type="checkbox" id="humid" name="humidity" value="Humid" defaultChecked onChange={this.handleHumiditySelection}/> 
+                    }
+                    <label for="humid">Humid</label>
+                </div>
+            </div>
+            <button id="filter-search" onClick={this.searchProjects}>Search</button>
         </div>
-      </div>
-      <div className="filters-container">
-        <div id="keywords" className="filter">
-          <p><strong>Keywords</strong></p>
-          <Select 
-            isMulti
-            value={selectedKeywords}
-            options={keywords} 
-            placeholder="e.g. Air purifying"
-            onChange={this.handleKeywordSelection}
-          />
-        </div>
-        <div id="plants" className="filter">
-          <p><strong>Plants</strong></p>
-          <Select
-            isMulti
-            value={selectedPlants}
-            options={plants}
-            placeholder="e.g. Cactus"
-            onChange={this.handlePlantSelection}
-          />
-        </div>
-        <div id="size" className="filter">
-          <p><strong>Plant size</strong></p>
-          <div className="checkbox">
-      {this.props.presets == undefined ||  this.props.presets.size != "Small" ?
-                <input type="checkbox" id="small" name="size" value="Small" onChange={this.handleSizeSelection}/>
-                : <input type="checkbox" id="small" name="size" value="Small" defaultChecked onChange={this.handleSizeSelection}/>
-      }
-            <label for="small">Small (less than 6" tall)</label>
-          </div>
-          <div className="checkbox">
-      {this.props.presets == undefined || this.props.presets.size != "Medium" ?
-                <input type="checkbox" id="medium" name="size" value="Medium" onChange={this.handleSizeSelection}/>
-                : <input type="checkbox" id="medium" name="size" value="Medium" defaultChecked onChange={this.handleSizeSelection}/>
-      }
-            <label for="medium">Medium (6 - 10" tall)</label>
-          </div>
-          <div className="checkbox">
-      {this.props.presets ==undefined || this.props.presets.size != "Large" ?
-                <input type="checkbox" id="large" name="size" value="Large" onChange={this.handleSizeSelection}/> 
-                : <input type="checkbox" id="large" name="size" value="Large" defaultChecked onChange={this.handleSizeSelection}/> 
-      }
-            <label for="large">Large (more than 10" tall)</label>
-          </div>
-        </div>
-        <div id="lighting" className="filter">
-          <p><strong>Lighting needs</strong></p>
-          <div className="checkbox">
-      {this.props.presets == undefined || this.props.presets.light != "No light" ?
-                <input type="checkbox" id="no-light" name="lighting" value="No light" onChange={this.handleLightingSelection}/> 
-          : <input type="checkbox" id="no-light" name="lighting" value="No light" defaultChecked onChange={this.handleLightingSelection}/> 
-      }
-            <label for="no-light">No light</label>
-          </div>
-          <div className="checkbox">
-      {this.props.presets == undefined || this.props.presets.light != "Dim light" ?
-                <input type="checkbox" id="dim-light" name="lighting" value="Dim light" onChange={this.handleLightingSelection}/> 
-                : <input type="checkbox" id="dim-light" name="lighting" value="Dim light" defaultChecked onChange={this.handleLightingSelection}/> 
-      }
-            <label for="dim-light">Dim light</label>
-          </div>
-          <div className="checkbox">
-      {this.props.presets == undefined ||  this.props.presets.light != "Partial sun" ?
-                <input type="checkbox" id="partial-sun" name="lighting" value="Partial sun" onChange={this.handleLightingSelection}/> 
-                : <input type="checkbox" id="partial-sun" name="lighting" value="Partial sun" defaultChecked onChange={this.handleLightingSelection}/> 
-      }
-            <label for="partial-sun">Partial sun</label>
-          </div>
-          <div className="checkbox">
-      {this.props.presets == undefined ||  this.props.presets.light != "Full sun" ?
-                <input type="checkbox" id="full-sun" name="lighting" value="Full sun" onChange={this.handleLightingSelection}/> 
-                : <input type="checkbox" id="full-sun" name="lighting" value="Full sun" defaultChecked onChange={this.handleLightingSelection}/> 
-      }
-            <label for="full-sun">Full sun</label>
-          </div>
-        </div>
-        <div id="humidity" className="filter">
-          <p><strong>Humidity needs</strong></p>
-          <div className="checkbox">
-      {this.props.presets == undefined ||  this.props.presets.humid != "Dry" ?
-                <input type="checkbox" id="dry" name="humidity" value="Dry" onChange={this.handleHumiditySelection}/> 
-                : <input type="checkbox" id="dry" name="humidity" value="Dry" defaultChecked onChange={this.handleHumiditySelection}/> 
-      }
-            <label for="dry">Dry</label>
-          </div>
-          <div className="checkbox">
-      {this.props.presets == undefined ||  this.props.presets.humid != "Slightly humid" ?
-                <input type="checkbox" id="slightly-humid" name="humidity" value="Slightly humid" onChange={this.handleHumiditySelection}/> 
-                : <input type="checkbox" id="slightly-humid" name="humidity" value="Slightly humid" defaultChecked onChange={this.handleHumiditySelection}/> 
-      }
-            <label for="slightly-humid">Slightly humid</label>
-          </div>
-          <div className="checkbox">
-      {this.props.presets == undefined ||  this.props.presets.humid != "Humid" ?
-                <input type="checkbox" id="humid" name="humidity" value="Humid" onChange={this.handleHumiditySelection}/> 
-                : <input type="checkbox" id="humid" name="humidity" value="Humid" defaultChecked onChange={this.handleHumiditySelection}/> 
-      }
-            <label for="humid">Humid</label>
-          </div>
-        </div>
-        <button id="filter-search" onClick={this.searchProjects}>Search</button>
-      </div>
     </div>
-    <div className="project-col">
-      <h2>{this.state.projectsHeading}</h2>
-      <div className="project-card-container">
-      { 
-        this.state.filteredProjects.map(project => 
-	  <ProjectCard id={project.id} added={this.props.added} increment={()=>this.props.increment(project.id)} decrement={()=>this.props.decrement(project.id)} add={()=>this.props.add(project.id)}/>
-	)
-      }
-      </div>
-    </div>
+        
+        <div className="project-col">
+            <h2>{this.state.projectsHeading}</h2>
+            <div className="project-card-container">
+                { 
+                    this.state.filteredProjects.map(project => 
+                       <ProjectCard id={project.id} added={this.props.added} increment={()=>this.props.increment(project.id)} decrement={()=>this.props.decrement(project.id)} add={()=>this.props.add(project.id)}/>
+                    )
+                }
+            </div>
+        </div>
     </div>
     );
   }
@@ -230,8 +232,11 @@ class ProjectList extends React.Component{
 	console.log(this.props.location.state);
     }
     render() {
-      return (
-        <Projects presets={this.props.location.state} added={this.props.added} increment={this.props.increment} decrement={this.props.decrement} add={this.props.add}/>
+        return (
+            <div>
+                <Navbar />
+                <Projects presets={this.props.location.state} added={this.props.added} increment={this.props.increment} decrement={this.props.decrement} add={this.props.add}/>
+            </div>
       );
     }
   }

@@ -15,7 +15,6 @@ function Quiz() {
   return (
     <div className="Quiz">
         <Navbar />
-        <PreQuiz />
         <QuizWrapper />
     </div>
   );
@@ -197,11 +196,7 @@ class QuizWrapper extends React.Component {
     render() {
         return (
             <div className="QuizQuestionsWrapper">
-                <div className="StartQuizWrapper">
-                    <div className="startthequ">
-                        Start the quiz
-                    </div>
-                </div>
+                
                 <div className="container">
                     {this.state.result ? this.renderResult() : this.renderQuiz()}
                 </div>
@@ -209,7 +204,13 @@ class QuizWrapper extends React.Component {
         )
     }
 }
-
+                /*
+                <div className="StartQuizWrapper">
+                    <div className="startthequ">
+                        Start the quiz
+                    </div>
+                </div>
+                */
 
                 /*
                 <Quiz

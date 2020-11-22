@@ -9,19 +9,21 @@ import {
   homeObjFour,
   homeObjFive
 } from '../plant_of_the_day/Data';
+import { Navbar } from '../home/Home.js'
 
 function PlantOfTheDay() {
-  return (
-    <>
-      <HeroSection/>
-      <PanelSection/>
-      <InfoSection {...homeObjOne} />
-      <InfoSection {...homeObjTwo} />
-      <InfoSection {...homeObjThree} />
-      <InfoSection {...homeObjFour} />
-      <InfoSection {...homeObjFive} />
-    </>
-  );
+    return (
+        <div>
+            <Navbar />
+            <HeroSection/>
+            <PanelSection/>
+            <InfoSection {...homeObjOne} />
+            <InfoSection {...homeObjTwo} />
+            <InfoSection {...homeObjThree} />
+            <InfoSection {...homeObjFour} />
+            <InfoSection {...homeObjFive} />
+        </div>
+    );
 }
 
 export default PlantOfTheDay;
