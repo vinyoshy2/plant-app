@@ -22,7 +22,7 @@ export const NavLink = styled(Link)`
   font-size: 14pt;
   &.active {
     font-weight: bold;
-    background: #E0E0E0;
+    background: #EEE;
     color: #000000;
   }
 `;

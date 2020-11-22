@@ -1,28 +1,22 @@
 
 
 #project-list {
-    margin-right: 2rem;
+    margin: 3rem 3rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
 }
 
 .filters-col {
-    width: 25%;
-    position: fixed;
-    top: 12.2%;
-    left: 0;
-    bottom: 0;
+    flex: 0 0 20%;
     background: #f0f0f0;
 }
 
-.filters-header {
-    border-bottom: 1px solid #ccc;
-}
-
 .filters-header .heading {
-    padding-bottom: 1rem;
+    padding-bottom: 1.5rem;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-    padding: 2rem 2rem 1.5rem 2rem;
 }
 
 .filters-header .heading button {
@@ -30,16 +24,16 @@
     text-transform: uppercase;
 }
 
-.filters-container {
-    padding: 0 2rem 2rem 2rem;
+.filters-header .heading button:hover {
+   cursor: pointer;
 }
 
 .filter {
-    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .filter p {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 #filter-search {
@@ -47,13 +41,18 @@
     font-weight: 600;
     text-transform: uppercase;
     display: block;
-    width: 80%;
+    width: 100%;
     padding: 10px 30px;
     margin: 2rem auto 0 auto;
     border-radius: 30px;
     border: none;
-    background-color: #333333;
+    background-color: #3F7D20;
     color: #ffffff;
+}
+
+#filter-search:hover {
+    background-color: #72B01D;
+    cursor: pointer;
 }
 
 .checkbox {
@@ -65,14 +64,10 @@
 }
 
 .project-col {
-    position: relative;
-    top: 0;
-    
-    margin-left: 30%;
-    margin-top: ;
+    flex: 0 0 70%;
 }
 
-.project-col h2 {
+.project-col h1 {
     margin-bottom: 2rem;
 }
 
@@ -91,6 +86,16 @@
     margin-bottom: 30px;
 }
 
+.card-inner-wrapper {
+    -webkit-box-shadow: 0 5px 6px -6px #777;
+    -moz-box-shadow: 0 5px 6px -6px #777;
+    box-shadow: 0 4px 5px #ccc;
+}
+
+.card-inner-wrapper:hover {
+    cursor: pointer;
+}
+
 .project-image {
     height: 250px;
     width: 100%;
@@ -101,10 +106,11 @@
 
 .project-details {
     padding: 2rem;
-    background-color: #f0f0f0;
+    background-color: #ffffff;
 }
 
-.project-details h3 {
+.project-details h2 {
+    font-size: 20px;
     margin-top: 0;
 }
 

@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-
 #profile {
-  margin-right: 2rem;
+  margin: 3rem 3rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
 }
 
 .vertical-frame {
@@ -11,8 +12,7 @@
 }
 
 .profile-content {
-  margin-left: 30%;
-  margin-top: 3rem;
+  flex: 0 0 70%;
 }
 
 .profile-title {
@@ -25,17 +25,17 @@
 }
 
 .sidebar {
-  width: 25%;
-  position: fixed;
-  top: 12.2%;
-  left: 0;
-  bottom: 0;
-  background: #f0f0f0;
+  flex: 0 0 25%;
+}
+
+.sidebar-container {
+  background-color: #ffffff;
+  padding: 2rem;
+  box-shadow: 0 4px 5px #ccc;
 }
 
 .sidebar .vertical-frame:first-child {
-  border-bottom: 1px solid #ccc;
-  padding: 2rem 2rem 1.5rem 2rem;
+  padding-bottom: 1.5rem;
   align-items: center;
 }
 
@@ -111,12 +111,32 @@
 }
 
 .download_button {
-  padding-left: 2px;
-  padding-top: 5px;
-  margin-bottom: 20px;
+  text-decoration: none;
+  background-color: #121b21;
+  color: #ffffff;
+  padding: 10px 20px;
+  margin-top: 20px;;
+  border-radius: 30px;
+}
+
+.round-all.event-item{
+  background-color: #3F7D20 !important;
+}
+
+.scheduler tbody {
+  background-color: #ffffff;
+}
+
+.scheduler .header3-text {
+  background-color: #ffffff !important;
+  color: #121b21 !important;
 }
 
 /* For MyProjects */
+.new-project-icon {
+  background-color: #3F7D20 !important;
+}
+
 .grid-layout {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -155,7 +175,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Lato', sans-serif;
 }
 
 .home,

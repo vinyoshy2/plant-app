@@ -94,17 +94,15 @@ class UserInfo extends React.Component {
 		        </a>
             <div class="user-popup-content">
               <div class="user-info">
-                <div className="vertical-frame">
                   <div class="profile-pic" style={{backgroundImage: "url(" + "/" + this.props.profile_pic + ")"}}/>
-                  <div className="horizontal-frame">
-                    <div class="username"> {this.props.username}</div>
-                    <div className='vertical-frame'>
-                      <img className='badge-image' src={'http://24.media.tumblr.com/tumblr_ly7xjxn3QI1r62v9yo1_1280.png'}/>
-                      <img className='badge-image' src={'http://24.media.tumblr.com/tumblr_ly7xjxn3QI1r62v9yo1_1280.png'}/>
-                      <img className='badge-image' src={'http://24.media.tumblr.com/tumblr_ly7xjxn3QI1r62v9yo1_1280.png'}/>
+                  <div className="user-info-wrapper">
+                    <p class="username"> {this.props.username}</p>
+                    <div class="badges">
+                      <img className='badge-image' src={'https://www.flaticon.com/svg/static/icons/svg/3629/3629314.svg'}/>
+                      <img className='badge-image' src={'https://www.flaticon.com/svg/static/icons/svg/628/628283.svg'}/>
+                      <img className='badge-image' src={'https://www.flaticon.com/svg/static/icons/svg/628/628292.svg'}/>
                     </div>
                   </div>
-                </div>
               </div>
               <div class="messages"><Link to="/messages">Message</Link></div>
             </div>

@@ -32,11 +32,12 @@
     padding: 10px 20px;
     border-radius: 30px;
     border: none;
-    background: #ccc;
+    background: #121b21;
+    color: #ffffff;
+    font-weight: 600;
 }
 
 #Amazon:hover {
     cursor: pointer;
-    background: #000;
-    color: #ffffff;
+    background: #3F7D20;
 }

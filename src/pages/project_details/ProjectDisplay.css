@@ -14,19 +14,25 @@
     grid-column-end: middle;
     grid-row-start: top;
     grid-row-end: bottom;
-    background-size: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 #Image2 {
     grid-column-start: middle;
     grid-column-end: end;
     grid-row-start: top;
     grid-row-end: center;
-    background-size: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 #Image3 {
     grid-column-start: middle;
     grid-column-end: end;
     grid-row-start: center;
     grid-row-end: bottom;
-    background-size: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
