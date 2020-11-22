@@ -5,6 +5,7 @@ import "./Profile.css"
 const Sidebar = () => {
   return (
     <div className='sidebar'>
+      <div className="sidebar-container">
       <div className='vertical-frame'>
         <img className='profile-photo' src={'https://images.unsplash.com/photo-1534945773093-1119ae5684ab'} alt={'Avatar'}/>
 
@@ -18,6 +19,7 @@ const Sidebar = () => {
         </div>
       </div>
       <Navbar />
+      </div>
     </div>
   )
 }

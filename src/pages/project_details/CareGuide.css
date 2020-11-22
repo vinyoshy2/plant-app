@@ -1,6 +1,6 @@
 #CareGuide,
 #CareGuideAdded {
-    background-color:#bbb;
+    background-color:#f0f0f0;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -12,6 +12,12 @@
 
 #CareGuideAdded {
     flex: 0 0 33%;
+}
+
+#CareGuideAdded a {
+    color:#3F7D20;
+    font-weight: 600;
+    text-decoration: none;
 }
 
 

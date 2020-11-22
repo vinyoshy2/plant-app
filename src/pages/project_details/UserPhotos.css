@@ -28,17 +28,17 @@
 .user-info {
     display: flex;
     flex-direction: row;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 .profile-pic {
     align-self: center;
-    height: 40px;
-    width: 40px;
-    background-size: 40px 40px;	
+    height: 50px;
+    width: 50px;
+    background-size: 50px 50px;	
     border-radius: 50%;
     background-color: #464646;
-    margin-right: 5px;
+    margin-right: 20px;
 }
 
 
@@ -49,11 +49,14 @@
     flex-direction: row;
 }
 
-.username {
-    margin-left: 5px;
-    margin-bottom: 5px;
-    align-self: start;
-    font-size: 20px;
+.user-info .username {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.username-wrapper {
+    display: flex;
 }
 
 .like-button {
@@ -67,22 +70,29 @@
 
 .user-container {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
-    padding: 20px;
     color: #ffffff;
 }
 
 .messages a {
-   color: #ffffff;
+    background-color: #72B01D;
+    padding: 8px 15px;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 30px;
+    text-decoration: none;
 }
+
+.messages a:hover {
+    background-color: #3F7D20
+;} 
 
 .user-popup-content {
     display: inline-flex;
-    height: 100%;
-    width: 100%;
+    height: 300px;
+    width: 300px;
     flex-direction: column;
+    padding: 1rem;
+    background: rgba(0,0,0,0.6);
 }
 
 
@@ -116,13 +126,16 @@
     flex-direction: column;
 }
 
-.badge-image {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-left: 5px;
+.badges {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.badges .badge-image {
+    width: 30px;
+    height: 30px;
     margin-right: 5px;
-    border: 2px solid #e0e0e0;
-    background-position: center center;
-    object-fit: cover;
+    margin-left: 0;
+    margin-bottom: 0;
 }

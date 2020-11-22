@@ -22,18 +22,17 @@
 }
 
 #step {
-   flex: 0 0 70%;
-  font-size: 18px;
+  flex: 0 0 70%;
   line-height: 150%;
 }
 
 .line {
-  border-left: 3px solid #bbb;
+  border-left: 3px solid #aaa;
   margin-left:11px;
   height: 50px;
 }
 .step_text {
-  font-size: 20px;
+  font-size: 18px;
 }
  /* Customize the label (the container) */
 .step_button {
@@ -75,7 +74,7 @@
 
 /* When the radio button is checked, add a blue background */
 .step_button input:checked ~ .checkmark {
-  background-color: #2196F3;
+  background-color: #72B01D;
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
@@ -101,5 +100,9 @@
 } 
 
 .step_completed {
-    float: right;
+    margin-top: 15px;
+}
+
+.step_completed input {
+  margin-right: 5px;
 }

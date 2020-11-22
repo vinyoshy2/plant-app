@@ -39,7 +39,7 @@ const events = [
     resourceId: 'Kitchen Sill - Bonsai',
     title: 'R2 has recurring tasks every week on Tuesday, Friday',
     rrule: 'FREQ=DAILY;INTERVAL=3;BYDAY=MO,TU,WE,TH,FR,SA,SU;COUNT=3',
-    bgColor: '#f759ab'
+    bgColor: '#3F7D20'
   },
   {
     id: 2,
@@ -48,7 +48,7 @@ const events = [
     resourceId: 'Kitchen Sill - Bonsai',
     title: 'R2 has recurring tasks every week on Tuesday, Friday',
     rrule: 'FREQ=DAILY;DTSTART=20201119T000000Z;INTERVAL=3;BYDAY=MO,TU,WE,TH,FR,SA,SU;COUNT=3',
-    bgColor: '#f759ab'
+    bgColor: '#3F7D20'
   }
 ];
 
@@ -152,7 +152,7 @@ class CareReminderCalendar extends React.Component {
         start: start,
         end: end,
         resourceId: slotId,
-        bgColor: 'purple'
+        bgColor: '#3F7D20'
       }
       schedulerData.addEvent(newEvent);
       this.setState({

@@ -40,34 +40,20 @@ class PreQuiz extends React.Component {
         return (
             <div className="PreQuizWrapper">
                 <div className="PreQuizText">
-                    <div className="howdowemat">
-                        How do we match the most exciting projects for you?
-                    </div>
-                    <div className="alreadyhav">
-                        Already have ideas of what plants for you project?
-                    </div>
+                    <h1 className="howdowemat">How do we find the perfect project for you?</h1>
+                    <p className="quizReason">By taking a short quiz, we can learn about the conditions in your space. We will analyze the results from the quiz and match you with projects that satisfy your constraints! This process gives your plants the greatest chance of thriving in their new environment.</p>
+                    <h2 className="alreadyhav">Would you like to take the quiz?</h2>
                     <div className="buttonWrapper">
-                        <NavLink className="choose" to="project-list" id="yes">
-                            <div className="yesiwantto">
-                                Yes, I want to search for certain plants.
-                            </div>
-                        </NavLink>
                         <NavLink className="choose" to="quiz">
-                            <div className="noiwantsom">
-                                No, I prefer taking a quiz.
+                            <div className="yesiwantto">
+                                Yes, I want to be matched with projects
                             </div>
                         </NavLink>
-                    </div>
-                    <div className="quizReason">
-                        <div className="aquizmayhe">
-                            A quiz may help us know more about your preferences.
-                        </div>
-                        <div className="projectrec">
-                            Project recommendation will then be made based on your conditions.
-                        </div>
-                        <div className="aprojectwi">
-                            A project will consist of one or two suggested plants and several add-on plants for you to choose.
-                        </div>
+                        <NavLink className="choose" to="project-list" id="yes">
+                            <div className="noiwantsom">
+                                No, I want to search for projects on my own
+                            </div>
+                        </NavLink>
                     </div>
                     <div className="checkSkipWrapper">
                         <input

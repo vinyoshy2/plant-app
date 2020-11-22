@@ -8,38 +8,23 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-style: solid;
-    border-width: 1px;
-    border-top-color: white;
-    border-left-color: white;
-    border-right-color: white;
-    border-bottom-color: black;
-    overflow: hidden;
-}
-
-.dropDown{
-    margin-right: 20%;
-    padding-top: 0%;
-    padding-bottom: 0%;
+    align-items: center;
+    padding: 2rem 3rem;
+    height: 100px;
 }
 
 .dropdown-content {
     display: none;
-    position: absolute;
-    margin-top: 2.127%;
-    background-color: #FFFFFF;
-    min-width: 14.7905%;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
 }
 
 .dropdown-content-show {
     display: block;
     position: absolute;
-    margin-top: 2.127%;
+    right: 2rem;
+    top: 6rem;
     background-color: #FFFFFF;
-    min-width: 14.7905%;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    min-width: 300px;
+    box-shadow: 0px 8px 8px rgba(0,0,0,0.2);
     z-index: 1;
 }
 
@@ -47,68 +32,45 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding-top: 8%;
-    padding-bottom: 8%;
+    padding: 2rem;
 }
 
-.menuItem{
-    margin-top: 8%;
-    margin-bottom: 8%;
-    margin-left: 15%;
-    color: rgba(0, 0, 0, 1);
-    font-family: "Open Sans";
-    font-size: 160%;
-    font-weight: normal;
+.menuItem {
+    margin-bottom: 1.8rem;
+    font-size: 20px;
 }
 
-#menuItemHome{
-    font-weight: bold;
+.menuItem:hover {
+    color: #3F7D20;
 }
 
-.appname{
-    padding-left: 3%;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    font-size: 200%;
-    text-decoration: none;
-    color: black;
-}
-
-.username{
-    margin-bottom: 0%;
-    font-size: 200%;
-    white-space: nowrap;
+.navbar .username {
+    margin-right: 30px;
+    padding-left: 30px;
+    background-image: url("./user-icon.png");
+    background-size: contain;
+    background-position: left center;
+    background-repeat: no-repeat;
+    margin-left: 0;
+    margin-bottom: 0;
+    font-size: 16px;
 }
 
 .navbar-right{
     display: flex;
     flex-direction: row;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    padding-left: 2%;
-    padding-right: 2%;
-    margin-right: 2%;
+    align-items: center;
 }
-/*
-    border-style: solid;
-    border-width: 1px;
-    border-top-color: white;
-    border-left-color: black;
-    border-right-color: white;
-    border-bottom-color: white;
-*/
+
 .MenuWrapper{
-    padding-left: 0%;
-    padding-right: 0%;
-    display: inline-block;
     cursor: pointer;
 }
 
 .bar1, .bar2, .bar3{
-    width: 35px;
-    height: 5px;
-    background-color: #333;
-    margin: 6px 0;
+    width: 25px;
+    height: 4px;
+    background-color: #121b21;
+    margin: 4px 0;
     transition: 0.4s;
 }
 
@@ -169,15 +131,13 @@
     z-index: 2;
 }
 
-.POD{
-    font-family: "Open Sans";
+.POD {
     margin-bottom: 1rem;
     font-weight: 400;
     font-size: 18px;
 }
 
 .plantName{
-    font-family: "Open Sans";
     font-size: 60px;
     font-weight: bold;
     line-height: 1;
@@ -185,8 +145,7 @@
 }
 
 .plantDesc{
-    font-family: "Open Sans";
-    font-size: 20px;
+    font-size: 18px;
     font-weight: normal;
     line-height: 150%;
     margin-bottom: 2.5rem;
@@ -195,26 +154,26 @@
 .buttonToPOD{
     border-radius: 30px;
     display: inline-block;
-    padding: 10px 30px;
+    padding: 10px 20px;
     text-align: center;
-    font-size: 20px;
-    background: #4c9a2a;
-    font-weight: 500;
+    font-size: 18px;
+    background: #72B01D;
+    font-weight: 600;
     color: #FFFFFF;
 }
 
 .buttonToPOD:hover {
-    background: #3a7520;
+    background: #3F7D20;
 }
 
 #FeaturedProjects{
-    font-size: 30px;
+    font-size: 26px;
     margin-top: 3rem;
     margin-left: 7%;
 }
 
 .FeaturedProjectsWrapper{
-    margin-top: 3%;
+    margin-top: 2rem;
     margin-left: 7%;
     margin-right: 7%;
     margin-bottom: 5%;
@@ -234,7 +193,6 @@
     margin: 3%;
     font-weight: bold;
     font-size: 180%;
-    font-family: "Open Sans";
 }
 
 .UCRborder{
@@ -251,7 +209,6 @@
 
 #UpcomingCareReminders{
     color: rgba(0, 0, 0, 1);
-    font-family: "Open Sans";
     font-size: 200%;
     font-weight: bold;
     padding-bottom: 1%;
@@ -277,7 +234,6 @@
 .UCRdate{
     font-size: 173%;
     color: rgba(0, 0, 0, 1);
-    font-family: "Open Sans";
     font-weight: 500;
 }
 
@@ -302,7 +258,6 @@
     font-weight: bold;
     font-size: 186%;
     color: rgba(0, 0, 0, 1);
-    font-family: "Open Sans";
 }
 
 .locationAndTaskWrapper{
@@ -314,14 +269,12 @@
 
 .UCRlocation{
     color: #666;
-    font-family: "Open Sans";
     font-weight: normal;
     font-size: 106%;
 }
 
 .UCRtask{
     color: rgba(0, 0, 0, 1);
-    font-family: "Open Sans";
     font-weight: normal;
     font-size: 160%;
 }

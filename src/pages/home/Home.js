@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { NavLink } from "react-router-dom";
 import SpiderPlant from "./spider-plant.jpg";
+import Logo from "./thrive-logo.png";
 import ProjectCard from "../project_list/ProjectCard.js"
 import "../project_list/ProjectList.css"
 import projectJSON from '../../data/projects.json';
@@ -34,18 +35,15 @@ export class Navbar extends React.Component {
     render() {
         var appname = "Thrive";
         var username = "Alice";
-        const fontsize200 = {
-            fontSize: '200%',
-        };
         return (
             <div>
                 <div className="navbar">
-                    <NavLink style={fontsize200} className="appname" to="/">
-                        {appname}
+                    <NavLink className="appname" to="/">
+                        <img src={Logo} alt="thrive" width="120px"/>
                     </NavLink>
                     <div className="navbar-right">
                         <div className="dropDown">
-                            <div style={fontsize200} className="username">
+                            <div className="username">
                                 {'Hello, ' + username + '!'}
                             </div>
                             <div className={ this.state.menu ? "dropdown-content" : "dropdown-content-show"}>
@@ -54,10 +52,10 @@ export class Navbar extends React.Component {
                                         <div className="menuItem" id="menuItemHome">Home</div>
                                     </NavLink>
                                     <NavLink className="navlink" to="/prequizpage">
-                                        <div className="menuItem">Plant Finder</div>
+                                        <div className="menuItem">Find a Project</div>
                                     </NavLink>
                                     <NavLink className="navlink" to="/my-projects">
-                                        <div className="menuItem">Your Profile</div>
+                                        <div className="menuItem">My Profile</div>
                                     </NavLink>
                                     <NavLink className="navlink" to="/messages">
                                         <div className="menuItem">Messages</div>
@@ -67,9 +65,6 @@ export class Navbar extends React.Component {
                                     </NavLink>
                                     <NavLink className="navlink" to="/plant-of-the-day">
                                         <div className="menuItem">Plant of the Day</div>
-                                    </NavLink>
-                                    <NavLink className="navlink" to="/account-settings">
-                                        <div className="menuItem">Account Settings</div>
                                     </NavLink>
                                 </div>
                             </div>

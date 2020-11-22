@@ -30,13 +30,15 @@ class ProjectCard extends Component {
       var proj = getEntryFromID(int_id, projectJSON);
       return (
         <div className="project-card">
-	  <ProjectDetails open={this.state.open} closer={this.close} id={int_id} added={this.props.added} increment={this.props.increment} decrement={this.props.decrement} add={this.props.add}/>
-          <div className="project-image" style={{backgroundImage: "url(/" + proj["gallery_pics"][0] + ")"}} onClick={this.open}></div>
-          <div className="project-details" onClick={this.open}>
-            <h3>{proj["name"]}</h3>
-            <p>{proj["size"]}</p>
-            <p>{proj["lighting"]}</p>
-            <p>{proj["humidity"]}</p>
+          <div className="card-inner-wrapper">
+            <ProjectDetails open={this.state.open} closer={this.close} id={int_id} added={this.props.added} increment={this.props.increment} decrement={this.props.decrement} add={this.props.add}/>
+            <div className="project-image" style={{backgroundImage: "url(/" + proj["gallery_pics"][0] + ")"}} onClick={this.open}></div>
+            <div className="project-details" onClick={this.open}>
+              <h2>{proj["name"]}</h2>
+              <p>{proj["size"]}</p>
+              <p>{proj["lighting"]}</p>
+              <p>{proj["humidity"]}</p>
+            </div>
           </div>
         </div>
       );

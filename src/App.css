@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;700&display=swap');
+
 html, body, #root, .App {
     height:100%;
+}
+
+body {
+    background-color: #f0f0f0;
+    color: #121b21;
+}
+
+h1, h2, h3 {
+    font-family: 'Poppins';
+}
+
+h4, p, label, button, div {
+    font-family: 'Open Sans';
 }

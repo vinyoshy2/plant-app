@@ -1,23 +1,23 @@
-.SeeResult{
-    font-size: 250%;
-    font-family: "Open sans";
-    font-weight: 500;
-    
+.SeeResult a {
+    font-weight: 600;
+    font-size: 40px;
+    text-decoration: none;
+    color: #ffffff;
 }
 
 .SeeResultWrapper{
-    border-style: solid;
     border-width: 1px;
     border-radius: 0px;
     display: inline-block;
     margin-top: 2.5%;
-    padding-top: 0.5%;
-    padding-bottom: 0.5%;
-    padding-left: 1.5%;
-    padding-right: 1.5%;
+    padding: 1rem 2rem;
     white-space: nowrap;
     text-align: center;
-    background-color: #C0BEBE;
+    background-color: #3F7D20;
+}
+
+.SeeResultWrapper:hover {
+    background-color: #72B01D;
 }
 
 .displayCenter{

@@ -18,28 +18,28 @@ code {
 }
 
 /* Quiz Component */
+.quiz {
+  padding: 2rem;
+}
+
 .answerOptions {
   margin: 0;
   padding: 0;
   list-style: none;
-    margin-bottom: 10%;
+  font-size: 18px;
 }
 
 /* QuestionCount Component */
 .questionCount {
-    padding: 1.5rem 2.5rem 0;
-    font-size: 200%;
     text-align: center;
-    margin-bottom: 5%;
+    margin-bottom: 1.5rem;
 }
 
 /* Question Component */
 .question {
     margin: 0;
-    padding: 0.5rem 2.5rem 1.5rem 2.5rem;
-    font-size: 250%;
     text-align: center;
-    margin-bottom: 5%;
+    margin-bottom: 2rem;
 }
 
 /* AnswerOption Component */
@@ -47,8 +47,12 @@ code {
     border-top: 1px solid #eee;
 }
 
+.answerOption:first-child {
+  border-top: none;
+}
+
 .answerOption:hover {
-  background-color: #eefbfe;
+  background-color: #eafaf2;
 }
 
 .radioCustomButton {
@@ -69,7 +73,6 @@ code {
   width: 230%;
   margin-left: 5%;
   padding: 1.5rem 2.5rem 1.5rem 7rem;
-  font-size: 200%;
   line-height: 1.5;
 }
 

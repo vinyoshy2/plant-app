@@ -212,7 +212,7 @@ class Projects extends Component {
     </div>
         
         <div className="project-col">
-            <h2>{this.state.projectsHeading}</h2>
+            <h1>{this.state.projectsHeading}</h1>
             <div className="project-card-container">
                 { 
                     this.state.filteredProjects.map(project => 
