@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/plant-app/static/css/main.0b726b26.chunk.css",
+    "main.js": "/plant-app/static/js/main.1b243061.chunk.js",
+    "main.js.map": "/plant-app/static/js/main.1b243061.chunk.js.map",
+    "runtime-main.js": "/plant-app/static/js/runtime-main.625f9da4.js",
+    "runtime-main.js.map": "/plant-app/static/js/runtime-main.625f9da4.js.map",
+    "static/css/2.9c495cb6.chunk.css": "/plant-app/static/css/2.9c495cb6.chunk.css",
+    "static/js/2.f599805a.chunk.js": "/plant-app/static/js/2.f599805a.chunk.js",
+    "static/js/2.f599805a.chunk.js.map": "/plant-app/static/js/2.f599805a.chunk.js.map",
+    "static/js/3.77d720cb.chunk.js": "/plant-app/static/js/3.77d720cb.chunk.js",
+    "static/js/3.77d720cb.chunk.js.map": "/plant-app/static/js/3.77d720cb.chunk.js.map",
+    "index.html": "/plant-app/index.html",
+    "static/css/2.9c495cb6.chunk.css.map": "/plant-app/static/css/2.9c495cb6.chunk.css.map",
+    "static/css/main.0b726b26.chunk.css.map": "/plant-app/static/css/main.0b726b26.chunk.css.map",
+    "static/js/2.f599805a.chunk.js.LICENSE.txt": "/plant-app/static/js/2.f599805a.chunk.js.LICENSE.txt",
+    "static/media/book-open.svg": "/plant-app/static/media/book-open.67a128a7.svg",
+    "static/media/calendar.svg": "/plant-app/static/media/calendar.0aa970cf.svg",
+    "static/media/chevron-left.svg": "/plant-app/static/media/chevron-left.982a40d4.svg",
+    "static/media/chevron-right.svg": "/plant-app/static/media/chevron-right.d45fd2f4.svg",
+    "static/media/droplet.svg": "/plant-app/static/media/droplet.49d3b134.svg",
+    "static/media/flag.svg": "/plant-app/static/media/flag.661b73f2.svg",
+    "static/media/heart.svg": "/plant-app/static/media/heart.b65bcc72.svg",
+    "static/media/index.css": "/plant-app/static/media/icon-check.12ef56db.svg",
+    "static/media/question-circle.svg": "/plant-app/static/media/question-circle.ca7a6fa2.svg",
+    "static/media/spider-plant.9ae02a97.jpg": "/plant-app/static/media/spider-plant.9ae02a97.jpg",
+    "static/media/sun.svg": "/plant-app/static/media/sun.ed23b430.svg",
+    "static/media/video.fa7d0a0f.mp4": "/plant-app/static/media/video.fa7d0a0f.mp4",
+    "static/media/wind.svg": "/plant-app/static/media/wind.d2a4a1fe.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.625f9da4.js",
+    "static/css/2.9c495cb6.chunk.css",
+    "static/js/2.f599805a.chunk.js",
+    "static/css/main.0b726b26.chunk.css",
+    "static/js/main.1b243061.chunk.js"
+  ]
+}
