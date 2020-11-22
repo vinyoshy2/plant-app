@@ -62,6 +62,11 @@
     align-items: center;
 }
 
+.nav-no-underline {
+    text-decoration: none;
+    color: #000000;
+}
+
 .MenuWrapper{
     cursor: pointer;
 }
