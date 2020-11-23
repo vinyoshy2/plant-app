@@ -1,6 +1,6 @@
 export const GalleryItems = [
   {
-    'albumName': 'Sample Album',
+    'albumName': 'Default Album',
     'samplePhotoSrc' : 'https://upload.wikimedia.org/wikipedia/commons/8/89/Ropy_pahoehoe.jpg',
     'photos': [
       {

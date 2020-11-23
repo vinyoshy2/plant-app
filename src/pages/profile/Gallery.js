@@ -14,7 +14,7 @@ class Gallery extends Component {
   constructor(props) {
     super(props);
 
-    let gallery_info = {"Sample Album" : 1};
+    let gallery_info = {"Default Album" : 1};
     for (let key in this.props.added) {
       if (this.props.added.hasOwnProperty(key)) {
         if (this.props.added[key] >= 6) {
