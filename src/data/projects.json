@@ -77,7 +77,7 @@
         },
         {
             "id": 3,
-            "name": "PLANT NAME",
+            "name": "PROJECT NAME 1",
             "keywords": ["keyword1", "keyword2"],
             "required_plants": [{"name": "plant1", "pic": "project-image-test.jpg"}, {"name": "plant2", "pic": "project-image-test.jpg"}],
             "alt_plants": [{"name": "plant1", "pic": "project-image-test.jpg"}, {"name": "plant2", "pic": "project-image-test.jpg"}],
@@ -102,7 +102,7 @@
         },
         {
             "id": 4,
-            "name": "PLANT NAME",
+            "name": "PROJECT NAME 2",
             "keywords": ["keyword1", "keyword2"],
             "required_plants": [{"name": "plant1", "pic": "project-image-test.jpg"}, {"name": "plant2", "pic": "project-image-test.jpg"}],
             "alt_plants": [{"name": "plant1", "pic": "project-image-test.jpg"}, {"name": "plant2", "pic": "project-image-test.jpg"}],
