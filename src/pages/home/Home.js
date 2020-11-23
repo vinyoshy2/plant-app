@@ -7,12 +7,12 @@ import ProjectCard from "../project_list/ProjectCard.js"
 import "../project_list/ProjectList.css"
 import projectJSON from '../../data/projects.json';
 
-function Home() {
+function Home(props) {
   return (
     <div className="Home">
         <Navbar />
         <POD />
-        <FeaturedProjects />
+        <FeaturedProjects added={props.added} increment={props.increment} decrement={props.decrement} add={props.add}/>
     </div>
   );
 }
@@ -159,7 +159,7 @@ class FeaturedProjects extends React.Component {
                     {/* <div class="FeaturedProject">
                         <img class="FPimg" src="https://avatars0.githubusercontent.com/u/3456749" width="600" height="400"></img>
                         <div class="projectName">{ProjectName1}</div>
-                    </div>
+                    /div>
                     <div class="FeaturedProject">
                         <img class="FPimg" src="https://avatars0.githubusercontent.com/u/3456749" width="600" height="400"></img>
                         <div class="projectName">{ProjectName2}</div>

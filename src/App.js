@@ -56,7 +56,7 @@ export default class App extends React.Component {
             <Router>
 	        <Switch>
 
-		        <Route exact path={"/"} render={() => <Home />} />
+		        <Route exact path={"/"} render={() => <Home added={this.state.added} increment={this.increment} decrement={this.decrement} add={this.add_new} />} />
 		        <Route exact path={"/gallery"} render={() => <Gallery />} />
 		        <Route exact path={"/badges"} render={() => <Badges added={this.state.added}/>} />
 		        <Route exact path={"/messages"} render={() => <Messages />} />
