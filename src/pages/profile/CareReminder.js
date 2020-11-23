@@ -183,7 +183,7 @@ class CareReminder extends Component {
                   <h2 className='profile-subtitle'> Care Reminder Settings </h2>
                   <div className='profile-sub-content'>
                     {/* Refer to lib in https://reactjsexample.com/empower-your-data-with-the-best-react-data-grid/*/}
-                    <p className='content-text'> Reminder Time: 9:30 AM, 5:00 PM</p>
+                    <p className='content-text'> Reminder Time: 8:30 AM </p>
                     <CareReminderSettings
                       settings={this.state.settings}
                       handleSettingChange={this.handleSettingChange}
