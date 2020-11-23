@@ -69,7 +69,7 @@ class UserUploadCard extends React.Component {
                 <UserInfo open={this.state.open} profile_pic={this.props.profile_pic} username={this.props.username} closer={this.closer}/>
                 <div class="photo" style={{backgroundImage: "url(" + this.props.plant_pic + ")"}} onClick={() => this.setState({open: true})}/>
                 <div class="like">
-	            <input type="image" class="like-button" onClick={this.clickHandler} src={!this.state.updated ? "url(thumb.png)" : "url(thumb_green.png)"}/>
+	            <input type="image" class="like-button" onClick={this.clickHandler} src={!this.state.updated ? "thumb.png" : "thumb_green.png"}/>
 	            <div class="like_count">{!this.state.updated ? this.props.likes : this.props.likes+1}</div>
 	        </div>
             </div>
