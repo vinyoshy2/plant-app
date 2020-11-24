@@ -2,55 +2,16 @@ import {DragDropContext} from "react-dnd";
 import HTML5Backend from 'react-dnd-html5-backend';
 import React from 'react';
 import moment from 'moment'
-import Scheduler, {SchedulerData, ViewTypes, DATE_FORMAT} from 'react-big-scheduler'
+import Scheduler, {SchedulerData, ViewTypes, DATE_FORMAT, DATETIME_FORMAT} from 'react-big-scheduler'
 
 import 'react-big-scheduler/lib/css/style.css'
+import {capitalize} from "../../utils/utils";
 
 /* Reference info
    React lib: https://github.com/StephenChou1017/react-big-scheduler
    Repetitive calendar rule: https://github.com/jakubroztocil/rrule
       (this relates to the rrule format in events variable)
 */
-
-const available_times = [
-  {
-    id: 'Bedroom Bonsai - Bonsai',
-    name: 'Bedroom Bonsai - Bonsai',
-    groupOnly: true
-  }, {
-    id: 'Office Desk - Bonsai',
-    name: 'Office Desk - Bonsai'
-  }, {
-    id: 'Kitchen Sill - Bonsai',
-    name: 'Kitchen Sill - Bonsai',
-  }, {
-    id: 'Kitchen Sill - Sill',
-    name: 'Kitchen Sill - Sill',
-  }
-];
-
-const date_today = new moment().format(DATE_FORMAT);
-
-const events = [
-  {
-    id: 1,
-    start: date_today + ' 08:30',
-    end: date_today + ' 09:00',
-    resourceId: 'Kitchen Sill - Bonsai',
-    title: 'R2 has recurring tasks every week on Tuesday, Friday',
-    rrule: 'FREQ=DAILY;INTERVAL=3;BYDAY=MO,TU,WE,TH,FR,SA,SU;COUNT=3',
-    bgColor: '#3F7D20'
-  },
-  {
-    id: 2,
-    start: date_today + ' 08:30',
-    end: date_today + ' 09:00:00',
-    resourceId: 'Kitchen Sill - Bonsai',
-    title: 'R2 has recurring tasks every week on Tuesday, Friday',
-    rrule: 'FREQ=DAILY;DTSTART=20201119T000000Z;INTERVAL=3;BYDAY=MO,TU,WE,TH,FR,SA,SU;COUNT=3',
-    bgColor: '#3F7D20'
-  }
-];
 
 class CareReminderCalendar extends React.Component {
   constructor(props){
@@ -69,12 +30,110 @@ class CareReminderCalendar extends React.Component {
     schedulerData.setLocaleMoment(moment);
     this.state = {
       schedulerData: schedulerData,
+      cal_events: this.getAllCalendarEvents(this.props.settings)
     }
   }
+
+  /**
+   * Get all calendar events for all plants in the settings.
+   *
+   * @param  {object} setting: full care calendar setting
+   *
+   * @return {array} all_events: array of objects. Each objects is a recursive event.
+   * */
+  getAllCalendarEvents = (setting) => {
+    // Refresh calendars.
+    // Note: Currently it cleans all calendar events and add three future events.
+    //       A potential future work is maintain old events and add future events
+    //       for next month etc.
+    let all_events = [];
+    for (let i = 0 ; i < setting.length; ++i) {
+      all_events = all_events.concat(
+        this.getCalEventSinglePlant(setting[i], 1));
+    }
+    return all_events;
+  }
+
+  /**
+   * Get all calendar events for a single plant in the settings.
+   *
+   * @param  {object} setting
+   * @param  {number} start_event_id: start event_id for each plant.
+   *
+   * @return {array} events. Care Events of a single plant, for events in
+   *         cr_columns (initial version: water, fertilize, dust and harvest).
+   * */
+  getCalEventSinglePlant = (setting, start_event_id) => {
+    let single_plant_events = []
+    let care_actions = ['water', "fertilize", "dust", "harvest"]
+
+    // Get events for different care actions
+    for (let i = 0; i < care_actions.length; ++i) {
+      let action = care_actions[i];
+      // If the action is not available
+      if (!(action in setting) || !setting[action]) continue;
+      single_plant_events.push(
+        this.getCalEventSingleAction(
+          setting.id,
+          this.props.care_available_time,
+          action,
+          setting[action],
+          start_event_id
+        )
+      );
+      start_event_id += 1;
+    }
+    return single_plant_events;
+  }
+
+  /**
+   * Get all calendar events for an action of a single plant in the settings.
+   *
+   * @param  {object} plant_id: the id of plant, unique cross projects.
+   * @param  {string} reminding_time: the time for reminder on each day.
+   * @param  {string} action: name of care action. E.g. water, fertilize.
+   * @param  {number} freq: the frequency of action, once every freq days.
+   * @param  {number} event_id: uniq event_id for each action on each plant.
+   *
+   * @return {object} care_event. Care Event of a action of a single plant.
+   *
+   * */
+  getCalEventSingleAction = (plant_id,
+                             reminding_time,
+                             action,
+                             freq,
+                             event_id) => {
+    let date_today = new moment().format(DATE_FORMAT);
+    let start_time = date_today + ' ' + this.props.care_available_time;
+    let end_time = moment(start_time).add(30, 'm').toDate();
+
+    return {
+      id: event_id,  // may need to change
+      start: start_time,
+      end: new moment(end_time).format(DATETIME_FORMAT),
+      resourceId: plant_id,
+      title: capitalize(action),
+      rrule: 'FREQ=DAILY;INTERVAL=' + freq + ';BYDAY=MO,TU,WE,TH,FR,SA,SU;COUNT=30',
+      bgColor: '#f759ab'
+    };
+  }
+
+  /** Get the header for visual calendar */
+  getCalHeaders = (settings) => {
+    let headers = [];
+    settings.forEach(plant_entry => {
+      headers.push({
+        id: plant_entry.id,
+        name: plant_entry.id,
+      });
+    })
+    return headers;
+  }
+
   render() {
     const {schedulerData} = this.state;
-    schedulerData.setResources(this.props.care_cal_header);
-    schedulerData.setEvents(this.props.care_cal_events);
+    schedulerData.setResources(this.getCalHeaders(this.props.settings));
+    schedulerData.setEvents(this.getAllCalendarEvents(this.props.settings));
     return (
         <Scheduler
           schedulerData={schedulerData}
@@ -82,8 +141,6 @@ class CareReminderCalendar extends React.Component {
           nextClick={this.nextClick}
           onSelectDate={this.onSelectDate}
           onViewChange={this.onViewChange}
-          eventItemClick={this.eventClicked}
-          newEvent={this.newEvent}
           onScrollLeft={this.onScrollLeft}
           onScrollRight={this.onScrollRight}
           onScrollTop={this.onScrollTop}
@@ -92,9 +149,11 @@ class CareReminderCalendar extends React.Component {
         />
     );
   }
+
+  /** Below are the operations for visual calendar operations */
   prevClick = (schedulerData)=> {
     schedulerData.prev();
-    schedulerData.setEvents(this.props.care_cal_events);
+    schedulerData.setEvents(this.state.cal_events);
     this.setState({
       viewModel: schedulerData
     })
@@ -102,7 +161,7 @@ class CareReminderCalendar extends React.Component {
 
   nextClick = (schedulerData)=> {
     schedulerData.next();
-    schedulerData.setEvents(this.props.care_cal_events);
+    schedulerData.setEvents(this.state.cal_events);
     this.setState({
       viewModel: schedulerData
     })
@@ -110,7 +169,7 @@ class CareReminderCalendar extends React.Component {
 
   onViewChange = (schedulerData, view) => {
     schedulerData.setViewType(view.viewType, view.showAgenda, view.isEventPerspective);
-    schedulerData.setEvents(this.props.care_cal_events);
+    schedulerData.setEvents(this.state.cal_events);
     this.setState({
       viewModel: schedulerData
     })
@@ -118,7 +177,7 @@ class CareReminderCalendar extends React.Component {
 
   onSelectDate = (schedulerData, date) => {
     schedulerData.setDate(date);
-    schedulerData.setEvents(this.props.care_cal_events);
+    schedulerData.setEvents(this.state.cal_events);
     this.setState({
       viewModel: schedulerData
     })
@@ -127,39 +186,6 @@ class CareReminderCalendar extends React.Component {
   eventClicked = (schedulerData, event) => {
     alert(`You just clicked an event: {id: ${event.id}, title: ${event.title}}`);
   };
-
-  ops1 = (schedulerData, event) => {
-    alert(`You just executed ops1 to event: {id: ${event.id}, title: ${event.title}}`);
-  };
-
-  ops2 = (schedulerData, event) => {
-    alert(`You just executed ops2 to event: {id: ${event.id}, title: ${event.title}}`);
-  };
-
-  newEvent = (schedulerData, slotId, slotName, start, end, type, item) => {
-    // eslint-disable-next-line no-restricted-globals
-    if(confirm(`Do you want to create a new event? {slotId: ${slotId}, slotName: ${slotName}, start: ${start}, end: ${end}, type: ${type}, item: ${item}}`)){
-
-      let newFreshId = 0;
-      schedulerData.events.forEach((item) => {
-        if(item.id >= newFreshId)
-          newFreshId = item.id + 1;
-      });
-
-      let newEvent = {
-        id: newFreshId,
-        title: 'New event you just created',
-        start: start,
-        end: end,
-        resourceId: slotId,
-        bgColor: '#3F7D20'
-      }
-      schedulerData.addEvent(newEvent);
-      this.setState({
-        viewModel: schedulerData
-      })
-    }
-  }
 
   updateEventStart = (schedulerData, event, newStart) => {
     // eslint-disable-next-line no-restricted-globals
@@ -194,7 +220,7 @@ class CareReminderCalendar extends React.Component {
   onScrollRight = (schedulerData, schedulerContent, maxScrollLeft) => {
     if(schedulerData.ViewTypes === ViewTypes.Day) {
       schedulerData.next();
-      schedulerData.setEvents(this.props.care_cal_events);
+      schedulerData.setEvents(this.state.cal_events);
       this.setState({
         viewModel: schedulerData
       });
@@ -206,7 +232,7 @@ class CareReminderCalendar extends React.Component {
   onScrollLeft = (schedulerData, schedulerContent, maxScrollLeft) => {
     if(schedulerData.ViewTypes === ViewTypes.Day) {
       schedulerData.prev();
-      schedulerData.setEvents(this.props.care_cal_events);
+      schedulerData.setEvents(this.state.cal_events);
       this.setState({
         viewModel: schedulerData
       });

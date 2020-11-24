@@ -119,6 +119,23 @@
   margin-bottom: 15px;
 }
 
+.setting-direction {
+  font-size: 13pt;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.direction-content {
+  font-size: 13pt;
+  padding-left: 30px;
+}
+
+.direction-content-end {
+  font-size: 13pt;
+  padding-left: 30px;
+  margin-bottom: 15px;
+}
+
 .download_button {
   text-decoration: none;
   background-color: #121b21;
