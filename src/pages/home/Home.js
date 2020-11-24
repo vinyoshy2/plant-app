@@ -6,6 +6,7 @@ import Logo from "./thrive-logo.png";
 import ProjectCard from "../project_list/ProjectCard.js"
 import "../project_list/ProjectList.css"
 import projectJSON from '../../data/projects.json';
+import { ReactComponent as Difficulty } from "feather-icons/dist/icons/book-open.svg";
 
 function Home(props) {
   return (
@@ -48,21 +49,27 @@ export class Navbar extends React.Component {
                             <div className={ this.state.menu ? "dropdown-content" : "dropdown-content-show"}>
                                 <div className="menuItems">
                                     <NavLink className="navlink" to="/">
+                                        <div className="pic1"></div>
                                         <div className="menuItem" id="menuItemHome">Home</div>
                                     </NavLink>
                                     <NavLink className="navlink" to="/prequizpage">
+                                        <div className="pic2"></div>
                                         <div className="menuItem">Find a Project</div>
                                     </NavLink>
                                     <NavLink className="navlink" to="/my-projects">
+                                        <div className="pic3"></div>
                                         <div className="menuItem">My Profile</div>
                                     </NavLink>
                                     <NavLink className="navlink" to="/messages">
+                                        <div className="pic4"></div>
                                         <div className="menuItem">Messages</div>
                                     </NavLink>
                                     <NavLink className="navlink" to="/care-reminder">
+                                        <div className="pic5"></div>
                                         <div className="menuItem">Care Reminders</div>
                                     </NavLink>
                                     <NavLink className="navlink" to="/plant-of-the-day">
+                                        <div className="pic6"></div>
                                         <div className="menuItem">Plant of the Day</div>
                                     </NavLink>
                                 </div>
