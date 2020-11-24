@@ -97,7 +97,7 @@ export const GalleryItems = [
     ]
   },
   {
-    'albumName': 'PROJECT NAME 2',
+    'albumName': 'RECOMMENDATION',
     'samplePhotoSrc' : 'https://upload.wikimedia.org/wikipedia/commons/8/89/Ropy_pahoehoe.jpg',
 
     'photos': [
