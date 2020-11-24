@@ -1,13 +1,8 @@
-import {DATE_FORMAT, DATETIME_FORMAT} from "react-big-scheduler";
 import React, {Component} from "react";
-import moment from "moment";
 
-import {capitalize} from "../../utils/utils";
 import CareReminderCalendar from "./CareReminderCalendar";
 import CareReminderDownload from "./CareReminderDownload";
 import CareReminderSettings from "./CareReminderSetting"
-import {getEntryFromID} from "../../utils/utils.js";
-import projectJSON from "../../data/projects.json";
 import Sidebar from "./SideBar";
 import { Navbar } from '../home/Home.js'
 

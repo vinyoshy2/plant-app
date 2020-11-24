@@ -1,11 +1,12 @@
 import {DragDropContext} from "react-dnd";
 import HTML5Backend from 'react-dnd-html5-backend';
-import React from 'react';
 import moment from 'moment'
+import React from 'react';
 import Scheduler, {SchedulerData, ViewTypes, DATE_FORMAT, DATETIME_FORMAT} from 'react-big-scheduler'
 
-import 'react-big-scheduler/lib/css/style.css'
 import {capitalize} from "../../utils/utils";
+
+import 'react-big-scheduler/lib/css/style.css'
 
 /* Reference info
    React lib: https://github.com/StephenChou1017/react-big-scheduler

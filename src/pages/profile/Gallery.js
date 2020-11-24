@@ -1,12 +1,10 @@
 import {Button} from "react-bootstrap";
-import React, { Component } from "react";
 import Lightbox from 'react-lightbox-component';
+import React, { Component } from "react";
 
 import Sidebar from "./SideBar";
 import { GalleryItems } from "./GalleryData"
 import { Navbar } from '../home/Home.js'
-import {getEntryFromID} from "../../utils/utils";
-import projectJSON from "../../data/projects.json";
 
 import 'react-lightbox-component/build/css/index.css'
 

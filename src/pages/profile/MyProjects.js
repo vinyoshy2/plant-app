@@ -29,7 +29,7 @@ class MyProjects extends Component {
               </div>
 
               <Container>
-                <NavLink to="/quiz" className={'new-project-nav'}>
+                <NavLink to="/prequizpage" className={'new-project-nav'}>
                   <Button
                     tooltip="Start a new project"
                     className='new-project-icon'> + </Button>
