@@ -109,8 +109,10 @@ const InfoSection = ({
                   <Button as={Link}
                     to= {{
                         pathname: "/project-list",
-                        state: {
-                            name: {id}
+                        state:{
+                          filter1: "Large",
+                          filter2: "Full sun",
+                          filter3: "Humid"
                         }
                     }}>
                     {buttonLabel}

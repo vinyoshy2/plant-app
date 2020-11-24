@@ -20,6 +20,12 @@ class Projects extends Component {
         humidVal = [this.props.presets.humid];
         props.presets.toxic == "Non-toxic" && keyVal.push({label: props.presets.toxic, value: props.presets.toxic});
         props.presets.air == "Air-purifying" && keyVal.push({label: props.presets.air, value: props.presets.air});
+
+        if (localStorage.getItem("filter1") !== null && localStorage.getItem("filter1") !== "empty") {
+          sizeVal = localStorage.getItem("filter1")
+          lightVal = localStorage.getItem("filter2")
+          humidVal = localStorage.getItem("filter3")
+        }
     }
     
     this.state = {
@@ -229,13 +235,21 @@ class Projects extends Component {
 class ProjectList extends React.Component{
     constructor(props) {
         super(props); 
-	console.log(this.props.location.state);
+      if (this.props.location.state) {
+        localStorage.setItem("filter1", this.props.location.state.filter1)
+        localStorage.setItem("filter2", this.props.location.state.filter2)
+        localStorage.setItem("filter3", this.props.location.state.filter3)
+      } else {
+        localStorage.setItem("filter1", "empty")
+        localStorage.setItem("filter2", "empty")
+        localStorage.setItem("filter3", "empty")
+      }
     }
     render() {
         return (
             <div>
                 <Navbar />
-                <Projects presets={this.props.location.state} added={this.props.added} increment={this.props.increment} decrement={this.props.decrement} add={this.props.add}/>
+                <Projects presets={this.props.location.state} added={this.props.added} increment={this.props.increment} decrement={this.props.decrement} add={this.props.add} filter1={localStorage.getItem("filter1")} filter2={localStorage.getItem("filter2")} filter3={localStorage.getItem("filter3")}/>
             </div>
       );
     }
