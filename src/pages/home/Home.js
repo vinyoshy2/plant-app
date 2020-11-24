@@ -4,9 +4,10 @@ import { NavLink } from "react-router-dom";
 import SpiderPlant from "./spider-plant.jpg";
 import Logo from "./thrive-logo.png";
 import ProjectCard from "../project_list/ProjectCard.js"
-import "../project_list/ProjectList.css"
 import projectJSON from '../../data/projects.json';
-import { ReactComponent as Difficulty } from "feather-icons/dist/icons/book-open.svg";
+
+import "../project_list/ProjectList.css"
+import "./Home.css"
 
 function Home(props) {
   return (
