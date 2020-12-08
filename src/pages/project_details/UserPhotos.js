@@ -32,7 +32,7 @@ export default class UserPhotos extends React.Component {
 		} {
 		     this.props.stage >= this.props.activate && 
                         <div id="upload_button">
-		            <input type="image" class="upload_icon" onClick={this.uploadHandler} src={"/camera_icon.png"}/>
+		            <input type="image" class="upload_icon" onClick={this.uploadHandler} src={"camera_icon.png"}/>
 		            <div class="upload_text">Upload your photo</div>
 		        </div>
 		    
