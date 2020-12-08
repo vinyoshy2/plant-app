@@ -141,21 +141,21 @@ class Projects extends Component {
                             <input type="checkbox" id="small" name="size" value="Small" onChange={this.handleSizeSelection}/>
                             : <input type="checkbox" id="small" name="size" value="Small" defaultChecked onChange={this.handleSizeSelection}/>
                         }
-                        <label for="small">Small (less than 6" tall)</label>
+                        <label for="small">Small</label>
                     </div>
                     <div className="checkbox">
                         {this.props.presets == undefined || this.props.presets.size != "Medium" ?
                         <input type="checkbox" id="medium" name="size" value="Medium" onChange={this.handleSizeSelection}/>
                         : <input type="checkbox" id="medium" name="size" value="Medium" defaultChecked onChange={this.handleSizeSelection}/>
                     }
-                    <label for="medium">Medium (6 - 10" tall)</label>
+                    <label for="medium">Medium</label>
                 </div>
                 <div className="checkbox">
                     {this.props.presets ==undefined || this.props.presets.size != "Large" ?
                     <input type="checkbox" id="large" name="size" value="Large" onChange={this.handleSizeSelection}/> 
                     : <input type="checkbox" id="large" name="size" value="Large" defaultChecked onChange={this.handleSizeSelection}/> 
                     }
-                    <label for="large">Large (more than 10" tall)</label>
+                    <label for="large">Large</label>
                 </div>
             </div>
             <div id="lighting" className="filter">

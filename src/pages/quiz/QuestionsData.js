@@ -33,7 +33,7 @@ var QuestionsData = [
           },
           {
               type: "Full sun",
-              content: "Full sum"
+              content: "Full sun"
           }
       ]
   },
@@ -50,7 +50,7 @@ var QuestionsData = [
           },
           {
               type: "Humid",
-              content: "humid"
+              content: "Humid"
           }
       ]
   },

@@ -33,7 +33,7 @@
             "alt_plants": [{"name": "Balbisiana", "pic": "Balbisiana.jpg"}, {"name": "Butzii", "pic": "butzii.jpg"}],
             "gallery_pics": ["project2-3.jpeg", "project2-1.jpg","project2-2.jpg"],
             "size": "Small",
-            "lighting": "Indirect Light",
+            "lighting": "Partial Sun",
             "humidity": "Dry",
             "setup_difficulty": "Medium",
             "care_difficulty": "Easy",
