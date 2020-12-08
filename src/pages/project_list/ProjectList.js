@@ -235,7 +235,8 @@ class Projects extends Component {
 class ProjectList extends React.Component{
     constructor(props) {
         super(props); 
-      if (this.props.location.state) {
+        console.log(this.props)
+      if (this.props.location.state.filter1) {
         localStorage.setItem("filter1", this.props.location.state.filter1)
         localStorage.setItem("filter2", this.props.location.state.filter2)
         localStorage.setItem("filter3", this.props.location.state.filter3)
